@@ -1,0 +1,10 @@
+# Working files from content extraction — contains unredacted source documents.
+# Never commit this folder.
+_extract/
+
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+Gemfile.lock

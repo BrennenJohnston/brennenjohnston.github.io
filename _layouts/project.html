@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<div class="container prose">
+  <h1>{{ page.title }}</h1>
+
+  <p class="project-meta">
+    {% case page.status %}
+      {% when "ready" %}<span class="badge badge--ready">Ready to print</span>
+      {% when "prototype" %}<span class="badge badge--wip">Work in progress</span>
+      {% when "custom" %}<span class="badge badge--custom">Custom build</span>
+    {% endcase %}
+    <span class="project-meta__date">{{ page.date | date: "%B %Y" }}</span>
+  </p>
+
+  {% if page.cover_image %}
+  <img class="project-cover" src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt | escape }}">
+  {% endif %}
+
+  {% include project-links.html project=page %}
+
+  {% if page.print_time or page.material or page.supports %}
+  <h2>Print details</h2>
+  <dl class="print-details">
+    {% if page.print_time %}<dt>Print time</dt><dd>{{ page.print_time }}</dd>{% endif %}
+    {% if page.material %}<dt>Material</dt><dd>{{ page.material }}</dd>{% endif %}
+    {% if page.supports %}<dt>Supports</dt><dd>{{ page.supports }}</dd>{% endif %}
+  </dl>
+  {% endif %}
+
+  {% if page.status == "prototype" %}
+  <section class="callout callout--help" aria-labelledby="help-improve">
+    <h2 id="help-improve">Help improve this design</h2>
+    {% if page.help_wanted and page.help_wanted != "" %}
+    <p>{{ page.help_wanted }}</p>
+    {% endif %}
+    <p>This project is a work in progress. See <a href="{{ '/collaborate/' | relative_url }}">how to collaborate</a> if you would like to test it, suggest changes, or help iterate.</p>
+  </section>
+  {% endif %}
+
+  {% if page.status == "custom" %}
+  <section class="callout" aria-labelledby="custom-note">
+    <h2 id="custom-note">About custom builds</h2>
+    <p>This was a one-of-a-kind build made for a specific person. If you or someone you support needs something similar, <a href="{{ '/about/' | relative_url }}">get in touch</a>.</p>
+  </section>
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.gallery and page.gallery.size > 0 %}
+  <h2>Photo gallery</h2>
+  {% for item in page.gallery %}
+  <figure class="project-figure">
+    <img src="{{ item.image | relative_url }}" alt="{{ item.alt | escape }}" loading="lazy">
+    {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+  {% endif %}
+
+  <p class="back-link"><a href="{{ '/projects/' | relative_url }}">Back to all projects</a></p>
+</div>

@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Brennen's 3D Printed Assistive Technology — single stylesheet, no framework.
+   Mobile-first. WCAG 2.2 AA: all text/background pairs >= 4.5:1.
+   Verified pairs:
+     #1a1a2e on #fdfdfb  ~15.9:1   (body text)
+     #0b5d8a on #fdfdfb   ~7.0:1   (links, accent)
+     #ffffff on #0b5d8a   ~7.1:1   (buttons)
+     #1a1a2e on badge backgrounds ~13:1 or better
+   ========================================================================== */
+
+:root {
+  --color-text: #1a1a2e;
+  --color-bg: #fdfdfb;
+  --color-accent: #0b5d8a;
+  --color-accent-dark: #084568;
+  --color-surface: #f1f1ec;
+  --color-border: #c9c9c2;
+  --color-badge-ready-bg: #d7efdc;
+  --color-badge-wip-bg: #fdeccc;
+  --color-badge-custom-bg: #e4e0f5;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --radius: 6px;
+}
+
+/* Base ------------------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.prose {
+  max-width: 70ch;
+}
+
+.prose img {
+  border-radius: var(--radius);
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: var(--space-5);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+main {
+  display: block; /* older browsers */
+  padding-block: var(--space-4) var(--space-5);
+}
+
+/* Focus ------------------------------------------------------------------ */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link -------------------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  background: var(--color-accent);
+  color: #ffffff;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.skip-link:focus {
+  left: var(--space-3);
+}
+
+/* Visually hidden (for screen-reader-only headings) ----------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header / nav ------------------------------------------------------------ */
+
+.site-header {
+  border-bottom: 2px solid var(--color-border);
+  background: var(--color-bg);
+  padding-block: var(--space-3);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-title:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+.site-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.6rem 0.5rem; /* generous touch target */
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  color: var(--color-text);
+}
+
+/* Footer ------------------------------------------------------------------ */
+
+.site-footer {
+  border-top: 2px solid var(--color-border);
+  background: var(--color-surface);
+  padding-block: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.site-footer__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+}
+
+.site-footer h3 {
+  margin-top: 0;
+}
+
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer li {
+  margin-block: var(--space-2);
+}
+
+.site-footer a {
+  display: inline-block;
+  padding-block: var(--space-1);
+}
+
+.site-footer__license {
+  margin-top: var(--space-4);
+  font-size: 0.9rem;
+}
+
+/* Card grid --------------------------------------------------------------- */
+
+.card-grid {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.project-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #ffffff;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card__body {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.project-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.project-card__title a {
+  display: inline-block;
+  padding-block: var(--space-1);
+}
+
+.project-card__summary {
+  margin: 0;
+}
+
+.project-card__categories {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Badges ------------------------------------------------------------------ */
+/* Status is conveyed by the text label plus a distinct border style,
+   never by color alone. */
+
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.badge--ready {
+  background: var(--color-badge-ready-bg);
+  border: 2px solid #2c6e49;
+}
+
+.badge--wip {
+  background: var(--color-badge-wip-bg);
+  border: 2px dashed #8a5a00;
+}
+
+.badge--custom {
+  background: var(--color-badge-custom-bg);
+  border: 2px double #4b3f8f;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.button-row {
+  list-style: none;
+  margin: var(--space-3) 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: var(--color-accent-dark);
+  color: #ffffff;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.button--secondary:hover {
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* Project detail page ------------------------------------------------------ */
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.project-cover {
+  border-radius: var(--radius);
+}
+
+.print-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-3) 0;
+}
+
+.print-details dt {
+  font-weight: 700;
+}
+
+.print-details dd {
+  margin: 0;
+}
+
+.callout {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+  margin-block: var(--space-4);
+}
+
+.callout h2 {
+  margin-top: 0;
+}
+
+.callout--help {
+  border-color: var(--color-accent);
+}
+
+.project-figure {
+  margin: var(--space-4) 0;
+}
+
+.project-figure figcaption {
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+}
+
+.back-link {
+  margin-top: var(--space-5);
+}
+
+/* Timeline (year headings) -------------------------------------------------- */
+
+.timeline-year {
+  border-left: 6px solid var(--color-accent);
+  padding-left: var(--space-3);
+}
+
+/* Legend -------------------------------------------------------------------- */
+
+.badge-legend {
+  list-style: none;
+  margin: var(--space-3) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Home hero ------------------------------------------------------------------ */
+
+.hero {
+  padding-block: var(--space-4);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 60ch;
+}
+
+/* Three-column audience section ---------------------------------------------- */
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.audience-grid section {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #ffffff;
+  padding: var(--space-3) var(--space-4);
+}
+
+.audience-grid h3 {
+  margin-top: 0;
+}
+
+/* Motion ---------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .button,
+  .site-nav a,
+  a {
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+}

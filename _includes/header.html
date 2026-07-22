@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav aria-label="Main">
+      <ul class="site-nav" role="list">
+        {% assign nav_items = "Home,/|My Projects,/projects/|Prototypes & Collaboration,/collaborate/|Resource Hub,/resources/|About,/about/" | split: "|" %}
+        {% for item in nav_items %}
+          {% assign parts = item | split: "," %}
+          {% assign nav_label = parts[0] %}
+          {% assign nav_url = parts[1] %}
+          {% assign nav_url_index = nav_url | append: "index.html" %}
+          <li>
+            {% if page.url == nav_url or page.url == nav_url_index %}
+              <a href="{{ nav_url | relative_url }}" aria-current="page">{{ nav_label }}</a>
+            {% else %}
+              <a href="{{ nav_url | relative_url }}">{{ nav_label }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,25 @@
+{% assign proj = include.project %}
+{% if proj.links and proj.links.size > 0 %}
+<section class="project-links" aria-labelledby="get-the-files">
+  <h2 id="get-the-files">Get the files</h2>
+  <ul class="button-row" role="list">
+    {% for link in proj.links %}
+      {% assign label_down = link.label | downcase %}
+      {% if link.url contains "://" %}{% assign link_href = link.url %}{% else %}{% assign link_href = link.url | relative_url %}{% endif %}
+      <li>
+        <a class="button" href="{{ link_href }}" rel="noopener">
+          {%- if label_down contains "github" -%}
+            Source files on {{ link.label }}
+          {%- elsif label_down contains "video" or label_down contains "youtube" -%}
+            Watch: {{ link.label }}
+          {%- elsif label_down contains "app" or label_down contains "guide" or label_down contains "pdf" -%}
+            {{ link.label }}
+          {%- else -%}
+            Download on {{ link.label }}
+          {%- endif -%}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

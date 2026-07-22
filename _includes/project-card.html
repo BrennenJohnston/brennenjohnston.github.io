@@ -1,0 +1,18 @@
+{% assign p = include.project %}
+<article class="project-card">
+  {% if p.cover_image %}
+  <img class="project-card__image" src="{{ p.cover_image | relative_url }}" alt="{{ p.cover_alt | escape }}" loading="lazy">
+  {% endif %}
+  <div class="project-card__body">
+    <h3 class="project-card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    {% case p.status %}
+      {% when "ready" %}<span class="badge badge--ready">Ready to print</span>
+      {% when "prototype" %}<span class="badge badge--wip">Work in progress</span>
+      {% when "custom" %}<span class="badge badge--custom">Custom build</span>
+    {% endcase %}
+    <p class="project-card__summary">{{ p.summary }}</p>
+    {% if p.categories and p.categories.size > 0 %}
+    <p class="project-card__categories">Categories: {{ p.categories | join: ", " }}</p>
+    {% endif %}
+  </div>
+</article>
