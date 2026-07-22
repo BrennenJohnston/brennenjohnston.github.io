@@ -1,29 +1,52 @@
 /* ==========================================================================
    Brennen's 3D Printed Assistive Technology — single stylesheet, no framework.
+   Frutiger Aero theme: sky-to-aqua gradient, frosted glass panels, glossy
+   pill buttons, specular highlights — all pure CSS, no image assets.
+
+   Glass / gloss / orb patterns adapted from MIT-licensed open-source work:
+     - Make Aero (https://github.com/Visnalize/makeaero, MIT) — glossy
+       button and Aero glass window treatments
+     - VitralCSS (https://github.com/UlisesPLopez/vitralcss, MIT) — glass /
+       water panel effects
+     - retro-design-system #12 Frutiger Aero
+       (https://github.com/NovusGFX/retro-design-system, MIT) — color
+       tokens and component patterns
+
    Mobile-first. WCAG 2.2 AA: all text/background pairs >= 4.5:1.
-   Verified pairs:
-     #1a1a2e on #fdfdfb  ~15.9:1   (body text)
-     #0b5d8a on #fdfdfb   ~7.0:1   (links, accent)
-     #ffffff on #0b5d8a   ~7.1:1   (buttons)
-     #1a1a2e on badge backgrounds ~13:1 or better
+   Verified pairs (checked against the LIGHTEST surface each sits on):
+     #12263a on #eaf7fd  ~13.5:1  (body text on the palest sky band)
+     #12263a on rgba-white glass over sky (worst case #cdeaf6) ~11.9:1
+     #075985 on #eaf7fd   ~6.2:1  (links on palest sky)
+     #075985 on #b8e4f7   ~5.0:1  (links on deepest sky band)
+     #ffffff on #0e6ea3   ~5.6:1  (button text on gloss-lightened top)
+     #ffffff on #084568   ~9.9:1  (button text on gradient bottom)
+     #12263a on badge glass tints ~11:1 or better
+   Status badges never rely on color alone (text label + border style).
    ========================================================================== */
 
 :root {
-  --color-text: #1a1a2e;
-  --color-bg: #fdfdfb;
-  --color-accent: #0b5d8a;
-  --color-accent-dark: #084568;
-  --color-surface: #f1f1ec;
-  --color-border: #c9c9c2;
-  --color-badge-ready-bg: #d7efdc;
-  --color-badge-wip-bg: #fdeccc;
-  --color-badge-custom-bg: #e4e0f5;
+  --color-text: #12263a;
+  --color-bg: #eaf7fd;
+  --color-accent: #075985;
+  --color-accent-dark: #06466a;
+  --color-surface: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.75);
+  --color-border-solid: #9dc8dd;
+  --color-badge-ready-bg: rgba(215, 242, 222, 0.9);
+  --color-badge-wip-bg: rgba(253, 236, 204, 0.9);
+  --color-badge-custom-bg: rgba(228, 224, 245, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 8px 24px rgba(7, 89, 133, 0.14),
+                  0 2px 6px rgba(7, 89, 133, 0.10);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2.5rem;
-  --radius: 6px;
+  --radius: 14px;
+  --radius-small: 8px;
 }
 
 /* Base ------------------------------------------------------------------- */
@@ -38,10 +61,20 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Period-authentic Vista/7 typeface first; falls back to system stacks. */
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   line-height: 1.6;
   color: var(--color-text);
+  /* The Frutiger Aero sky: vivid at the horizon (top), fading through
+     pale cyan into a soft green meadow tint. Fixed so panels appear to
+     float over it while scrolling. */
   background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, #b8e4f7 0%, #d3eefa 22rem, #eaf7fd 55%, #e3f6ec 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 img {
@@ -60,7 +93,9 @@ img {
 }
 
 .prose img {
-  border-radius: var(--radius);
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glass-shadow);
 }
 
 h1, h2, h3 {
@@ -111,7 +146,7 @@ main {
   background: var(--color-accent);
   color: #ffffff;
   padding: var(--space-2) var(--space-3);
-  border-radius: 0 0 var(--radius) var(--radius);
+  border-radius: 0 0 var(--radius-small) var(--radius-small);
 }
 
 .skip-link:focus {
@@ -133,11 +168,19 @@ main {
 }
 
 /* Header / nav ------------------------------------------------------------ */
+/* Frosted Aero glass bar: translucent white + blur, with a specular top
+   edge (pattern after Make Aero's glass window chrome). */
 
 .site-header {
-  border-bottom: 2px solid var(--color-border);
-  background: var(--color-bg);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 2px 12px rgba(7, 89, 133, 0.12);
   padding-block: var(--space-3);
+  position: relative;
+  z-index: 5;
 }
 
 .site-header__inner {
@@ -171,14 +214,16 @@ main {
 
 .site-nav a {
   display: inline-block;
-  padding: 0.6rem 0.5rem; /* generous touch target */
+  padding: 0.6rem 0.75rem; /* generous touch target */
   min-height: 44px;
   text-decoration: none;
   color: var(--color-accent);
+  border-radius: 999px;
 }
 
 .site-nav a:hover {
   text-decoration: underline;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .site-nav a[aria-current="page"] {
@@ -187,13 +232,18 @@ main {
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
   color: var(--color-text);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 /* Footer ------------------------------------------------------------------ */
 
 .site-footer {
-  border-top: 2px solid var(--color-border);
-  background: var(--color-surface);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-top: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
   padding-block: var(--space-4);
   margin-top: var(--space-5);
 }
@@ -229,6 +279,8 @@ main {
 }
 
 /* Card grid --------------------------------------------------------------- */
+/* Floating glass cards (VitralCSS-style water panel: translucent white,
+   bright 1px glass rim, soft drop shadow, specular top highlight). */
 
 .card-grid {
   list-style: none;
@@ -240,9 +292,13 @@ main {
 }
 
 .project-card {
+  position: relative;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: #ffffff;
+  background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -254,6 +310,7 @@ main {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .project-card__body {
@@ -284,34 +341,39 @@ main {
 }
 
 /* Badges ------------------------------------------------------------------ */
-/* Status is conveyed by the text label plus a distinct border style,
-   never by color alone. */
+/* Glossy status pills. Status is conveyed by the text label plus a
+   distinct border style, never by color alone. */
 
 .badge {
   display: inline-block;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius);
+  padding: var(--space-1) 0.75rem;
+  border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+              0 1px 3px rgba(7, 89, 133, 0.15);
 }
 
 .badge--ready {
-  background: var(--color-badge-ready-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-ready-bg);
   border: 2px solid #2c6e49;
 }
 
 .badge--wip {
-  background: var(--color-badge-wip-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-wip-bg);
   border: 2px dashed #8a5a00;
 }
 
 .badge--custom {
-  background: var(--color-badge-custom-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-custom-bg);
   border: 2px double #4b3f8f;
 }
 
 /* Buttons ----------------------------------------------------------------- */
+/* Glossy Aero pills (after Make Aero's button treatment): blue vertical
+   gradient, bright inset rim light at the top edge, soft outer glow.
+   The gradient's lightest stop (#0e6ea3) keeps white text at ~5.6:1. */
 
 .button-row {
   list-style: none;
@@ -329,26 +391,34 @@ main {
   min-height: 44px;
   min-width: 44px;
   padding: var(--space-2) var(--space-4);
-  background: var(--color-accent);
+  background: linear-gradient(180deg, #0e6ea3 0%, #0b5d8a 48%, #084568 100%);
   color: #ffffff;
-  border-radius: var(--radius);
+  border: 1px solid #06466a;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+              0 2px 8px rgba(7, 89, 133, 0.35);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .button:hover {
-  background: var(--color-accent-dark);
+  background: linear-gradient(180deg, #0b5d8a 0%, #084568 60%, #06385a 100%);
   color: #ffffff;
 }
 
 .button--secondary {
-  background: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55));
   color: var(--color-accent);
   border: 2px solid var(--color-accent);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 2px 8px rgba(7, 89, 133, 0.18);
+  text-shadow: none;
 }
 
 .button--secondary:hover {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
 }
@@ -364,6 +434,8 @@ main {
 
 .project-cover {
   border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .print-details {
@@ -382,9 +454,12 @@ main {
 }
 
 .callout {
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
   padding: var(--space-3) var(--space-4);
   margin-block: var(--space-4);
 }
@@ -394,11 +469,17 @@ main {
 }
 
 .callout--help {
-  border-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
 
 .project-figure {
   margin: var(--space-4) 0;
+}
+
+.project-figure img {
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .project-figure figcaption {
@@ -429,14 +510,65 @@ main {
 }
 
 /* Home hero ------------------------------------------------------------------ */
+/* CSS-only bubble accents (radial-gradient orbs, after Make Aero's orb):
+   decorative, behind the text, no pointer events, no images. */
 
 .hero {
+  position: relative;
   padding-block: var(--space-4);
 }
 
 .hero p {
   font-size: 1.15rem;
   max-width: 60ch;
+  position: relative;
+}
+
+.hero h1,
+.hero .button-row {
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.25) 22%, rgba(255, 255, 255, 0) 45%),
+    radial-gradient(circle at 70% 80%, rgba(122, 205, 244, 0.5) 0%, rgba(122, 205, 244, 0) 55%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12), rgba(186, 230, 253, 0.28));
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.8),
+              inset 0 -4px 10px rgba(56, 152, 199, 0.18),
+              0 4px 14px rgba(7, 89, 133, 0.08);
+}
+
+.hero::before {
+  width: 9rem;
+  height: 9rem;
+  top: -1rem;
+  right: 4%;
+}
+
+.hero::after {
+  width: 4.5rem;
+  height: 4.5rem;
+  top: 7rem;
+  right: 16%;
+}
+
+@media (max-width: 40rem) {
+  /* Keep bubbles clear of wrapped text on narrow screens. */
+  .hero::before {
+    width: 5rem;
+    height: 5rem;
+    top: -1.5rem;
+    right: 2%;
+  }
+  .hero::after {
+    display: none;
+  }
 }
 
 /* Three-column audience section ---------------------------------------------- */
@@ -451,12 +583,31 @@ main {
 .audience-grid section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: #ffffff;
+  background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
   padding: var(--space-3) var(--space-4);
 }
 
 .audience-grid h3 {
   margin-top: 0;
+}
+
+/* Tables (guides / resource pages) -------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid var(--color-border-solid);
+  padding: var(--space-1) var(--space-2);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+th {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 /* Motion ---------------------------------------------------------------------- */
@@ -466,5 +617,16 @@ main {
   .site-nav a,
   a {
     transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .project-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: inset 0 1px 0 var(--glass-highlight),
+                0 14px 32px rgba(7, 89, 133, 0.20),
+                0 4px 10px rgba(7, 89, 133, 0.12);
   }
 }

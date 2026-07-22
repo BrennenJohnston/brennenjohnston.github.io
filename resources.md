@@ -43,6 +43,10 @@ A curated list of assistive technology resources and maker communities — the s
 
 - [WATAP's Design Challenge Intake Form](https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=W9229i_wGkSZoBYqxQYL0hWbd9GaYGhOhlp2Mf6JlQhUOEhOQUZZNU1TSDJIUlg3NEs4U1M1VEVTRC4u) — one form that combines the questions from local, North American, and global assistive technology makers' intake forms, so a single submission can reach a large group of makers.
 
+## Design tools
+
+- [BumpMesh](https://bumpmesh.com/) — a tool for applying tactile, fidget-friendly textures to 3D-printable models; useful for sensory and fidget designs.
+
 ## Getting started guides
 
 - [Onshape CAD Quick Start Guide]({{ '/guides/onshape/' | relative_url }}) — my five-step beginner path from a free CAD account to your first parametric, printable part.

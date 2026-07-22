@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder image. Photo coming soon.">
-  <rect width="400" height="300" fill="#f1f1ec"/>
-  <circle cx="160" cy="140" r="55" fill="none" stroke="#0b5d8a" stroke-width="6"/>
-  <circle cx="160" cy="140" r="32" fill="none" stroke="#0b5d8a" stroke-width="4" stroke-dasharray="8 6"/>
-  <circle cx="250" cy="140" r="55" fill="none" stroke="#0b5d8a" stroke-width="6"/>
-  <circle cx="250" cy="140" r="32" fill="none" stroke="#0b5d8a" stroke-width="4" stroke-dasharray="8 6"/>
-  <text x="200" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#1a1a2e">Photo coming soon</text>
-</svg>
