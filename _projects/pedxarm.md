@@ -20,4 +20,4 @@ help_wanted: ""
 
 PedXarm is a 3D-printed scale model of a railroad crossing, with pedestrian crossing ("ped xing") gate arms. The model includes a printed track base, crossbuck "Railroad Crossing" signs with red lights, and striped crossing arms that raise and lower.
 
-The design is under active development — the project files show many iterations of the poles, arms, and floor pieces (currently around edit 2.4+), refining how the parts print and fit together.
+The design is under active development; the project files show many iterations of the poles, arms, and floor pieces (currently around edit 2.4+), refining how the parts print and fit together.

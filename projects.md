@@ -5,13 +5,13 @@ permalink: /projects/
 ---
 <div class="container">
   <h1>My Projects</h1>
-  <p class="prose">Every device I've designed or built, newest first. Some are published and ready to print, some are prototypes I'm still iterating on, and some were one-of-a-kind builds for a specific person — shown here to spark ideas about what's possible.</p>
+  <p class="prose">This is a collection of projects I found worth sharing. Some are published and ready to print, some are prototypes I'm still iterating on, and some were one of a kind builds for a specific person that might spark ideas.</p>
 
   <h2 class="visually-hidden">Badge legend</h2>
   <ul class="badge-legend" role="list">
     <li><span class="badge badge--ready">Ready to print</span> — published design with downloadable files.</li>
-    <li><span class="badge badge--wip">Work in progress</span> — a prototype I'm iterating on; feedback welcome.</li>
-    <li><span class="badge badge--custom">Custom build</span> — a completed one-off made for a specific individual.</li>
+    <li><span class="badge badge--wip">Work in progress</span> — a prototype I'm iterating on.</li>
+    <li><span class="badge badge--custom">Custom build</span> — a completed one off project made for a specific individual.</li>
   </ul>
 
   {% assign sorted = site.projects | sort: "date" | reverse %}

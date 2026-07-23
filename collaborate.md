@@ -1,11 +1,19 @@
 ---
 layout: default
-title: Prototypes & Collaboration
+title: Collaborations
 permalink: /collaborate/
 ---
 <div class="container">
-  <h1>Prototypes &amp; Collaboration</h1>
-  <p class="prose">These projects are works in progress — designs I'm actively iterating on. They're shared early on purpose: real feedback from users, clinicians, and makers is what turns a rough prototype into a device that actually works for people. If something here interests you, please try it, break it, and tell me what happened.</p>
+  <h1>Collaborations</h1>
+  <p class="prose">Alongside my own designs, I collaborate with agencies, universities, and maker organizations on assistive technology projects. Below are a few ongoing partnerships, followed by the prototypes I'm currently iterating on. They are shared early on purpose, because real feedback from users, clinicians, and makers is what turns a rough prototype into a device that actually works for people.</p>
+
+  <div class="prose">
+    <h2>WATAP &amp; Sound Transit tactile maps</h2>
+    <p>WATAP is partnering with Sound Transit and Portland State University to develop 3D-printed tactile transit maps that help riders who are blind or low vision navigate train stations by touch. The work explores hybrid maps with a detachable symbol key and research-based dimensions for tactile readability. See the <a href="{{ '/projects/tactile-maps/' | relative_url }}">tactile maps project</a> for prototypes and details.</p>
+
+    <h2>UW CREATE &amp; the Kren Engineering-based Medicine Initiative</h2>
+    <p>Through <a href="https://create.uw.edu/" rel="noopener">UW CREATE</a> (the Center for Research and Education on Accessible Technology and Experiences), I contribute to the project <em>Integrating Engineering and Rehabilitation Medicine to Improve Healthcare and Assistive Technology Access and Customizability</em>, funded through the <a href="https://kemi.uw.edu/projects" rel="noopener">Kren Engineering-based Medicine Initiative (KEMi)</a>. A focus of this work is developing more accessible documentation standards for DIY and 3D-printed assistive technology, so open designs are easier to share, reproduce, and adapt. Related efforts and repositories are gathered at <a href="https://a11yhood.org" rel="noopener">a11yhood.org</a>.</p>
+  </div>
 
   <h2>Current prototypes</h2>
   {% assign prototypes = site.projects | where: "status", "prototype" | sort: "date" | reverse %}
@@ -14,16 +22,4 @@ permalink: /collaborate/
     <li>{% include project-card.html project=p %}</li>
     {% endfor %}
   </ul>
-
-  <div class="prose">
-    <h2>How to collaborate</h2>
-    <ol>
-      <li><strong>Comment on the model page.</strong> Every published design has a comments section — on <a href="https://makerworld.com/en/@WATAP_3D" rel="noopener">MakerWorld (WATAP_3D)</a>, <a href="https://www.printables.com/@Brengineered_4921802" rel="noopener">Printables (Brengineered)</a>, or <a href="https://www.thingiverse.com/Brennen_WATAP/designs" rel="noopener">Thingiverse (Brennen_WATAP)</a>.</li>
-      <li><strong>Open a GitHub issue.</strong> For the OpenSCAD Assistive Forge, use <a href="https://github.com/BrennenJohnston/openscad-assistive-forge/issues" rel="noopener">the Forge issue tracker</a>. For anything else on this site, open an issue on this website's repository. <!-- TODO(owner): add the website repo issues URL after deploy --></li>
-      <li><strong>Email me.</strong> Send feedback, questions, or collaboration ideas to <a href="mailto:your-email@example.com">your-email@example.com</a>. <!-- TODO(owner): replace with your real email address --></li>
-    </ol>
-
-    <h2>For AT professionals</h2>
-    <p>The most useful feedback answers questions like: Did the device fit the person it was intended for? How much force did it take to use? How does it hold up to cleaning? What happened after a week of real use? Client outcomes — good and bad — directly shape the next iteration, and your observations reach far beyond a single client when they're folded back into an open design.</p>
-  </div>
 </div>

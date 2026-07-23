@@ -3,20 +3,20 @@ layout: page
 title: Onshape CAD Quick Start Guide
 permalink: /guides/onshape/
 ---
-New to CAD? This quick start takes you from zero to your first 3D-printable, parametric part using Onshape — free, browser-based CAD that runs on any web-connected device.
+New to CAD? This quick start takes you from zero to your first 3D-printable, parametric part using Onshape, a free, browser-based CAD tool that runs on any web-connected device.
 
 ## What you'll do in this quick start
 
 1. Create a free education account (private projects, cloud-native CAD).
 2. Learn the layout basics and the core sketch-to-feature workflow from a short video series.
 3. Get 3D-printing basics so you can fabricate your first part.
-4. Learn variables for parametric designs — change one value and the whole model updates.
+4. Learn variables for parametric designs: change one value and the whole model updates.
 
 ## Step 1: Get started (free, education plan)
 
 1. Go to the [Onshape Education page](https://www.onshape.com/en/education).
 2. Click "Create a Student Account" and [complete signup](https://www.onshape.com/en/education/sign-up).
-3. [Open Onshape in your browser](https://www.onshape.com/en/) — there's nothing to install.
+3. [Open Onshape in your browser](https://www.onshape.com/en/); there's nothing to install.
 
 **Why this software?** Onshape's student plan is free and designed for learning at any level. It's also cloud-native, so it runs on any web-connected device without needing a high-end computer.
 
@@ -33,14 +33,14 @@ Watch this beginner overview to understand slicing, materials, bed leveling, and
 Tips before your first print:
 
 - Export your part in STL format from Onshape (right-click the part, then Export). Open it in your slicer and use the guide above to choose layer height, infill, and temperatures.
-- If you're using a new or different printer model, watch a quick model-specific setup video first — minor differences matter (bed leveling, firmware, materials, and so on).
+- If you're using a new or different printer model, watch a quick model-specific setup video first; minor differences matter (bed leveling, firmware, materials, and so on).
 
 ## Step 4: Go parametric with variables (the "power move")
 
 1. Watch: [Introduction to Variables (YouTube)](https://www.youtube.com/watch?v=EibLkfW-Ot4).
 2. Then skim the official documentation: [Variables in Onshape](https://cad.onshape.com/help/Content/variable.htm).
 
-**Why do variables matter?** If you define a named value like `width = 40 mm` once, you can reuse it across sketches and features throughout the project — and changing the value updates the entire model wherever the variable is used.
+**Why do variables matter?** If you define a named value like `width = 40 mm` once, you can reuse it across sketches and features throughout the project, and changing the value updates the entire model wherever the variable is used.
 
 ## Step 5: Where to go next?
 

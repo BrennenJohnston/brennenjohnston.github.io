@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="container prose">
-  <h1>{{ page.title }}</h1>
+  <h1 class="window__titlebar"><span class="window__dot" aria-hidden="true"></span>{{ page.title }}</h1>
 
   <p class="project-meta">
     {% case page.status %}
@@ -34,14 +34,14 @@ layout: default
     {% if page.help_wanted and page.help_wanted != "" %}
     <p>{{ page.help_wanted }}</p>
     {% endif %}
-    <p>This project is a work in progress. See <a href="{{ '/collaborate/' | relative_url }}">how to collaborate</a> if you would like to test it, suggest changes, or help iterate.</p>
+    <p>This project is a work in progress. If you would like to test it, suggest changes, or help iterate, feedback is welcome on the model pages linked above. See my other <a href="{{ '/collaborate/' | relative_url }}">collaborations</a> for related work.</p>
   </section>
   {% endif %}
 
   {% if page.status == "custom" %}
   <section class="callout" aria-labelledby="custom-note">
     <h2 id="custom-note">About custom builds</h2>
-    <p>This was a one-of-a-kind build made for a specific person. If you or someone you support needs something similar, <a href="{{ '/about/' | relative_url }}">get in touch</a>.</p>
+    <p>This was a one-of-a-kind build made for a specific person. It's shared here to spark ideas about what's possible with DIY assistive technology.</p>
   </section>
   {% endif %}
 

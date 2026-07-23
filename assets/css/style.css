@@ -1,45 +1,108 @@
 /* ==========================================================================
    Brennen's 3D Printed Assistive Technology — single stylesheet, no framework.
-   Frutiger Aero theme: sky-to-aqua gradient, frosted glass panels, glossy
-   pill buttons, specular highlights — all pure CSS, no image assets.
+   Frutiger Aero "Green Utopia" theme: a CSS-only sky→sun→grass scene
+   (deep sky blue, white sun burst, aqua midband, glossy grass ground),
+   glass "window" panels with glossy titlebars, a home sidebar, candy-gloss
+   buttons and specular highlights — all pure CSS, no image assets.
+
+   Palette inspiration: the "Green Utopia" Frutiger Aero photo (deep sky
+   blue up top, white sun glow, glossy green globe, grass-green ground) with
+   water/bubble accents. Photos are inspiration only — never embedded.
 
    Glass / gloss / orb patterns adapted from MIT-licensed open-source work:
      - Make Aero (https://github.com/Visnalize/makeaero, MIT) — glossy
        button and Aero glass window treatments
      - VitralCSS (https://github.com/UlisesPLopez/vitralcss, MIT) — glass /
-       water panel effects
+       water panel effects and soft bokeh circles
      - retro-design-system #12 Frutiger Aero
        (https://github.com/NovusGFX/retro-design-system, MIT) — color
        tokens and component patterns
+     - 7.css (https://github.com/khang-nd/7.css, MIT) — hard-stop "50%
+       sheen" gloss on buttons/tabs, glossy titlebars, and listview headers
+     - Frutiger Aero Archive webring widget CSS — plain-CSS gloss stack
+       (sheen band + rim light + outer glow layering)
 
-   Mobile-first. WCAG 2.2 AA: all text/background pairs >= 4.5:1.
-   Verified pairs (checked against the LIGHTEST surface each sits on):
-     #12263a on #eaf7fd  ~13.5:1  (body text on the palest sky band)
-     #12263a on rgba-white glass over sky (worst case #cdeaf6) ~11.9:1
-     #075985 on #eaf7fd   ~6.2:1  (links on palest sky)
-     #075985 on #b8e4f7   ~5.0:1  (links on deepest sky band)
-     #ffffff on #0e6ea3   ~5.6:1  (button text on gloss-lightened top)
-     #ffffff on #084568   ~9.9:1  (button text on gradient bottom)
-     #12263a on badge glass tints ~11:1 or better
+   Mobile-first. WCAG 2.2 AA: all text/background pairs >= 4.5:1
+   (>= 3:1 for large-text headings).
+   The wallpaper is genuinely vivid (#1670c8 sky -> #3e8c1e grass), so
+   ALL text sits on frosted glass panels above it — never on the raw
+   background. Verified pairs (worst-case surface each sits on):
+     Content panel = white 0.82 over the deepest wallpaper stops:
+       composites to #d3e8f6 (over sky) / #dceecd (over grass)
+     #12263a on #d3e8f6  ~12.2:1  (body text on panel, worst case)
+     #075985 on #d3e8f6   ~6.0:1  (links on panel, worst case)
+     #0b62b0 on #d3e8f6   ~4.9:1  (h1/h2 headings — large text, needs 3:1)
+     #12263a on #bbddf2  ~10.8:1  (header text on aqua glass over deep sky)
+     #075985 on #bbddf2   ~5.3:1  (nav links on header glass)
+     #12263a on #9bd968  ~9.0:1  (current nav tab, deepest green gloss stop)
+     #0a3510 on #9bd968   ~6.6:1  (nav link text on green hover/active pill)
+     #062a3f on #189fe8   ~5.1:1  (primary aqua button navy text, darkest stop)
+     #0a3510 on #4dbf2e   ~5.8:1  (secondary/primary-green button text, darkest)
+     #12263a on #5fb62e   ~6.0:1  (footer text on deepest grass-ground stop)
+     #0a3510 on #5fb62e   ~5.4:1  (footer links use --color-leaf-dark on grass)
+     #12263a on #7ddcff   ~9.9:1  (::selection dark text on vivid aqua)
+     #12263a on badge candy tints (#aef0c4/#ffe196/#d8cdfa) >= 10.3:1
+     #12263a on #a8e3fa   ~9.7:1  (table header, deepest gloss stop)
+   Aurora / sun / bokeh layers sit behind the wallpaper's glass panels and
+   text never sits directly on them.
    Status badges never rely on color alone (text label + border style).
+   Decorative window titlebars and ornaments are aria-hidden / CSS-only.
    ========================================================================== */
 
 :root {
   --color-text: #12263a;
-  --color-bg: #eaf7fd;
+  --color-bg: #2b8fdc;
+  --color-heading: #0b62b0;
   --color-accent: #075985;
-  --color-accent-dark: #06466a;
+  --color-accent-dark: #053e5f;
   --color-surface: rgba(255, 255, 255, 0.6);
   --color-border: rgba(255, 255, 255, 0.75);
-  --color-border-solid: #9dc8dd;
-  --color-badge-ready-bg: rgba(215, 242, 222, 0.9);
-  --color-badge-wip-bg: rgba(253, 236, 204, 0.9);
-  --color-badge-custom-bg: rgba(228, 224, 245, 0.9);
-  --glass-bg: rgba(255, 255, 255, 0.62);
-  --glass-bg-strong: rgba(255, 255, 255, 0.78);
-  --glass-highlight: rgba(255, 255, 255, 0.85);
-  --glass-shadow: 0 8px 24px rgba(7, 89, 133, 0.14),
-                  0 2px 6px rgba(7, 89, 133, 0.10);
+  --color-border-solid: #74bede;
+  --color-badge-ready-bg: rgba(174, 240, 196, 0.95);
+  --color-badge-wip-bg: rgba(255, 225, 150, 0.95);
+  --color-badge-custom-bg: rgba(216, 205, 250, 0.95);
+  --glass-bg: rgba(240, 251, 255, 0.66);
+  --glass-bg-strong: rgba(250, 254, 255, 0.82);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+  /* The frosted content panel every layout's text sits on. */
+  --panel-bg: rgba(255, 255, 255, 0.82);
+  --panel-pad-x: clamp(1rem, 4vw, 2.5rem);
+  --glass-shadow: 0 8px 24px rgba(5, 62, 95, 0.18),
+                  0 2px 6px rgba(5, 62, 95, 0.12);
+  /* Green Utopia grass palette. --color-leaf / --color-leaf-dark are the
+     only greens ever used as text (leaf for borders + dark leaf for footer
+     links on the grass ground); the rest are decorative fill/glow tokens. */
+  --color-leaf: #1e6b33;
+  --color-leaf-dark: #0a3510;
+  --color-grass: #57ab27;
+  --color-grass-deep: #3e8c1e;
+  --sun-glow: rgba(255, 252, 214, 0.85);
+  --aurora-cyan: rgba(0, 216, 255, 0.38);
+  --aurora-green: rgba(126, 255, 170, 0.4);
+  --grass-glow: rgba(108, 194, 74, 0.55);
+  --grass-glow-soft: rgba(108, 194, 74, 0.3);
+  --aqua-glow: rgba(0, 191, 255, 0.55);
+  --aqua-glow-soft: rgba(0, 191, 255, 0.3);
+  /* Glossy grass-green candy (globe-green) used on the primary CTA and
+     other green controls. Deepest stop #4dbf2e keeps dark leaf text >= 4.5:1. */
+  --candy-green: linear-gradient(180deg,
+      #d2f7b8 0%,
+      #8ee060 49%,
+      #4dbf2e 50%,
+      #76d84d 100%);
+  --candy-green-hover: linear-gradient(180deg,
+      #ddfac9 0%,
+      #9ee774 49%,
+      #5ecb3c 50%,
+      #86e05e 100%);
+  /* Signature Vista/7 hard-stop sheen (after 7.css): brighter top half
+     with a crisp edge at 50%. Safe on any light surface under dark text
+     because it only ever lightens. */
+  --gloss-sheen: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.22) 49%,
+      rgba(255, 255, 255, 0.03) 50%,
+      rgba(255, 255, 255, 0) 100%);
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
@@ -65,16 +128,94 @@ body {
   font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   line-height: 1.6;
   color: var(--color-text);
-  /* The Frutiger Aero sky: vivid at the horizon (top), fading through
-     pale cyan into a soft green meadow tint. Fixed so panels appear to
-     float over it while scrolling. */
+  /* The Green Utopia wallpaper: a CSS-only scene — deep blue sky up top, a
+     warm white sun burst in the upper-left casting faint light rays, an aqua
+     midband at the horizon, and a curved glossy grass hill filling the
+     bottom. Fixed so glass panels float over it. */
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
-    linear-gradient(180deg, #b8e4f7 0%, #d3eefa 22rem, #eaf7fd 55%, #e3f6ec 100%);
+    /* Curved grass hill: an oversized bright-rimmed ellipse rising from the
+       bottom so the horizon reads as a gentle green curve. */
+    radial-gradient(ellipse 150% 62% at 50% 138%,
+      #7cc93f 0%,
+      var(--color-grass) 34%,
+      var(--color-grass-deep) 60%,
+      rgba(62, 140, 30, 0) 72%),
+    /* Faint conic sun rays fanning from the upper-left sun. */
+    conic-gradient(from 205deg at 12% 6%,
+      rgba(255, 255, 255, 0) 0deg,
+      rgba(255, 253, 224, 0.22) 14deg,
+      rgba(255, 255, 255, 0) 28deg,
+      rgba(255, 255, 255, 0) 40deg,
+      rgba(255, 253, 224, 0.18) 54deg,
+      rgba(255, 255, 255, 0) 68deg,
+      rgba(255, 255, 255, 0) 84deg,
+      rgba(255, 253, 224, 0.16) 98deg,
+      rgba(255, 255, 255, 0) 112deg),
+    /* The sun burst itself: hot white core bleeding into warm sky. */
+    radial-gradient(circle 42rem at 12% 4%,
+      rgba(255, 255, 255, 0.95) 0%,
+      var(--sun-glow) 10%,
+      rgba(255, 250, 205, 0.35) 22%,
+      rgba(255, 250, 205, 0) 46%),
+    /* Aurora sweeps at real opacity: electric cyan and spring green. */
+    radial-gradient(ellipse 90% 45% at 85% 30%, var(--aurora-cyan), rgba(0, 216, 255, 0) 62%),
+    radial-gradient(ellipse 95% 45% at 60% 82%, var(--aurora-green), rgba(126, 255, 170, 0) 65%),
+    /* The sky-to-grass base: deep sky blue -> aqua horizon -> grass. */
+    linear-gradient(180deg,
+      #1670c8 0%,
+      #2b8fdc 22%,
+      #57c2e8 44%,
+      #86dcd2 58%,
+      #7ec96a 72%,
+      var(--color-grass) 88%,
+      var(--color-grass-deep) 100%);
   background-attachment: fixed;
   background-size: cover;
   min-height: 100vh;
+}
+
+/* Static bokeh + bubble field (VitralCSS-style): scattered circles of
+   light fixed behind all content, bright enough to read against the
+   saturated wallpaper. Two of them are crisp-rimmed "bubbles" (hard ring
+   stop) among the soft bokeh. Decorative only — pointer-events off, and
+   text never sits directly on this layer (it sits on glass panels). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    /* Soft bokeh discs. */
+    radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 64%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.22) 55%, rgba(255, 255, 255, 0) 64%),
+    radial-gradient(circle, rgba(196, 255, 220, 0.55) 0%, rgba(196, 255, 220, 0.24) 55%, rgba(196, 255, 220, 0) 64%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.18) 55%, rgba(255, 255, 255, 0) 64%),
+    radial-gradient(circle, rgba(196, 255, 220, 0.45) 0%, rgba(196, 255, 220, 0.18) 55%, rgba(196, 255, 220, 0) 64%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.24) 55%, rgba(255, 255, 255, 0) 64%),
+    /* Crisp-rimmed bubbles: catch-light + transparent body + hard ring. */
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.25) 14%, rgba(255, 255, 255, 0.05) 46%, rgba(255, 255, 255, 0.7) 58%, rgba(255, 255, 255, 0) 63%),
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.2) 16%, rgba(255, 255, 255, 0.04) 44%, rgba(255, 255, 255, 0.65) 58%, rgba(255, 255, 255, 0) 64%);
+  background-repeat: no-repeat;
+  background-size:
+    14rem 14rem,
+    8rem 8rem,
+    11rem 11rem,
+    16rem 16rem,
+    9rem 9rem,
+    6rem 6rem,
+    10rem 10rem,
+    5rem 5rem;
+  background-position:
+    8% 12%,
+    22% 68%,
+    78% 18%,
+    45% 88%,
+    90% 55%,
+    64% 38%,
+    5% 92%,
+    93% 88%;
 }
 
 img {
@@ -82,10 +223,133 @@ img {
   height: auto;
 }
 
+/* Vivid aqua selection highlight — #12263a on #7ddcff is ~9.9:1. */
+::selection {
+  background: #7ddcff;
+  color: #12263a;
+}
+
+/* Aero-glass scrollbars: candy-aqua gradient thumb in a pale track. */
+html {
+  scrollbar-color: #1691d6 #dff5fd;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dff5fd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #7ddcff 0%, #38b6f0 49%, #1691d6 50%, #38b6f0 100%);
+  border: 3px solid #dff5fd;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #9be9ff 0%, #4fc7f7 49%, #22a2e2 50%, #4fc7f7 100%);
+}
+
 .container {
   max-width: 68rem;
   margin-inline: auto;
   padding-inline: var(--space-3);
+}
+
+/* The floating Aero glass panel every layout's content sits on. This is
+   the structural move that lets the wallpaper be genuinely vivid: body
+   text never sits on the raw background. White at 0.82 over the deepest
+   wallpaper stops (#1670c8 sky / #3e8c1e grass) composites to ~#d3e8f6 /
+   #dceecd, keeping #12263a body text >= 12:1 and #075985 links >= 4.5:1. */
+main > .container {
+  /* Keep a sliver of wallpaper visible either side on narrow screens. */
+  max-width: min(68rem, calc(100% - 1.25rem));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.12) 5rem, rgba(255, 255, 255, 0) 12rem),
+    var(--panel-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+              0 18px 44px rgba(4, 48, 74, 0.35),
+              0 4px 12px rgba(4, 48, 74, 0.22);
+  padding: var(--space-4) var(--panel-pad-x) var(--space-5);
+}
+
+main > .container > :first-child,
+main > .container > :first-child > :first-child {
+  margin-top: 0;
+}
+
+/* Aero window chrome ------------------------------------------------------- */
+/* A reusable glass "window" (after Make Aero / xpace / bliss): a glossy
+   aqua titlebar strip capping a frosted panel, with a 1px white inner rim,
+   specular top highlight, and soft drop shadow. The titlebar is decorative
+   chrome — no fake close buttons that read as controls. */
+
+.window {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(228, 248, 255, 0.72) 45%, rgba(203, 240, 224, 0.72) 100%);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+              var(--glass-shadow);
+  overflow: hidden;
+}
+
+/* Glossy titlebar strip. Dark --color-text on the deepest aqua stop
+   (#8fdcf8) is ~10:1. When it is a heading it keeps a full-bleed strip. */
+.window__titlebar {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text);
+  font-size: 1.15rem;
+  line-height: 1.3;
+  background: linear-gradient(180deg,
+      #f2fcff 0%,
+      #c8effd 49%,
+      #9be2f9 50%,
+      #8fdcf8 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 12px rgba(0, 191, 255, 0.28);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+/* A tiny aero orb ornament on the left of the titlebar (decorative only;
+   the include marks it aria-hidden). */
+.window__titlebar .window__dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  vertical-align: baseline;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 45%),
+    radial-gradient(circle at 50% 60%, #7cff9a 0%, #2fae3a 70%);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.8),
+              0 1px 2px rgba(4, 48, 74, 0.35);
+}
+
+/* The main content panel used as a window: promote its first heading into a
+   full-bleed titlebar by breaking it out of the panel padding. */
+main > .container > .window__titlebar:first-child {
+  margin-top: calc(var(--space-4) * -1);
+  margin-inline: calc(var(--panel-pad-x) * -1);
+  margin-bottom: var(--space-4);
+  padding-inline: var(--panel-pad-x);
+  border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+  font-size: 1.9rem;
 }
 
 .prose {
@@ -98,8 +362,87 @@ img {
   box-shadow: var(--glass-shadow);
 }
 
+/* Droplet-blue list bullets (decorative only — never carries meaning). */
+.prose ul li::marker {
+  color: #0b8fd6;
+}
+
+/* Glass blockquote: frosted panel with a bright rim and accent edge. */
+blockquote {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 3rem, rgba(255, 255, 255, 0) 100%),
+    var(--glass-bg);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 2px 8px rgba(7, 89, 133, 0.1);
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Vivid cyan-to-green water-line divider. */
+hr {
+  border: 0;
+  height: 3px;
+  margin-block: var(--space-5);
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      rgba(0, 191, 255, 0) 0%,
+      rgba(0, 191, 255, 0.9) 20%,
+      rgba(108, 194, 74, 0.9) 80%,
+      rgba(108, 194, 74, 0) 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Inline code and code blocks on light glass (text stays --color-text). */
+code {
+  font-family: Consolas, "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.925em;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(116, 190, 222, 0.7);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+}
+
+pre {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.15) 2.5rem, rgba(255, 255, 255, 0) 100%),
+    var(--glass-bg-strong);
+  border: 1px solid var(--color-border-solid);
+  border-radius: var(--radius-small);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 2px 8px rgba(7, 89, 133, 0.1);
+  padding: var(--space-3);
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
 h1, h2, h3 {
   line-height: 1.25;
+}
+
+/* Vivid Aero-blue headings with a soft white glow lifting them off the
+   glass. #0b62b0 on the panel's worst-case surface (~#dcf0fa) is ~5.4:1;
+   headings are large text so AA requires only 3:1 — comfortably clear. */
+h1, h2 {
+  color: var(--color-heading);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9),
+               0 0 12px rgba(255, 255, 255, 0.7);
 }
 
 h1 {
@@ -168,19 +511,36 @@ main {
 }
 
 /* Header / nav ------------------------------------------------------------ */
-/* Frosted Aero glass bar: translucent white + blur, with a specular top
-   edge (pattern after Make Aero's glass window chrome). */
+/* Aqua-tinted Aero glass bar over the vivid sky, with a specular top
+   edge (pattern after Make Aero's glass window chrome). White at 0.7
+   over the deepest sky stop composites to ~#bbddf2, keeping header text
+   >= 10:1 and nav links >= 5:1. */
 
 .site-header {
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  backdrop-filter: blur(14px) saturate(1.4);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(226, 248, 255, 0.7) 55%,
+      rgba(190, 236, 252, 0.7) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  backdrop-filter: blur(16px) saturate(1.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: inset 0 1px 0 var(--glass-highlight),
-              0 2px 12px rgba(7, 89, 133, 0.12);
+              0 2px 14px rgba(4, 48, 74, 0.28);
   padding-block: var(--space-3);
   position: relative;
   z-index: 5;
+}
+
+/* Hard-stop Vista sheen over the frosted bar (after 7.css). Painted at
+   z-index -1 so it sits above the glass background but BEHIND the header
+   text — it can only lighten the surface under the dark text. */
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--gloss-sheen);
 }
 
 .site-header__inner {
@@ -212,6 +572,10 @@ main {
   padding: 0;
 }
 
+/* Glossy Aero tabs: vivid aqua candy pills on hover and a saturated
+   "lit from within" tab for the current page. Hover fill bottoms out at
+   #aee6fb (~9.5:1 under #12263a); current tab bottoms out at #8fdcf8
+   (~10:1). Both keep dark text. */
 .site-nav a {
   display: inline-block;
   padding: 0.6rem 0.75rem; /* generous touch target */
@@ -219,31 +583,59 @@ main {
   text-decoration: none;
   color: var(--color-accent);
   border-radius: 999px;
+  border: 1px solid transparent;
 }
 
+/* Hover: glossy grass-green candy pill with a green glow. Dark leaf label
+   on the deepest stop (#9bd968) is ~8.2:1. */
 .site-nav a:hover {
   text-decoration: underline;
-  background: rgba(255, 255, 255, 0.55);
+  color: var(--color-leaf-dark);
+  background: linear-gradient(180deg,
+      #eafbdc 0%,
+      #cdefa0 49%,
+      #a6e072 50%,
+      #9bd968 100%);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              0 0 12px var(--grass-glow);
 }
 
+/* Current page: a "lit from within" grass-green tab. Dark navy label on the
+   deepest stop (#9bd968) is ~9:1. */
 .site-nav a[aria-current="page"] {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
   color: var(--color-text);
-  background: rgba(255, 255, 255, 0.65);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  background: linear-gradient(180deg,
+      #f0fbe2 0%,
+      #d3f0a8 49%,
+      #aee079 50%,
+      #9bd968 100%);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 10px rgba(108, 194, 74, 0.45),
+              0 1px 5px rgba(16, 60, 10, 0.3);
 }
 
 /* Footer ------------------------------------------------------------------ */
 
+/* The ground: a glossy grass-green band at the bottom of the page with a
+   bright specular top edge. Deepest stop is #5fb62e: footer body text
+   (#12263a) is ~5.7:1 and footer links use --color-leaf-dark
+   (#0a3510, ~4.6:1) instead of the standard link blue. */
 .site-footer {
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  backdrop-filter: blur(14px) saturate(1.4);
-  border-top: 1px solid var(--color-border);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  background: linear-gradient(180deg,
+      #c6eba0 0%,
+      #9bd968 40%,
+      #78c840 78%,
+      #5fb62e 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.95),
+              inset 0 14px 24px -14px rgba(255, 255, 255, 0.95),
+              0 -4px 18px rgba(16, 60, 10, 0.28);
   padding-block: var(--space-4);
   margin-top: var(--space-5);
 }
@@ -271,6 +663,13 @@ main {
 .site-footer a {
   display: inline-block;
   padding-block: var(--space-1);
+  /* Dark leaf green for the grass ground (>= 4.5:1 on the deepest #5fb62e). */
+  color: var(--color-leaf-dark);
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #062306;
 }
 
 .site-footer__license {
@@ -295,10 +694,17 @@ main {
   position: relative;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
+  /* Aqua-tinted glass: white top falling into a visible cyan-green tint. */
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(228, 248, 255, 0.75) 55%,
+      rgba(203, 240, 224, 0.78) 100%);
+  -webkit-backdrop-filter: blur(10px) saturate(1.3);
+  backdrop-filter: blur(10px) saturate(1.3);
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+              var(--glass-shadow),
+              0 0 14px var(--grass-glow-soft);
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -321,14 +727,21 @@ main {
   gap: var(--space-2);
 }
 
+/* The card title is a window titlebar (see .window__titlebar); this keeps
+   the link filling the strip with a comfortable touch target. */
 .project-card__title {
-  margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
 .project-card__title a {
   display: inline-block;
   padding-block: var(--space-1);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.project-card__title a:hover {
+  color: var(--color-accent-dark);
 }
 
 .project-card__summary {
@@ -355,25 +768,30 @@ main {
               0 1px 3px rgba(7, 89, 133, 0.15);
 }
 
+/* Hard-stop pill shine (after 7.css): crisp 50% edge instead of a fade.
+   The overlay only lightens the tint, so dark badge text keeps >= 11:1. */
 .badge--ready {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-ready-bg);
-  border: 2px solid #2c6e49;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 49%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%), var(--color-badge-ready-bg);
+  border: 2px solid var(--color-leaf);
 }
 
 .badge--wip {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-wip-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 49%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%), var(--color-badge-wip-bg);
   border: 2px dashed #8a5a00;
 }
 
 .badge--custom {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%), var(--color-badge-custom-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 49%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%), var(--color-badge-custom-bg);
   border: 2px double #4b3f8f;
 }
 
 /* Buttons ----------------------------------------------------------------- */
-/* Glossy Aero pills (after Make Aero's button treatment): blue vertical
-   gradient, bright inset rim light at the top edge, soft outer glow.
-   The gradient's lightest stop (#0e6ea3) keeps white text at ~5.6:1. */
+/* Candy-gloss Aqua pills (after Mac OS X Aqua / PS3 XMB via 7.css +
+   Make Aero): vivid cyan / leaf-green vertical gradients with the
+   signature hard-stop sheen at 50%, bright inset rim light, glow halo
+   on hover, darkened inset pressed state. Both variants carry DARK
+   text; the deepest stop under a label is the documented worst case
+   (primary #189fe8 ~5.1:1, secondary #4dbf2e ~5.8:1, both AA). */
 
 .button-row {
   list-style: none;
@@ -391,36 +809,81 @@ main {
   min-height: 44px;
   min-width: 44px;
   padding: var(--space-2) var(--space-4);
-  background: linear-gradient(180deg, #0e6ea3 0%, #0b5d8a 48%, #084568 100%);
-  color: #ffffff;
-  border: 1px solid #06466a;
+  /* Candy top half, crisp edge at 50%, glow rising from the base. */
+  background: linear-gradient(180deg,
+      #a6ecff 0%,
+      #58cdf8 49%,
+      #189fe8 50%,
+      #4ac4f5 100%);
+  color: #062a3f;
+  border: 1px solid #0d84c4;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45),
-              inset 0 -1px 0 rgba(0, 0, 0, 0.15),
-              0 2px 8px rgba(7, 89, 133, 0.35);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95),
+              inset 0 -2px 6px rgba(255, 255, 255, 0.35),
+              0 2px 10px rgba(4, 48, 74, 0.35);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .button:hover {
-  background: linear-gradient(180deg, #0b5d8a 0%, #084568 60%, #06385a 100%);
-  color: #ffffff;
+  /* Lit from within: every stop brightens plus an aqua halo. */
+  background: linear-gradient(180deg,
+      #b8f1ff 0%,
+      #6ed6fa 49%,
+      #2fb1ee 50%,
+      #5fccf7 100%);
+  color: #062a3f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1),
+              inset 0 -2px 6px rgba(255, 255, 255, 0.4),
+              0 0 16px var(--aqua-glow),
+              0 2px 10px rgba(4, 48, 74, 0.35);
 }
 
-.button--secondary {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55));
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent);
-  box-shadow: inset 0 1px 0 var(--glass-highlight),
-              0 2px 8px rgba(7, 89, 133, 0.18);
-  text-shadow: none;
+.button:active {
+  /* Pressed: sheen extinguished, darkened, shadow pushed inside.
+     Lightest remaining stop #45c0f4 still >= 5:1 under the navy label. */
+  background: linear-gradient(180deg, #189fe8 0%, #45c0f4 100%);
+  box-shadow: inset 0 2px 6px rgba(4, 48, 74, 0.45),
+              inset 0 -1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.button--secondary:hover {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
+/* Globe-green candy: the grass half of the wallpaper as a control. Used as
+   the home hero's PRIMARY call to action. Deepest stop #4dbf2e keeps the
+   dark leaf label (#0a3510) at ~5.8:1. */
+.button--secondary,
+.button--green {
+  background: var(--candy-green);
+  color: var(--color-leaf-dark);
+  border: 1px solid #3a9e21;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95),
+              inset 0 -2px 6px rgba(255, 255, 255, 0.35),
+              0 2px 10px rgba(20, 80, 20, 0.35);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.button--secondary:hover,
+.button--green:hover {
+  background: var(--candy-green-hover);
+  color: var(--color-leaf-dark);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1),
+              inset 0 -2px 6px rgba(255, 255, 255, 0.4),
+              0 0 16px var(--grass-glow),
+              0 2px 10px rgba(20, 80, 20, 0.35);
+}
+
+.button--secondary:active,
+.button--green:active {
+  background: linear-gradient(180deg, #4dbf2e 0%, #6fd447 100%);
+  box-shadow: inset 0 2px 6px rgba(10, 53, 16, 0.45),
+              inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Compact button for the sidebar boxes. */
+.button--small {
+  min-height: 38px;
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.9rem;
 }
 
 /* Project detail page ------------------------------------------------------ */
@@ -430,6 +893,39 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-3);
+}
+
+/* Quiet glass pill for the project date. */
+.project-meta__date {
+  display: inline-block;
+  padding: var(--space-1) 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.45));
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  font-size: 0.9rem;
+}
+
+/* "Get the files" panel: glossy glass tray around the download buttons. */
+.project-links {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.15) 3.5rem, rgba(255, 255, 255, 0) 100%),
+    var(--glass-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
+  padding: var(--space-3) var(--space-4);
+  margin-block: var(--space-4);
+}
+
+.project-links h2 {
+  margin-top: 0;
+}
+
+.project-links .button-row {
+  margin-bottom: 0;
 }
 
 .project-cover {
@@ -456,7 +952,10 @@ main {
 .callout {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: var(--glass-bg);
+  /* Sheen edge: brighter glass along the top of the panel. */
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 3.5rem, rgba(255, 255, 255, 0) 6rem),
+    var(--glass-bg);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
@@ -470,6 +969,11 @@ main {
 
 .callout--help {
   border: 2px solid var(--color-accent);
+  /* Bright aqua rim glow bleeding in from the left edge. */
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 16px 0 24px -12px var(--aqua-glow),
+              0 0 14px var(--aqua-glow-soft),
+              var(--glass-shadow);
 }
 
 .project-figure {
@@ -492,10 +996,24 @@ main {
 }
 
 /* Timeline (year headings) -------------------------------------------------- */
+/* Glossy aqua year chip: candy tab treatment on the year heading.
+   Dark text on the deepest chip stop (#8fdcf8) is ~10:1. */
 
 .timeline-year {
-  border-left: 6px solid var(--color-accent);
-  padding-left: var(--space-3);
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: linear-gradient(180deg,
+      #f2fcff 0%,
+      #c8effd 49%,
+      #9be2f9 50%,
+      #8fdcf8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 var(--glass-highlight),
+              inset 0 0 10px rgba(0, 191, 255, 0.3),
+              0 2px 6px rgba(4, 48, 74, 0.25);
 }
 
 /* Legend -------------------------------------------------------------------- */
@@ -518,30 +1036,40 @@ main {
   padding-block: var(--space-4);
 }
 
+/* Text layers above the decorative bubbles (z-index 1 vs the bubbles' 0)
+   so an orb can never paint over the glyphs and wash out their contrast. */
 .hero p {
   font-size: 1.15rem;
   max-width: 60ch;
   position: relative;
+  z-index: 1;
 }
 
 .hero h1,
 .hero .button-row {
   position: relative;
+  z-index: 1;
 }
 
 .hero::before,
-.hero::after {
+.hero::after,
+.hero h1::before {
   content: "";
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 0;
+  /* Brighter specular pass: hot white catch-light, secondary aqua
+     reflection near the base, faint green undertone in the body. */
   background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.25) 22%, rgba(255, 255, 255, 0) 45%),
-    radial-gradient(circle at 70% 80%, rgba(122, 205, 244, 0.5) 0%, rgba(122, 205, 244, 0) 55%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12), rgba(186, 230, 253, 0.28));
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.8),
-              inset 0 -4px 10px rgba(56, 152, 199, 0.18),
-              0 4px 14px rgba(7, 89, 133, 0.08);
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.45) 18%, rgba(255, 255, 255, 0) 42%),
+    radial-gradient(circle at 62% 88%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 22%),
+    radial-gradient(circle at 70% 80%, rgba(61, 197, 255, 0.55) 0%, rgba(61, 197, 255, 0) 55%),
+    radial-gradient(circle at 45% 65%, rgba(126, 255, 170, 0.3) 0%, rgba(126, 255, 170, 0) 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12), rgba(150, 226, 252, 0.35));
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.95),
+              inset 0 -4px 10px rgba(0, 148, 216, 0.3),
+              0 4px 14px rgba(4, 48, 74, 0.12);
 }
 
 .hero::before {
@@ -551,11 +1079,22 @@ main {
   right: 4%;
 }
 
+/* Kept near the right edge, below the large orb, so it stays out of the
+   paragraph text column on most viewport widths. */
 .hero::after {
   width: 4.5rem;
   height: 4.5rem;
-  top: 7rem;
-  right: 16%;
+  top: 9.5rem;
+  right: 2%;
+}
+
+/* Third, smallest bubble drifting between the other two. */
+.hero h1::before {
+  width: 2.5rem;
+  height: 2.5rem;
+  top: -1.5rem;
+  right: 24%;
+  z-index: -1;
 }
 
 @media (max-width: 40rem) {
@@ -566,9 +1105,104 @@ main {
     top: -1.5rem;
     right: 2%;
   }
-  .hero::after {
+  .hero::after,
+  .hero h1::before {
     display: none;
   }
+}
+
+/* For users who ask for higher contrast: drop the decorative bokeh and
+   bubbles and make the glass panels effectively opaque. */
+@media (prefers-contrast: more) {
+  body::before,
+  .hero::before,
+  .hero::after,
+  .hero h1::before {
+    display: none;
+  }
+  :root {
+    --glass-bg: rgba(250, 254, 255, 0.97);
+    --glass-bg-strong: rgba(255, 255, 255, 0.99);
+  }
+}
+
+/* Home two-column layout ----------------------------------------------------- */
+/* Main content column beside a right-hand sidebar of window boxes; the grid
+   collapses to a single stacked column on narrow screens. */
+
+.home-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 60rem) {
+  .home-grid {
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    align-items: start;
+  }
+}
+
+.home-main {
+  min-width: 0;
+}
+
+/* Sidebar sits below the main column on mobile; on desktop it can stick
+   just under the header as the reader scrolls the longer main column. */
+.home-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 60rem) {
+  .home-sidebar {
+    position: sticky;
+    top: var(--space-3);
+  }
+}
+
+.sidebar-box__body {
+  padding: var(--space-3) var(--space-4);
+}
+
+.sidebar-box__body > :first-child {
+  margin-top: 0;
+}
+
+.sidebar-box__body > :last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-box .button-row {
+  margin-bottom: 0;
+}
+
+/* Neocities-style update log: title + date, auto-built from _projects. */
+.update-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.update-list__item {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--space-2);
+  border-bottom: 1px solid rgba(116, 190, 222, 0.45);
+}
+
+.update-list__item:last-child {
+  border-bottom: 0;
+}
+
+.update-list__link {
+  font-weight: 600;
+  padding-block: var(--space-1);
+}
+
+.update-list__date {
+  font-size: 0.85rem;
+  color: var(--color-accent-dark);
 }
 
 /* Three-column audience section ---------------------------------------------- */
@@ -580,21 +1214,22 @@ main {
   margin-top: var(--space-3);
 }
 
-.audience-grid section {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg));
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
+.audience-grid__body {
   padding: var(--space-3) var(--space-4);
 }
 
-.audience-grid h3 {
+.audience-grid__body > :first-child {
   margin-top: 0;
 }
 
+.audience-grid__body > :last-child {
+  margin-bottom: 0;
+}
+
 /* Tables (guides / resource pages) -------------------------------------------- */
+/* Aero listview (after 7.css): gloss-gradient column headers with a crisp
+   bottom rule, translucent zebra rows, aqua hover tint. All cells keep
+   dark --color-text on light surfaces. */
 
 table {
   border-collapse: collapse;
@@ -607,7 +1242,22 @@ th, td {
 }
 
 th {
-  background: rgba(255, 255, 255, 0.8);
+  /* Aero listview header: candy-aqua gloss with the crisp 50% edge.
+     Dark text on the deepest stop (#a8e3fa) is ~9.7:1. */
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      #e8f8ff 49%,
+      #bfeafc 50%,
+      #a8e3fa 100%);
+  border-bottom: 2px solid var(--color-border-solid);
+}
+
+tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+tbody tr:hover td {
+  background: rgba(178, 231, 252, 0.9);
 }
 
 /* Motion ---------------------------------------------------------------------- */
@@ -616,7 +1266,8 @@ th {
   .button,
   .site-nav a,
   a {
-    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
   }
 
   .project-card {
@@ -625,8 +1276,12 @@ th {
 
   .project-card:hover {
     transform: translateY(-3px);
+    /* Vivid grass-green halo lifting off the glass. */
     box-shadow: inset 0 1px 0 var(--glass-highlight),
-                0 14px 32px rgba(7, 89, 133, 0.20),
-                0 4px 10px rgba(7, 89, 133, 0.12);
+                inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+                0 14px 32px rgba(4, 48, 74, 0.28),
+                0 4px 10px rgba(4, 48, 74, 0.16),
+                0 0 20px var(--grass-glow),
+                0 0 32px rgba(0, 191, 255, 0.22);
   }
 }

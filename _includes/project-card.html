@@ -1,10 +1,10 @@
 {% assign p = include.project %}
-<article class="project-card">
+<article class="project-card window">
+  <h3 class="project-card__title window__titlebar"><span class="window__dot" aria-hidden="true"></span><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
   {% if p.cover_image %}
   <img class="project-card__image" src="{{ p.cover_image | relative_url }}" alt="{{ p.cover_alt | escape }}" loading="lazy">
   {% endif %}
   <div class="project-card__body">
-    <h3 class="project-card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
     {% case p.status %}
       {% when "ready" %}<span class="badge badge--ready">Ready to print</span>
       {% when "prototype" %}<span class="badge badge--wip">Work in progress</span>

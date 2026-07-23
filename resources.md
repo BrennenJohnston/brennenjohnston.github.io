@@ -3,7 +3,7 @@ layout: page
 title: Resource Hub
 permalink: /resources/
 ---
-A curated list of assistive technology resources and maker communities — the same list I share with makers and AT professionals I work with.
+Here is my curated list of DIY assistive technology resources and maker communities.
 
 ## Assistive technology resources
 
@@ -51,4 +51,8 @@ A curated list of assistive technology resources and maker communities — the s
 
 - [Onshape CAD Quick Start Guide]({{ '/guides/onshape/' | relative_url }}) — my five-step beginner path from a free CAD account to your first parametric, printable part.
 - [Tactile Map Making Quick Reference Guide (draft PDF)]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}) — research-based dimensions and methods for making tactile maps. This is a working draft; feedback is welcome.
-- Looking for printable assistive designs? Search [Printables](https://www.printables.com/), [MakerWorld](https://makerworld.com/), or [Thingiverse](https://www.thingiverse.com/) for terms like "assistive" or "adaptive" — there are thousands of open designs beyond what any one list can capture.
+
+## 3D printing AT informational pages
+
+- [Shannon Paige, MA, CCC-SLP — TTAP and 3D Printing](https://padlet.com/STPaige/ttap-and-3d-printing-jajt8w04674ztoq7) — the Texas Technology Access Program's 3D printing resource board, with vetted files and guidance for making 3D printing decisions.
+- [Michael Cantino — mcantino.com](https://www.mcantino.com/) — an educator and braille transcriber creating accessible 3D-printed tactile graphics, maps, and braille tools; see also his [Printables profile (MCprints)](https://www.printables.com/@MCprints_1038587).

@@ -3,19 +3,19 @@ title: WATAP Fidget Rings
 date: 2025-06-01
 status: ready
 categories: [gaming-recreation]
-summary: A tactile fidget ring with different textures — the outer ring spells WATAP in raised letters and braille dots.
-cover_image: /assets/images/projects/fidget-rings/bumpmesh-texture-tests.jpg
-cover_alt: "Four 3D-printed fidget rings on a cutting mat, each with a different surface texture: a green woven-band ring, two green rings with bumpy rock-like textures, and a blue textured spinner ring."
+summary: A tactile fidget ring whose outer surface spells "WATAP" in raised letters and a braille translation.
+cover_image: /assets/images/projects/fidget-rings/fidget-rings.jpg
+cover_alt: "Several 3D-printed fidget rings in different colors, their outer surfaces textured with the raised letters and braille dots that spell WATAP."
 links:
-  - label: MakerWorld (WATAP_3D profile)
-    url: https://makerworld.com/en/@WATAP_3D
+  - label: MakerWorld
+    url: https://makerworld.com/en/models/421842-watap-fidget-rings#profileId-324762
+gallery:
+  - image: /assets/images/projects/fidget-rings/fidget-rings-2.jpg
+    alt: "A closer view of the WATAP fidget rings, showing the raised letters and braille dots wrapping around the outer surface of each ring."
+    caption: "The outer ring spells WATAP in raised letters and a braille translation."
 ---
-<!-- TODO(owner): replace the profile link with the direct MakerWorld model URL for the fidget rings, and confirm the date. -->
+<!-- TODO(owner): confirm the date. -->
 
-A tactile ring fidget device with different textures to explore. The outer ring spells "WATAP" with raised letters and braille dots, making it a small braille-awareness piece as well as a quiet fidget.
+A tactile ring fidget device that doubles as a small braille-awareness piece. The outer surface spells "WATAP" with raised letters alongside a braille translation of the same word, so it's a quiet fidget you can also read by touch.
 
-Fidget rings are part of WATAP's free 3D-printed assistive technology catalog — Washington State residents can [request a printed copy for free](https://watap.org/3d-printed-assistive-technology), and anyone can download and print their own from the MakerWorld profile.
-
-## Work in progress: BumpMesh texture testing
-
-I'm currently learning [BumpMesh](https://bumpmesh.com/), a tool that applies tactile textures to 3D-printable models, to expand the range of fidget-friendly surfaces these rings can offer. The photo above shows four test prints, each with a different texture — from a fine pebbled grain to large rocky bumps and a ridged spinner band. Feedback on which textures feel best as a fidget is very welcome — reach out through the [contact options]({{ '/about/' | relative_url }}).
+Fidget rings are part of WATAP's free 3D-printed assistive technology catalog. Washington state residents can [request a printed copy for free](https://watap.org/3d-printed-assistive-technology), and anyone can [download and print their own from MakerWorld](https://makerworld.com/en/models/421842-watap-fidget-rings#profileId-324762).

@@ -19,6 +19,6 @@ gallery:
 ---
 <!-- TODO(owner): confirm the date. -->
 
-Someone struggled to reach the door-open button at their place of work — it sat behind a large piece of furniture that couldn't be moved.
+Someone struggled to reach the door-open button at their place of work; it sat behind a large piece of furniture that couldn't be moved.
 
 Safety drove every choice in this reaching tool: baseball-bat grip tape for a secure hold, a quick-release wrist strap so the tool can't clatter away (but releases instantly if it snags), a rubber cane tip to press buttons without damaging surfaces, and waterproof grip tape throughout. The result stays accessible, safe, and practical for daily use.

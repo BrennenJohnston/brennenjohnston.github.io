@@ -1,0 +1,16 @@
+<aside class="home-sidebar" aria-label="Site updates">
+  <section class="window sidebar-box" aria-labelledby="sidebar-updates">
+    <h2 class="window__titlebar" id="sidebar-updates"><span class="window__dot" aria-hidden="true"></span>Site updates</h2>
+    <div class="sidebar-box__body">
+      {% assign updates = site.projects | sort: "date" | reverse %}
+      <ul class="update-list" role="list">
+        {% for u in updates limit: 6 %}
+        <li class="update-list__item">
+          <a class="update-list__link" href="{{ u.url | relative_url }}">{{ u.title }}</a>
+          <span class="update-list__date">{{ u.date | date: "%b %d, %Y" }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</aside>
