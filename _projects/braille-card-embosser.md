@@ -7,8 +7,6 @@ summary: A fully 3D-printable, hand-operated embosser for making custom braille 
 cover_image: /assets/images/projects/braille-card-embosser/cover.png
 cover_alt: "White and blue 3D-printed braille embosser standing beside a white card embossed with braille, on a bright green promotional background with braille-dot decorations and the text Custom Braille Embosser."
 links:
-  - label: GitHub (custom-braille-embosser-3d-printing-project)
-    url: https://github.com/BrennenJohnston/custom-braille-embosser-3d-printing-project
   - label: Printables
     url: https://www.printables.com/model/1742352-custom-braille-card-embosser-hand-operated
   - label: MakerWorld
@@ -38,10 +36,10 @@ gallery:
 ---
 This is a fully 3D-printable, hand-operated braille card embosser designed to create custom braille cards without electronics, fasteners, or glue. Braille business card embossers are typically machined out of metal and made for individual use only, which makes them very expensive. This design brings the cost down to filament, and its interchangeable plates mean one tool can serve multiple users, for example in an office environment, reducing waste while improving accessibility.
 
-Everything needed to build one is on GitHub at [custom-braille-embosser-3d-printing-project](https://github.com/BrennenJohnston/custom-braille-embosser-3d-printing-project): the CAD sources, print-ready STLs and sliced Bambu X1C profiles, example embossing and counter plate pairs for 0.3 mm and 0.4 mm card stock, and the full documentation set (Maker Guide, User Guide, Quickstart, bill of materials, design rationale). The project pages on Printables, MakerWorld, and Thingiverse carry the same build files plus the video tutorials.
+Everything needed to build one is on the project pages linked above: print-ready STLs and sliced Bambu X1C profiles, example embossing and counter plate pairs for 0.3 mm and 0.4 mm card stock, the CAD sources, and the documentation set (Maker Guide, User Guide, Quickstart, bill of materials, design rationale), plus the video tutorials.
 
 The braille content itself comes from a companion generator — either the [web app](https://braille-card-and-cylinder-stl-gener.vercel.app) (type text, it translates for you) or the [OpenSCAD version](https://github.com/BrennenJohnston/braille-cylinder-stl-generator-openscad) for offline and fully parametric use. One embosser serves as many people as you have plates.
 
-If you cannot use the videos, the repo has the whole procedure in text and pictures: a transcript-derived written tutorial and numbered assembly screenshots. A "Lego-style" illustrated guide and Makers Making Change documentation are still in progress.
+A "Lego-style" illustrated guide and Makers Making Change documentation are still in progress. The video tutorials are complete, so there is enough direction to get started now.
 
 If you print, build, test, or adapt this design, feedback is very welcome. If anything is unclear or you run into a problem, please reach out through the model pages linked above.
