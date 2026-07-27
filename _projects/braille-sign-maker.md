@@ -9,8 +9,8 @@ cover_alt: "3D-printed tactile sign reading CREATE TINKER TUESDAY in raised blac
 links:
   - label: Customize in the web app (OpenSCAD Assistive Forge)
     url: https://openscad-assistive-forge.pages.dev/
-  - label: GitHub (braille-wedge-card-openscad)
-    url: https://github.com/BrennenJohnston/braille-wedge-card-openscad
+  - label: GitHub (braille-sign-openscad)
+    url: https://github.com/BrennenJohnston/braille-sign-openscad
   - label: "Thingiverse (STL generator, work in progress)"
     url: https://www.thingiverse.com/thing:7386098
 gallery:
@@ -28,9 +28,9 @@ Braille dots print poorly when they face straight up on an FDM printer, so the b
 
 ## Two ways to use it
 
-The same OpenSCAD file ([`Braille_Sign_STL_Generator.scad`](https://github.com/BrennenJohnston/braille-wedge-card-openscad)) works two ways:
+The same OpenSCAD file ([`Braille_Sign_STL_Generator.scad`](https://github.com/BrennenJohnston/braille-sign-openscad)) works two ways:
 
 1. **In the browser, no install needed.** Open the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) web app, type your text, preview the sign in 3D, and download the STL. Braille translation runs on your device.
-2. **In desktop OpenSCAD.** Download the file from the [braille-wedge-card-openscad repo](https://github.com/BrennenJohnston/braille-wedge-card-openscad) and use OpenSCAD's built-in Customizer panel to set the text and dimensions yourself.
+2. **In desktop OpenSCAD.** Download the file from the [braille-sign-openscad repo](https://github.com/BrennenJohnston/braille-sign-openscad) and use OpenSCAD's built-in Customizer panel to set the text and dimensions yourself.
 
 If you print signs with it, feedback on braille readability from your printer is especially welcome; share it on the model pages linked above.

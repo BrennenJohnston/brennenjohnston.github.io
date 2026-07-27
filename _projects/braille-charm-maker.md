@@ -9,8 +9,8 @@ cover_alt: "Purple silicone bracelet fitted with seven light-blue 3D-printed cha
 links:
   - label: Customize in the web app (OpenSCAD Assistive Forge)
     url: https://openscad-assistive-forge.pages.dev/
-  - label: GitHub (braille-wedge-card-openscad)
-    url: https://github.com/BrennenJohnston/braille-wedge-card-openscad
+  - label: GitHub (braille-charm-openscad)
+    url: https://github.com/BrennenJohnston/braille-charm-openscad
   - label: "Thingiverse (STL generator, work in progress)"
     url: https://www.thingiverse.com/thing:7386099
 gallery:
@@ -27,9 +27,9 @@ This is the braille variation of the [OpenSCAD Assistive Forge]({{ '/projects/op
 
 ## Two ways to use it
 
-The same OpenSCAD file ([`Braille_Charm_STL_Generator.scad`](https://github.com/BrennenJohnston/braille-wedge-card-openscad)) works two ways:
+The same OpenSCAD file ([`Braille_Charm_STL_Generator.scad`](https://github.com/BrennenJohnston/braille-charm-openscad)) works two ways:
 
 1. **In the browser, no install needed.** Open the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) web app, type a name, preview the charms in 3D, and download the STL. Braille translation runs on your device.
-2. **In desktop OpenSCAD.** Download the file from the [braille-wedge-card-openscad repo](https://github.com/BrennenJohnston/braille-wedge-card-openscad) and use OpenSCAD's built-in Customizer panel directly.
+2. **In desktop OpenSCAD.** Download the file from the [braille-charm-openscad repo](https://github.com/BrennenJohnston/braille-charm-openscad) and use OpenSCAD's built-in Customizer panel directly.
 
 If you make a bracelet with it, feedback on braille readability from your printer is especially welcome; share it on the model pages linked above.

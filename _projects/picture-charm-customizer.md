@@ -9,8 +9,8 @@ cover_alt: "Green bracelet with black square charms showing a sad face, a thumbs
 links:
   - label: Customize in the web app (OpenSCAD Assistive Forge)
     url: https://openscad-assistive-forge.pages.dev/
-  - label: GitHub (braille-wedge-card-openscad)
-    url: https://github.com/BrennenJohnston/braille-wedge-card-openscad
+  - label: GitHub (openscad-assistive-forge)
+    url: https://github.com/BrennenJohnston/openscad-assistive-forge/tree/main/public/examples/nasif-charm-maker
   - label: "REMIX: AAC Charms With Boardmaker Symbols For Silicone Bracelets - WOOF3D (static STL, not customizable)"
     url: https://www.thingiverse.com/thing:7155293
 gallery:
@@ -42,6 +42,6 @@ A paraeducator working in audiology and assistive technology, Daniel K., used th
 ## Two ways to use it
 
 1. **In the browser, no install needed.** Open the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) web app, upload an SVG, preview the charms in 3D, and download the STL.
-2. **In desktop OpenSCAD.** The charm generator is open source in the [braille-wedge-card-openscad repo](https://github.com/BrennenJohnston/braille-wedge-card-openscad), so you can also run it in OpenSCAD's built-in Customizer panel offline.
+2. **In desktop OpenSCAD.** The charm generator is open source in the [OpenSCAD Assistive Forge repo](https://github.com/BrennenJohnston/openscad-assistive-forge/tree/main/public/examples/nasif-charm-maker), so you can also run it in OpenSCAD's built-in Customizer panel offline.
 
 If you make a bracelet with it, feedback is very welcome; share it on the model pages linked above.

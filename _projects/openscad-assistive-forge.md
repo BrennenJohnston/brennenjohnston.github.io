@@ -41,7 +41,7 @@ A separate, independent tool handles pictures instead of braille:
 
 - **[Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }})** — bracelet charms made from SVG graphics, for communication aids and task-list prompts, with a built-in SVG editing step.
 
-Every tool is an ordinary OpenSCAD file underneath (from the [braille-wedge-card-openscad repo](https://github.com/BrennenJohnston/braille-wedge-card-openscad)), so each one also works in desktop OpenSCAD's Customizer if you prefer working offline.
+Every tool is an ordinary OpenSCAD file underneath — the braille tools come from the [braille-wedge-card-openscad](https://github.com/BrennenJohnston/braille-wedge-card-openscad), [braille-sign-openscad](https://github.com/BrennenJohnston/braille-sign-openscad), and [braille-charm-openscad](https://github.com/BrennenJohnston/braille-charm-openscad) repos — so each one also works in desktop OpenSCAD's Customizer if you prefer working offline.
 
 ## Why it exists
 
