@@ -2,6 +2,18 @@
 layout: default
 ---
 <div class="container prose">
+  {%- comment -%}
+    No aria-current="page" on the Projects crumb: the reader is on a detail
+    page, not on /projects/, so claiming otherwise would be inaccurate.
+  {%- endcomment -%}
+  <nav aria-label="Breadcrumb">
+    <ol class="breadcrumb">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+  </nav>
+
   <h1 class="window__titlebar"><span class="window__dot" aria-hidden="true"></span>{{ page.title }}</h1>
 
   <p class="project-meta">
@@ -34,7 +46,7 @@ layout: default
     {% if page.help_wanted and page.help_wanted != "" %}
     <p>{{ page.help_wanted }}</p>
     {% endif %}
-    <p>This project is a work in progress. If you would like to test it, suggest changes, or help iterate, feedback is welcome on the model pages linked above. See my other <a href="{{ '/collaborate/' | relative_url }}">collaborations</a> for related work.</p>
+    <p>This project is a work in progress. If you would like to test it, suggest changes, or help iterate, feedback is welcome on the model pages linked above. See the other <a href="{{ '/projects/#work-in-progress' | relative_url }}">works in progress</a> for related designs.</p>
   </section>
   {% endif %}
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moved to {{ page.redirect.to }}</title>
+  <link rel="canonical" href="{{ page.redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  {%- comment -%}
+    Overrides the template jekyll-redirect-from ships, which emits head content
+    directly inside <html> with no <head> or <body>, and relies on JavaScript.
+    The meta refresh above has no delay, so there is no time limit to adjust
+    (WCAG 2.2.1), and the link below works with scripting off.
+  {%- endcomment -%}
+  <main>
+    <div class="container prose">
+      <h1>This page has moved</h1>
+      <p>You should arrive at the new page automatically. If nothing happens, <a href="{{ page.redirect.to }}">continue to {{ page.redirect.to }}</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

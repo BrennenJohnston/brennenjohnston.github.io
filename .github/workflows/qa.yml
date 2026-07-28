@@ -1,0 +1,103 @@
+name: QA
+
+# Pull requests only, so the native GitHub Pages deploy is untouched. The
+# external-link job runs on a schedule instead of on every pull request:
+# Thingiverse, MakerWorld, and Printables bot-block datacenter IP addresses, and
+# a red X on every pull request from a rate limiter teaches everyone to ignore CI.
+on:
+  pull_request:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Links, accessibility, and markup
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build the site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      # --swap-urls rewrites the site's own absolute URLs (the canonical and
+      # og:url tags jekyll-seo-tag emits) to paths, so they are resolved against
+      # this build. Without it every brand-new page 404s against production
+      # until it deploys.
+      - name: Check internal links, images, and alt text
+        run: |
+          bundle exec htmlproofer ./_site \
+            --disable-external \
+            --no-enforce-https \
+            --swap-urls '^https\://brennenjohnston\.github\.io:'
+
+      - name: Validate markup
+        run: npx --yes html-validate@8 "_site/**/*.html"
+
+      - name: Serve the built site
+        run: |
+          npx --yes http-server@14 ./_site -p 8080 --silent &
+          npx --yes wait-on@7 http://127.0.0.1:8080/index.html
+
+      # The sitemap lists the tactile map guide PDF, which Chrome cannot render
+      # into a DOM; see the accessibility statement for how that file is covered.
+      # .pa11yci turns off axe's color-contrast rule, because this design's
+      # gradient and pseudo-element backgrounds make axe report "background could
+      # not be determined" for literally every text node. Contrast is verified by
+      # hand instead — every pair is listed at the top of assets/css/style.css.
+      - name: Check WCAG 2.2 AA with pa11y-ci
+        run: |
+          npx --yes pa11y-ci@3 \
+            --sitemap http://127.0.0.1:8080/sitemap.xml \
+            --sitemap-find "https://brennenjohnston.github.io" \
+            --sitemap-replace "http://127.0.0.1:8080" \
+            --sitemap-exclude "\.pdf$"
+
+  external-links:
+    name: External links (weekly)
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build the site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      # A browser User-Agent, low concurrency, and retries keep the model hosts
+      # from mistaking the runner for a scraper. The ignored hosts block
+      # datacenter IP addresses outright, so they have to be checked by hand.
+      - name: Check external links
+        run: |
+          bundle exec htmlproofer ./_site \
+            --ignore-status-codes "403,429,999" \
+            --ignore-urls "/thingiverse\.com/,/makerworld\.com/,/printables\.com/,/forms\.office\.com/,/dl\.acm\.org/,/linkedin\.com/" \
+            --swap-urls '^https\://brennenjohnston\.github\.io:' \
+            --no-enforce-https \
+            --hydra '{"max_concurrency": 2}' \
+            --typhoeus '{"followlocation": true, "connecttimeout": 30, "timeout": 60, "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"}}'

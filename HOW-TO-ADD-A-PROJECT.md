@@ -41,13 +41,20 @@ summary: A wide, soft-grip handle that snaps onto standard spoons for easier hol
 # then put its path here:
 cover_image: /assets/images/projects/adaptive-spoon-grip/cover.jpg
 
-# Describe what is VISIBLE in the photo, for people using screen readers:
+# Describe what is VISIBLE in the photo, for people using screen readers.
+# Still required even though project cards no longer read it: this is what the
+# big cover photo on the project page itself uses.
 cover_alt: "Blue 3D-printed grip with finger grooves attached to a metal spoon, on a kitchen table."
 
 # Download / related links. Delete any lines you don't need.
-# Label words matter: a label containing "GitHub" shows as "Source files on...",
-# one containing "Video" or "YouTube" shows as "Watch: ...", anything else
-# shows as "Download on ...".
+# Label words matter — the button text is built from the label:
+#   "Printables" / "MakerWorld" / "Thingiverse"  ->  "Download the <project title> on Printables"
+#   a label starting with "GitHub"               ->  "Source files on GitHub (...)"
+#   a label starting with "Video"                ->  shown exactly as written
+#   any other label containing "video"           ->  "Watch: <label>"
+#   anything else                                ->  shown exactly as written
+# So if a label is already self-describing (an app name, a guide title, the
+# title of a specific model listing), just write it out and it is used as-is.
 links:
   - label: Printables
     url: https://www.printables.com/model/XXXXXX
@@ -93,13 +100,29 @@ Photo tips:
 - Every photo needs **alt text** describing what is actually visible — write it as if describing the photo to someone over the phone.
 - To replace a photo, upload a new file with the same name.
 
+## Before you commit: check every link you pasted
+
+No automated check can tell that a video link points at the wrong project — that
+is a human-only check, and it is how two Charm Customizer videos ended up on the
+braille embosser page. So, for each link in `links:`:
+
+1. Open it in a new tab.
+2. Read the destination page's own title.
+3. Confirm that title is about the project you are editing, not a neighbouring one.
+4. Confirm the label you wrote matches what the destination actually is (the
+   original design or a remix, the tiles or the tray, v1 or v2).
+
+The same goes for links you write in the body text.
+
 ## Rules that keep the site healthy
 
 - `status` must be exactly `ready`, `prototype`, or `custom` — nothing else.
 - Every image needs alt text describing what's visible. Never leave `cover_alt` empty.
 - Dates use the `YYYY-MM-DD` format.
 - Categories come from the controlled list: `daily-living`, `eating-drinking`, `communication`, `computer-access`, `gaming-recreation`, `mobility`, `writing-drawing`, `other`.
+- If a new category is ever added to that controlled list, create its matching page under `projects/category/` **in the same commit** — copy an existing one, change the three lines in its front matter. Without it, the category link on every card 404s.
 - In text fields containing a colon (`:`) or quote marks, wrap the whole value in double quotes — like the `cover_alt` examples above.
+- Spell out an abbreviation the first time a page uses it, with the short form in parentheses — "augmentative and alternative communication (AAC)". Braille displays show about 40 characters at a time, and a bare acronym costs the reader a guess.
 - **Privacy**: refer to other individuals by first name and last initial only (for example "Daniel K."), with a general job title at most and no locations or other identifying details.
 
 ## Editing or removing a project
@@ -109,7 +132,7 @@ Photo tips:
 
 ## Troubleshooting
 
-- **Where do I see build status?** Repository → **Actions** tab. Every commit triggers a "pages build and deployment" run.
+- **Where do I see build status?** Repository → **Actions** tab. Every commit triggers a "pages build and deployment" run. Pull requests additionally run a "QA" check for broken links, accessibility problems, and invalid markup.
 - **Red X?** The build failed — almost always a typo in the front matter (the section between the `---` lines). Check that every `:` has a space after it, quotes are closed, and the indentation of `links:` and `gallery:` entries matches the template exactly.
 - **Changes not showing?** Wait 2 minutes, then hard-refresh (Ctrl+F5). Check the Actions tab for a green check.
 - **Image not showing?** The path is case-sensitive and must start with `/assets/`. Compare the filename letter for letter.
