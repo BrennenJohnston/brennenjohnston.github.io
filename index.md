@@ -12,12 +12,13 @@ title: Home
         <p>You can learn more about WATAP's wider mission here: <a href="https://watap.org/" rel="noopener">watap.org</a>.</p>
         <p>Every design here is free to download, print, and adapt.</p>
         <ul class="button-row" role="list">
-          <li><a class="button button--green" href="{{ '/projects/' | relative_url }}">Browse ready-to-print devices</a></li>
-          <li><a class="button" href="{{ '/collaborate/' | relative_url }}">See works in progress</a></li>
+          <li><a class="button button--green" href="{{ '/projects/#ready-to-print' | relative_url }}">Browse ready-to-print devices</a></li>
+          <li><a class="button" href="{{ '/projects/#work-in-progress' | relative_url }}">See works in progress</a></li>
+          <li><a class="button" href="{{ '/collaborations/' | relative_url }}">Collaborations</a></li>
         </ul>
       </div>
 
-      <h2>Recently added</h2>
+      <h2>Latest projects</h2>
       {% assign recent = site.projects | sort: "date" | reverse %}
       <ul class="card-grid" role="list">
         {% for p in recent limit: 3 %}

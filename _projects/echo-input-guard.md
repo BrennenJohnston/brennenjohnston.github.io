@@ -13,8 +13,6 @@ gallery:
     alt: "Echo Show wrapped in blue painter's tape on a workbench while the clear guard is shaped and test-fitted."
     caption: Shaping and test-fitting the guard with the screen masked off.
 ---
-<!-- TODO(owner): confirm the date. -->
-
 A family needed a reliable way to stay in contact with a loved one living with dementia, who unintentionally, but frequently, disconnected their home phone.
 
 I adapted an Amazon Echo Show into a dementia-friendly communication device by customizing a piece of plexiglass to cover the touchscreen, preventing any touch interaction while leaving the screen fully visible. With the smart display's "Drop In" feature, the family gained dependable, voice-only communication that can't be accidentally switched off, unplugged, or misconfigured, and the display still cycles through family photos.

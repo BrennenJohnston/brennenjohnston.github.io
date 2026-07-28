@@ -1,0 +1,22 @@
+{%- comment -%}
+  One status section: a heading with a stable id (so /projects/#work-in-progress
+  and the jump nav can target it) and a grid of cards.
+
+  Parameters:
+    projects     — an already-filtered, already-sorted list of projects
+    heading      — the visible h2 text
+    id           — the heading id used by the jump nav and inbound links
+    description  — optional sentence explaining what the section contains
+    empty        — optional message shown when the list is empty
+{%- endcomment -%}
+<h2 id="{{ include.id }}">{{ include.heading }}</h2>
+{% if include.description %}<p>{{ include.description }}</p>{% endif %}
+{% if include.projects.size > 0 %}
+<ul class="card-grid" role="list">
+  {% for p in include.projects %}
+  <li>{% include project-card.html project=p %}</li>
+  {% endfor %}
+</ul>
+{% elsif include.empty %}
+<p>{{ include.empty }}</p>
+{% endif %}

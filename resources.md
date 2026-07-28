@@ -3,21 +3,22 @@ layout: page
 title: Resource Hub
 permalink: /resources/
 ---
-Here is my curated list of DIY assistive technology resources and maker communities.
+Here is my curated list of DIY (do it yourself) assistive technology resources and maker communities.
 
 ## Assistive technology resources
 
-- [WATAP](https://watap.org/) — helps with assistive technology decision making.
-- [AT3 Center](https://exploreat.net/) — explore assistive technology and find your state's AT Act program.
-- [Unified Listing](https://ul.gpii.net/) — an assistive technology database.
-- [RESNA](https://www.resna.org/Membership/Assistive-Technology-Journal) — the Rehabilitation Engineering and Assistive Technology Society of North America; AT information and its Assistive Technology journal.
+- [WATAP](https://watap.org/) — the Washington Assistive Technology Act Program; helps with assistive technology decision making.
+- [AT3 Center](https://exploreat.net/) — explore assistive technology and find your state's Assistive Technology Act program.
+- [EASTIN](https://eastin.eu/) — the European Assistive Technology Information Network; a federated database of assistive products.
+- [ATconnect](https://atconnect.info/) — ATscale's global gateway to assistive technology resources, programs, and guidelines.
+- [RESNA](https://www.resna.org/Membership/Assistive-Technology-Journal) — the Rehabilitation Engineering and Assistive Technology Society of North America; assistive technology information and its *Assistive Technology* journal.
 
 ## Assistive technology makers — Seattle
 
 - [HuskyADAPT](https://www.huskyadapt.me.uw.edu/our-mission) — University of Washington Seattle campus student organization that supports accessible design and inclusive play technology.
 - [WOOF3D](https://www.woof3d.org/projects) — University of Washington Seattle campus student 3D printing club.
-- [UW CREATE](https://create.uw.edu/about/) — the Center for Research and Education on Accessible Technology and Experiences; home to HuskyADAPT and other AT programs.
-- [A11yhood.org Access Technology Repository](https://create.uw.edu/initiatives/rerc-home/a11yhood-repository/) — a collaborative tool being developed for AT makers.
+- [UW CREATE](https://create.uw.edu/about/) — the University of Washington's Center for Research and Education on Accessible Technology and Experiences; home to HuskyADAPT and other assistive technology programs.
+- [A11yhood.org Access Technology Repository](https://create.uw.edu/initiatives/rerc-home/a11yhood-repository/) — a collaborative tool being developed for assistive technology makers.
 - [WATAP Free AT 3D Printing Program](https://watap.org/3d-printed-assistive-technology) — a catalog of free 3D-printed assistive devices that any Washington State resident can request.
 
 ## Assistive technology makers and repositories — North America
@@ -49,10 +50,10 @@ Here is my curated list of DIY assistive technology resources and maker communit
 
 ## Getting started guides
 
-- [Onshape CAD Quick Start Guide]({{ '/guides/onshape/' | relative_url }}) — my five-step beginner path from a free CAD account to your first parametric, printable part.
+- [Onshape CAD Quick Start Guide]({{ '/guides/onshape/' | relative_url }}) — my five-step beginner path from a free CAD (computer-aided design) account to your first parametric, printable part.
 - [Tactile Map Making Quick Reference Guide (draft PDF)]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}) — research-based dimensions and methods for making tactile maps. This is a working draft; feedback is welcome.
 
-## 3D printing AT informational pages
+## Assistive technology and 3D printing information pages
 
 - [Shannon Paige, MA, CCC-SLP — TTAP and 3D Printing](https://padlet.com/STPaige/ttap-and-3d-printing-jajt8w04674ztoq7) — the Texas Technology Access Program's 3D printing resource board, with vetted files and guidance for making 3D printing decisions.
 - [Michael Cantino — mcantino.com](https://www.mcantino.com/) — an educator and braille transcriber creating accessible 3D-printed tactile graphics, maps, and braille tools; see also his [Printables profile (MCprints)](https://www.printables.com/@MCprints_1038587).

@@ -7,6 +7,19 @@ markdown: kramdown
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+# jekyll-feed always builds a feed for the "posts" collection, and this site has
+# no posts — left alone, the feed readers find at /feed.xml would be empty. Park
+# the posts feed out of the way and give /feed.xml to the projects collection.
+feed:
+  path: /feed/all.xml
+  collections:
+    projects:
+      path: /feed.xml
+  # feed_meta would advertise feed.path (the empty posts feed), so the discovery
+  # link is written by hand in _layouts/default.html instead.
+  disable_in_head: true
 collections:
   projects:
     output: true

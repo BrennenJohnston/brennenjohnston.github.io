@@ -16,9 +16,11 @@ gallery:
     alt: "A Lorenz attractor print soaking in a container of water to dissolve its support material."
     caption: Dissolving the supports in water.
 help_wanted: ""
+# Open question for Brennen: what is the purpose and audience for this piece
+# (math/STEM education, tactile art, sensory object?) and are there print notes
+# worth sharing? The body below describes only what the photos show. Kept in the
+# front matter so the note does not ship in the published HTML.
 ---
-<!-- TODO(owner): please add the purpose and audience for this piece (math/STEM education? tactile art? sensory object?) and any print notes worth sharing. The text below describes only what the photos show. -->
-
 This is a 3D-printed [Lorenz attractor](https://en.wikipedia.org/wiki/Lorenz_system), the famous butterfly-shaped curve from chaos theory, traced as a single continuous tube that coils into two linked spirals.
 
 Printing a shape like this is a challenge in itself: the curve loops through open space in every direction, so these prints used dissolvable support material that washes away in water. The photos show two sizes of the print, before and after removing supports.

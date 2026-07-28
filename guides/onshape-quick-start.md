@@ -3,7 +3,7 @@ layout: page
 title: Onshape CAD Quick Start Guide
 permalink: /guides/onshape/
 ---
-New to CAD? This quick start takes you from zero to your first 3D-printable, parametric part using Onshape, a free, browser-based CAD tool that runs on any web-connected device.
+New to CAD (computer-aided design)? This quick start takes you from zero to your first 3D-printable, parametric part using Onshape, a free, browser-based CAD tool that runs on any web-connected device.
 
 ## What you'll do in this quick start
 
@@ -32,7 +32,7 @@ Watch this beginner overview to understand slicing, materials, bed leveling, and
 
 Tips before your first print:
 
-- Export your part in STL format from Onshape (right-click the part, then Export). Open it in your slicer and use the guide above to choose layer height, infill, and temperatures.
+- Export your part in STL (stereolithography) format from Onshape (right-click the part, then Export). Open it in your slicer and use the guide above to choose layer height, infill, and temperatures.
 - If you're using a new or different printer model, watch a quick model-specific setup video first; minor differences matter (bed leveling, firmware, materials, and so on).
 
 ## Step 4: Go parametric with variables (the "power move")

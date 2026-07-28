@@ -2,7 +2,12 @@
 <article class="project-card window">
   <h3 class="project-card__title window__titlebar"><span class="window__dot" aria-hidden="true"></span><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
   {% if p.cover_image %}
-  <img class="project-card__image" src="{{ p.cover_image | relative_url }}" alt="{{ p.cover_alt | escape }}" loading="lazy">
+  {%- comment -%}
+    Decorative here on purpose: the card already carries a title link, a status
+    badge, a date, and a summary. The described version of this image is on the
+    project page, which reads the same cover_alt front matter.
+  {%- endcomment -%}
+  <img class="project-card__image" src="{{ p.cover_image | relative_url }}" alt="" loading="lazy">
   {% endif %}
   <div class="project-card__body">
     {% case p.status %}
@@ -10,9 +15,14 @@
       {% when "prototype" %}<span class="badge badge--wip">Work in progress</span>
       {% when "custom" %}<span class="badge badge--custom">Custom build</span>
     {% endcase %}
+    <p class="project-card__date">{{ p.date | date: "%B %Y" }}</p>
     <p class="project-card__summary">{{ p.summary }}</p>
     {% if p.categories and p.categories.size > 0 %}
-    <p class="project-card__categories">Categories: {{ p.categories | join: ", " }}</p>
+    <p class="project-card__categories">Categories:
+      {%- for cat in p.categories -%}
+        {{ ' ' }}<a href="{{ '/projects/category/' | append: cat | append: '/' | relative_url }}">{{ cat | replace: "-", " " | capitalize }}</a>{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    </p>
     {% endif %}
   </div>
 </article>
