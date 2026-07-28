@@ -8,3 +8,8 @@ _site/
 .jekyll-metadata
 
 Gemfile.lock
+
+# Gems installed into the repo by `bundle install --path vendor/bundle`, which
+# is what ruby/setup-ruby does in CI.
+vendor/
+node_modules/

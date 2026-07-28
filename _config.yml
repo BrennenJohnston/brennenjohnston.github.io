@@ -30,9 +30,19 @@ defaults:
       type: projects
     values:
       layout: project
+# Setting exclude replaces Jekyll's defaults rather than adding to them, so the
+# vendor and node_modules entries have to be restated here. Without them, a
+# `bundle install --path vendor/bundle` (which is what ruby/setup-ruby does in
+# CI) drops Jekyll's own site template into the source tree and the build fails
+# on its placeholder post date.
 exclude:
   - README.md
   - HOW-TO-ADD-A-PROJECT.md
   - Gemfile
   - Gemfile.lock
   - _extract
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - node_modules/
