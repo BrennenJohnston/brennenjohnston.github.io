@@ -15,14 +15,10 @@ gallery:
   - image: /assets/images/projects/lorenz-attractor/lorenz-attractor-04.jpg
     alt: "A Lorenz attractor print soaking in a container of water to dissolve its support material."
     caption: Dissolving the supports in water.
-help_wanted: ""
-# Open question for Brennen: what is the purpose and audience for this piece
-# (math/STEM education, tactile art, sensory object?) and are there print notes
-# worth sharing? The body below describes only what the photos show. Kept in the
-# front matter so the note does not ship in the published HTML.
+help_wanted: "If you teach math or run a STEM program, tell me whether a print like this helped explain chaos theory by touch, and what size worked best in hand."
 ---
 This is a 3D-printed [Lorenz attractor](https://en.wikipedia.org/wiki/Lorenz_system), the famous butterfly-shaped curve from chaos theory, traced as a single continuous tube that coils into two linked spirals.
 
 Printing a shape like this is a challenge in itself: the curve loops through open space in every direction, so these prints used dissolvable support material that washes away in water. The photos show two sizes of the print, before and after removing supports.
 
-Unlike most projects on this site, this one is less about a specific assistive function and more of a STEM, art, and tactile exploration piece: a mathematical object you can hold.
+Unlike most projects on this site, this one is not a device for a specific task. It is a STEM and math education piece: a way for students to hold and trace a chaotic system by touch rather than only seeing it on a screen, which also makes it usable in a classroom or library for learners who are blind or have low vision.

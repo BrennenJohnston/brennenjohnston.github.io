@@ -14,12 +14,8 @@ gallery:
   - image: /assets/images/projects/pedxarm/pedxarm-concept.jpg
     alt: "Reference illustration of pedestrian crossing gate arms at a railroad crossing, labeling the curb and the sidewalk or pathway."
     caption: A reference illustration of pedestrian ("ped xing") gate arms used during design.
-help_wanted: ""
-# Open question for Brennen: what is the purpose and intended audience of this
-# model (orientation and mobility training?), and what feedback would help? The
-# body below describes only what the photos and files show. Kept in the front
-# matter so the note does not ship in the published HTML.
+help_wanted: "Orientation and mobility instructors: does the scale, arm movement, and level of detail help when teaching travelers what a pedestrian rail crossing gate is like? What is missing?"
 ---
-PedXarm is a 3D-printed scale model of a railroad crossing, with pedestrian crossing ("ped xing") gate arms. The model includes a printed track base, crossbuck "Railroad Crossing" signs with red lights, and striped crossing arms that raise and lower.
+PedXarm is a 3D-printed scale model of a railroad crossing, with pedestrian crossing ("ped xing") gate arms, made as a teaching aid for orientation and mobility training. Travelers who are blind or have low vision can explore by touch how the crossbuck signs, lights, and gate arms are arranged and how the arms move, before encountering a real crossing. The model includes a printed track base, crossbuck "Railroad Crossing" signs with red lights, and striped crossing arms that raise and lower.
 
 The design is under active development; the project files show many iterations of the poles, arms, and floor pieces (currently around edit 2.4+), refining how the parts print and fit together.
