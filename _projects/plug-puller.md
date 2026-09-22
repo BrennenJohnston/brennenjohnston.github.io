@@ -26,4 +26,4 @@ This is the customizable version of the design. To make your own, get the model 
 
 The OpenSCAD version makes the design adjustable: measure your plug and your hand, type the numbers into OpenSCAD's Customizer, and export a tool that fits both. It builds two tool styles from one model: a flat puller for standard plugs, and a heavy-duty clamshell (the paired plates shown in the photos) for thick round extension-cord plugs.
 
-The model is currently at **version 0.8** and approaching a **version 1.0 milestone**, so it is still a work in progress. The repository includes beginner guides (a five-minute measuring guide, quick-start walkthrough, and fit troubleshooting), ready-to-print Small / Medium / Large STL (stereolithography) model files, and a single-file build for web customizers.
+The model is currently at **version 0.10** and approaching a **version 1.0 milestone**, so it is still a work in progress. The repository includes beginner guides (a five-minute measuring guide, quick-start walkthrough, and fit troubleshooting), ready-to-print Small / Medium / Large STL (stereolithography) model files, and a single-file build for web customizers.
