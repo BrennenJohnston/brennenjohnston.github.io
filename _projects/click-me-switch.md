@@ -25,6 +25,9 @@ gallery:
   - image: /assets/images/projects/click-me-switch/click-me-switch-06.jpg
     alt: "A computer rendering of four keycap options in red: a tall chamfered dome, a tall dome with a faceted star pattern radiating from its centre, a lower rounded dome, and a thin flat slab."
     caption: Four of the five keycap shapes in the files, including one with a tactile pattern you can find by touch.
+  - image: /assets/images/projects/click-me-switch/click-me-switch-07.jpg
+    alt: "Three finished Click Me switches on a wood table, each with a different keycap. Back left: a flat lime-green keycap with a finely textured top, in a black housing over a grey layer and a light blue base. Back right: a tall lime-green keycap whose sloped sides rise to a raised flat square, in a magenta housing over a grey layer and a light blue base. In front: an all-black Click Me with a tall red keycap shaped like a four-sided pyramid, with a raised, finely ridged X on its peak whose arms point to the corners."
+    caption: Three of those keycaps printed and in use, with the housing parts printed in different colours. The red one in front has the tactile pattern.
 help_wanted: "If you use an access switch, or support someone who does, print one, try two or three different keyboard switches in it, and tell me which actuation force suited the person and why. That is the one thing I cannot decide from here."
 ---
 The Click Me is a 3D-printed access switch with a 3.5 mm mono plug, the standard connector for switch-adapted toys, communication aids, and switch interfaces. It is built around a small custom printed circuit board that carries a 3.5 mm jack and a hot-swap socket for an ordinary mechanical keyboard switch.
