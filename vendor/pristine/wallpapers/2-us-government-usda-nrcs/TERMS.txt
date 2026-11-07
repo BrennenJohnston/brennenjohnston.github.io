@@ -1,0 +1,18 @@
+Wallpaper candidate 2 (US government photograph, USDA NRCS), fetched 2026-09-23.
+Commons file page: https://commons.wikimedia.org/wiki/File:NRCSCA00012_-_California_(537)(NRCS_Photo_Gallery).jpg
+  (saved as commons-file-page.html; the page source and metadata as commons-file-api.json)
+The file page says: description "Northern CA rangeland."; source "USDA NRCS
+Photo Gallery: NRCSCA00012.tif"; author "Photo by Lynn Betts, USDA Natural
+Resources Conservation Service."; permission {{PD-USGov-USDA-NRCS-Gallery}};
+credit line "Author=Lynn Betts | Photo courtesy of USDA Natural Resources
+Conservation Service | License=Public Domain"; keywords "scenic, grass,
+rangeland, pasture". Uploaded 2013-02-21 by Smallbot (before 2022).
+Original file: 2100 x 1500 px, 4,842,948 bytes, SHA-1
+23940718d293026dd3be1d59607a493e1cff3fad (matches the SHA-1 Commons reports).
+Seen in the picture: green rolling hills with oak trees under a pale,
+slightly mint sky (a film scan). A full-size crop shows small grazing cattle
+on the far hills and a thin pole near the middle. No people, no buildings,
+no logos.
+Resized copies (Pillow 11.3.0, LANCZOS, optimize, progressive):
+  wallpaper-2-usda-nrcs-1920.jpg      1920 x 1371, quality 80, 451,364 bytes (OVER 300 KB)
+  wallpaper-2-usda-nrcs-1920-q60.jpg  1920 x 1371, quality 60, 297,443 bytes (under 300,000 bytes)

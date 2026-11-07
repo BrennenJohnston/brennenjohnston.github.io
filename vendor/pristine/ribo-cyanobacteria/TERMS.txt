@@ -1,0 +1,22 @@
+Terms of use for the ribo.zone free layouts, copied word for word from
+https://ribo.zone/free/layouts/ (the "Terms of Use" section) on 2026-09-23.
+The raw page is saved beside this file as layouts-page.html.
+
+Terms of Use
+You may:
+- Change colors, fonts, margins, etc (please do! change it all and make it yours!)
+- Move the credit from its default location
+- Remove the credit entirely (I think it's worthwhile to cite your sources, but I won't come nag you about it)
+- Let me know if something is broken
+- Break it yourself
+You may not:
+- Redistribute these for commercial purposes
+- Expect 24/7 tech support
+
+The same page says of the layout gathered here:
+"Layout #3: Cyanobacteria / Release date: March 9, 2024 / Inspiration: any
+of the top sites on neocities or nekoweb, MagicPattern". The zip's
+cyanobacteria.css begins "/* CYANOBACTERIA.CSS v1.1 */ /* HTML/CSS layout
+template from https://ribo.zone/free/layouts/ */ /* last updated: june 28,
+2026 */", and its template.html carries the credit "layout by ribo.zone"
+linking to https://ribo.zone/free/layouts/.

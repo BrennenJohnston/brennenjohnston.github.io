@@ -1,0 +1,12 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.redirect %}<meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">{% endif %}
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/borrowed/7css.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/borrowed/cyanobacteria.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/borrowed/a11y-boilerplate.css" | relative_url }}">
+  <link type="application/atom+xml" rel="alternate" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }} projects" />
+</head>

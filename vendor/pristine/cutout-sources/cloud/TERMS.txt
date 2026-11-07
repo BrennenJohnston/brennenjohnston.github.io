@@ -1,0 +1,8 @@
+Cut-out source: a cloud (Free-Images.com), fetched 2026-09-23.
+Image page: https://free-images.com/display/cumulus_clouds_clouds_sky.html (saved as source-page-free-images.html)
+The page says: "It was marked as Public Domain or CC0 and is free to use. To
+verify, go to the source and check the information there." Source named:
+https://pixabay.com/en/cumulus-clouds-clouds-sky-1194969/ (not fetched: Pixabay
+answers 403 to scripted fetches).
+Original: https://free-images.com/or/de4d/cumulus_clouds_clouds_sky.jpg (6000 x 4000 px, 2,072,632 bytes).
+Seen: one white cumulus cloud on a clear blue sky.

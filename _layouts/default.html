@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <a class="a11y-kb-only" href="#main">Skip to main content</a>
+
+    <div class="container">
+
+    {%- include header.html -%}
+
+    <main class="page-content large" id="main" tabindex="-1" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    </div>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<title>HTML/CSS layout templates</title>
+    <meta name="description" content="free to use, responsive website templates inspired by sites on neocities and nekoweb">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<style>
+		.flex-box {
+			display:flex;
+			flex-wrap:wrap;
+			margin: 0 auto;
+			gap: 0 4rem;
+		}
+		.half { flex: 1 1 45%; min-width: 300px; }
+		.half p, .half ul { margin: 1rem; }		
+		.preview { text-align: center; max-width:100%; }
+		.preview img { max-height: 300px; border: 2px solid cadetblue; margin: 3px 0; }
+		.preview .desktop { max-width: 70.75%; }
+		.preview .mobile { max-width: 25%; }
+		h3 { text-align: center; }
+		section { margin: 0 auto; }
+		section:not(.half) p, section:not(.half) ul { max-width: 42rem; margin: 1rem auto; }
+		section p:last-child { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+		section p:last-child a { padding: 5px 7px 3px; border: 2px solid cadetblue; border-color: cadetblue #395e60 #395e60 cadetblue; background: gainsboro; box-shadow: inset 2px 2px #eee; text-decoration: none; line-height: 1.2; }
+		section p:last-child a:hover, section p:last-child a:focus { background: white; }
+		section:has(img) p:last-child { text-align: center; }
+		ul { margin: 10px 0; }
+		ol { margin: 0 0 0 27px; }
+		@media (prefers-color-scheme:dark) {
+			section p:last-child a { background: #122; box-shadow: inset 2px 2px #243d3d; }
+			section p:last-child a:hover, section p:last-child a:focus { background: darkslategrey; }
+		}
+	</style>
+  </head>
+  <body>
+
+	<div>
+		<nav>
+			<div>
+				<a href="../">webcraft supplies</a>
+				<div>
+					<a href="../graphics/">graphics</a>
+					<a href="../snippets/">code snippets</a>
+					<a href="../layouts/" class="open">layouts</a>
+					<a href="../guides/">guides</a>
+				</div>
+			</div>
+			<div>
+				<a href="https://ko-fi.com/ribozone"><img src="../../88x31/mine/buyribocoffee.png" alt="buy me a coffee"></a>
+				<a href="../../">homepage</a>
+			</div>
+		</nav>
+	</div>
+	
+	<main>
+	
+	<h1>layouts</h1>
+	
+	<div class="flex-box"> 
+
+		<section class="half">
+			<h2>Layout Properties</h2>
+			<p>The code on the rest of my site can be a bit messy, but with these templates I try to behave myself and follow best practices.</p>
+			<p>All layouts are responsive to screen size. I test them on my small laptop, my phone, and my ultrawide desktop monitor in both firefox and a chromium browser. I don't test in safari, because I don't own any apple devices.</p>
+			<p>Templates use semantic HTML wherever possible and include a few comments in the code to help orient you. They do not include the placeholder images shown in the previews.</p>
+		</section>
+
+		<section class="half">
+			<h2>Terms of Use</h2>		
+			<h3>You may:</h3>
+			<ul>
+				<li>Change colors, fonts, margins, etc <small>(please do! change it all and make it yours!)</small></li>
+				<li>Move the credit from its default location</li>
+				<li>Remove the credit entirely <small>(I think it's worthwhile to cite your sources, but I won't come nag you about it)</small></li>
+				<li>Let me know if something is broken</li>
+				<li>Break it yourself</li>
+			</ul>	
+			<h3>You may not:</h3>
+			<ul>
+				<li>Redistribute these for commercial purposes</li>
+				<li>Expect 24/7 tech support</li>
+			</ul>
+		</section>
+	
+	</div>
+
+	<section id="yogurt">
+		<h2>Layout #5: Yogurt</h2>
+		<div class="preview">
+			<img src="yogurt/desktop.png" class="desktop" alt="Desktop layout">
+			<img src="yogurt/mobile.png" class="mobile" alt="Mobile layout">
+		</div>
+		<ul>
+			<li>Release date: May 3, 2026</li>
+			<li>Made for: <a href="https://32bit.cafe">The 32-Bit Cafe</a>'s <a href="https://32bit.cafe/tea26/">Spring 2026 Tea Party</a></li>
+			<li>Inspiration: <a href="https://macthemes.garden/themes/c2037ec139c5-Very-Strawberry">Very Strawberry Mac Theme</a></li>
+		</ul>
+		<p>Centered box with a scrollable main section. Try zooming in and out!</p>
+		<p><a href="yogurt/preview">Live preview</a> <a href="yogurt.zip" download="yogurt">Download .zip</a></p>
+	</section>
+
+	<section id="kombucha">
+		<h2>Layout #4: Kombucha</h2>
+		<div class="preview">
+			<img src="kombucha/desktoplight.png" class="desktop" alt="Light desktop layout">
+			<img src="kombucha/mobilelight.png" class="mobile" alt="Light mobile layout">
+			<img src="kombucha/desktopdark.png" class="desktop" alt="Dark desktop layout">
+			<img src="kombucha/mobiledark.png" class="mobile" alt="Dark mobile layout">
+		</div>
+		<ul>
+			<li>Release date: May 11, 2025</li>
+			<li>Made for: <a href="https://32bit.cafe">The 32-Bit Cafe</a>'s <a href="https://32bit.cafe/spring25/">Spring 2025 Tea Party</a></li>
+			<li>Inspiration: <a href="https://shishka.neocities.org/">shishka</a>, the cute and wonderful <a href="https://en.wikipedia.org/wiki/SCOBY">SCOBY</a></li>
+		</ul>
+		<p>Wiggly single column, with big heading text that scales with viewport width. The default color palettes are completely out of my comfort zone, but I was going for something that feels like drinking kombucha... bubbly? fermented? sour? brown?</p>
+		<p><a href="kombucha/preview">Live preview</a> <a href="kombucha.zip" download="kombucha">Download .zip</a></p>
+	</section>
+
+	<section id="cyanobacteria">
+		<h2>Layout #3: Cyanobacteria</h2>
+		<div class="preview">
+			<img src="cyanobacteria/desktoplight.png" class="desktop" alt="Light desktop layout">
+			<img src="cyanobacteria/mobilelight.png" class="mobile" alt="Light mobile layout">
+			<img src="cyanobacteria/desktopdark.png" class="desktop" alt="Dark desktop layout">
+			<img src="cyanobacteria/mobiledark.png" class="mobile" alt="Dark mobile layout">
+		</div>
+		<ul>
+			<li>Release date: March 9, 2024</li>
+			<li>Inspiration: any of the top sites on neocities or nekoweb, <a href="https://www.magicpattern.design/tools/css-backgrounds">MagicPattern</a>
+		</ul>
+		<p>I wanted to try making one of those 2000s-style “everything in tiny boxes” homepage layouts with some modern improvements. The container width is set in rem (so the box scales with each visitor's default font size) and it's a flexbox (so the tiny boxes get rearranged responsively). Light and dark mode are included, with colors set by the variables at the top of the CSS file.</p>
+		<p><a href="cyanobacteria/preview">Live preview</a> <a href="cyanobacteria.zip" download="cyanobacteria">Download .zip</a></p>
+	</section>
+
+	<section id="amoeba">
+		<h2>Layout #2: Amoeba</h2>
+		<div class="preview">
+			<img src="amoeba/desktop.png" class="desktop" alt="Desktop layout preview">
+			<img src="amoeba/mobile.png" class="mobile" alt="Mobile layout preview">
+		</div>
+		<ul>
+			<li>Release date: Dec 31, 2023</li>
+			<li>Inspiration: <a href="https://solflo.neocities.org">sol's home</a>, <a href="https://web.archive.org/web/20240329182508/https://errormine.net/">errormine</a>, crunchy fonts</li>
+			<li>Fonts: <a href="https://velvetyne.fr/fonts/terminal-grotesque/">terminal grotesque open</a> & <a href="https://velvetyne.fr/fonts/degheest/">degheest regular</a></li>
+		</ul>
+		<p>A simple single column layout with a flex-box navigation bar. Made with text-heavy pages in mind.</p>
+		<p><a href="amoeba/preview">Live preview</a> <a href="amoeba.zip" download="amoeba">Download .zip</a></p>
+	</section>
+
+	<section id="stentor">
+		<h2>Layout #1: Stentor</h2>
+		<div class="preview">
+			<img src="stentor/desktop.png" class="desktop" alt="Desktop layout preview">
+			<img src="stentor/mobile.png" class="mobile" alt="Mobile layout preview">
+		</div>
+		<ul>
+			<li>Release date: Aug 11, 2023</li>
+			<li>Inspiration: <a href="https://kalechips.net/site/oldlayouts">kalechips v3</a>, <a href="https://biome.neocities.org">biome</a>, the dream of a totally clean lab space</li>
+		</ul>
+		<p>This is my first free layout! Wowee. This is what I imagine my site might look like if you hosed the whole thing down with a pressure washer, then sprayed all the surfaces with 70% ethanol to disinfect them.</p>
+		<p><a href="stentor/preview">Live preview</a> <a href="stentor.zip" download="stentor">Download .zip</a></p>
+	</section>
+	
+	</main>
+
+  </body>
+</html>
+

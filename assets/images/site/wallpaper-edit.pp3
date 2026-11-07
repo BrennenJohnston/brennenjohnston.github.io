@@ -1,0 +1,43 @@
+[Exposure]
+Auto=false
+Compensation=0.7
+Brightness=14
+Contrast=-10
+Saturation=0
+HighlightCompr=90
+HighlightComprThreshold=0
+ShadowCompr=50
+
+[Shadows & Highlights]
+Enabled=true
+Highlights=15
+HighlightTonalWidth=70
+Shadows=60
+ShadowTonalWidth=40
+Radius=40
+Lab=false
+
+[Vibrance]
+Enabled=true
+Pastels=30
+Saturated=10
+PSThreshold=0;75
+ProtectSkins=false
+AvoidColorShift=true
+PastSatTog=false
+
+[Resize]
+Enabled=true
+Scale=1
+AppliesTo=Cropped area
+Method=Lanczos
+DataSpecified=1
+Width=1440
+Height=1006
+AllowUpscaling=false
+
+[HSV Equalizer]
+Enabled=true
+HCurve=1;0;0.5;0.35;0.35;0.25;0.5;0.12;0.12;0.5;0.5;0.15;0.15;0.625;0.46;0.1;0.1;0.75;0.5;0.15;0.15;
+SCurve=1;0;0.5;0.35;0.35;0.25;0.54;0.12;0.12;0.5;0.5;0.15;0.15;0.625;0.56;0.1;0.1;0.75;0.5;0.15;0.15;
+VCurve=1;0;0.5;0.35;0.35;0.25;0.57;0.12;0.12;0.5;0.5;0.15;0.15;0.75;0.5;0.15;0.15;

@@ -1,0 +1,20 @@
+Wallpaper candidate 4 (Wikimedia Commons, CC BY 2.0), chosen by the owner on 2026-11-06.
+Original fetched 2026-11-05; the pages beside it fetched 2026-11-06.
+Commons file page: https://commons.wikimedia.org/wiki/File:Soap_bubbles-jurvetson.jpg
+  (saved as commons-file-page.html; the page source and metadata as commons-file-api.json)
+The file page says: description 'Soap bubbles. "Bubble Rain". Taken on April 16, 2005.';
+author Steve Jurvetson (https://www.flickr.com/people/44124348109@N01); date 2005-04-16;
+source "Bubble Rain" on Flickr, https://www.flickr.com/photos/44124348109@N01/10525957/;
+license {{Cc-by-2.0}}; FlickreviewR confirmed cc-by-2.0 on 26 December 2006.
+One upload only: 2006-03-28, by the Commons user Überraschungsbilder.
+Flickr's own page, read on 2026-11-06, is titled "Bubble Rain | Steve Jurvetson | Flickr"
+and links the license https://creativecommons.org/licenses/by/2.0/.
+License text: cc-by-2.0-legalcode.html, saved from
+https://creativecommons.org/licenses/by/2.0/legalcode
+Original file: 2040 x 1425 px, 2,238,754 bytes, SHA-1
+96ba5121afa254c54aa78548aab49c43cbcdf7f4 (matches the SHA-1 Commons reports).
+Seen in the picture: soap bubbles in the air in front of a large tree with green
+leaves, seen from below, with small patches of blue sky. No people.
+The license asks that the author and title be credited, that the license be named
+by its address, and that an edited copy be credited as an edit. The site's copy is
+edited, so PROVENANCE.md and the credits say so.

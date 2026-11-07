@@ -1,0 +1,59 @@
+title: "DIY Assistive Technology created by Brennen"
+description: "Open-source 3D-printed assistive technology by Brennen Johnston, lead of WATAP's 3D Printed Assistive Technology Program: ready-to-print devices, works in progress, and curated resources."
+url: "https://brennenjohnston.github.io"
+baseurl: ""             # stays "" for a user site; "/website" if the repo is named "website"
+lang: en
+header_pages:
+  - index.md
+  - projects.md
+  - collaborations.md
+  - resources.md
+  - about.md
+markdown: kramdown
+# GitHub Pages uses its Primer theme unless one is named; null keeps that theme's
+# unused stylesheet out of the built site.
+theme: null
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+# jekyll-feed always builds a feed for the "posts" collection, and this site has
+# no posts; left alone, the feed readers find at /feed.xml would be empty. Park
+# the posts feed out of the way and give /feed.xml to the projects collection.
+feed:
+  path: /feed/all.xml
+  collections:
+    projects:
+      path: /feed.xml
+  # feed_meta would advertise feed.path (the empty posts feed), so the discovery
+  # link is written by hand in _layouts/default.html instead.
+  disable_in_head: true
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+# Setting exclude replaces Jekyll's defaults rather than adding to them, so the
+# vendor and node_modules entries have to be restated here. Without them, a
+# `bundle install --path vendor/bundle` (which is what ruby/setup-ruby does in
+# CI) drops Jekyll's own site template into the source tree and the build fails
+# on its placeholder post date.
+exclude:
+  - README.md
+  - HOW-TO-ADD-A-PROJECT.md
+  - Gemfile
+  - Gemfile.lock
+  - _extract
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - node_modules/
+  - "*.code-workspace"
+  - vendor/pristine/

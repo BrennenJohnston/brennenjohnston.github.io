@@ -1,0 +1,29 @@
+{%- assign p = include.project -%}
+<div class="window glass active">
+  <div class="title-bar">
+    <div class="title-bar-text"><h3><a class="post-link" href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></h3></div>
+  </div>
+  <div class="window-body has-space">
+    {%- if p.cover_image -%}
+    {%- comment -%}
+      Decorative here on purpose: the card already carries a title link, a status
+      badge, a date, and a summary. The described version of this image is on the
+      project page, which reads the same cover_alt front matter.
+    {%- endcomment -%}
+    <img src="{{ p.cover_image | relative_url }}" alt="" width="{{ site.data.image-sizes[p.cover_image].width }}" height="{{ site.data.image-sizes[p.cover_image].height }}" loading="lazy">
+    {%- endif -%}
+    {%- assign status = site.data.statuses | where: "slug", p.status | first -%}
+    <p>{{ status.name }}</p>
+    <span class="post-meta">{{ p.date | date: "%B %Y" }}</span>
+    <p>{{ p.summary }}</p>
+    {%- if p.categories.size > 0 -%}
+    <p>Categories:</p>
+    <ul class="post-list">
+      {%- for cat in p.categories -%}
+      {%- assign c = site.data.categories | where: "slug", cat | first -%}
+      <li><a class="post-link" href="{{ c.url | relative_url }}">{{ c.name | escape }}</a></li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+</div>

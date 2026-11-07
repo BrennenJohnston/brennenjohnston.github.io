@@ -1,0 +1,54 @@
+<footer class="site-footer h-card">
+  <div class="container">
+  <div class="wrapper full">
+
+    <h2 class="a11y-sr-only">Site information and profile links</h2>
+
+    {%- comment -%}
+      No aria-label on these sections: it would duplicate the visible h3 and
+      make screen readers announce the same name twice.
+    {%- endcomment -%}
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <section>
+          <h3>Where I share my designs</h3>
+          <ul role="list">
+            <li><a href="https://makerworld.com/en/@WATAP_3D" rel="noopener">MakerWorld (WATAP_3D)</a></li>
+            <li><a href="https://www.printables.com/@Brengineered_4921802" rel="noopener">Printables (Brengineered)</a></li>
+            <li><a href="https://www.thingiverse.com/Brennen_WATAP/designs" rel="noopener">Thingiverse (Brennen_WATAP)</a></li>
+            <li><a href="https://github.com/BrennenJohnston" rel="noopener">GitHub (BrennenJohnston)</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <section>
+          <h3>WATAP</h3>
+          <p>I lead the <a href="https://watap.org/3d-printed-assistive-technology" rel="noopener">3D Printed Assistive Technology Program</a> at the <a href="https://watap.org/" rel="noopener">Washington Assistive Technology Act Program (WATAP)</a>.</p>
+        </section>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <section>
+          <h3>This site</h3>
+          <ul role="list">
+            <li><a href="{{ '/accessibility/' | relative_url }}">Accessibility statement</a></li>
+            <li><a href="{{ '/feed.xml' | relative_url }}">Project updates feed (RSS)</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <p>Designs shared on this site are open source. See each project page for its license and download links.</p>
+
+    <h2>Made with pieces by</h2>
+    <ul role="list">
+      {%- for credit in site.data.credits -%}
+      <li><a href="{{ credit.url }}">{{ credit.author | escape }}</a> ({{ credit.piece }})</li>
+      {%- endfor -%}
+    </ul>
+    <p><a class="post-link" href="{{ '/credits/' | relative_url }}">See the full credits</a></p>
+
+  </div>
+  </div>
+</footer>

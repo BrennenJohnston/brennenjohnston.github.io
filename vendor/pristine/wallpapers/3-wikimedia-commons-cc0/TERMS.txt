@@ -1,0 +1,16 @@
+Wallpaper candidate 3 (Wikimedia Commons, CC0, uploaded before 2022), fetched 2026-09-23.
+Commons file page: https://commons.wikimedia.org/wiki/File:Mm00a_1004_Rising_Cloud_(77011239).jpeg
+  (saved as commons-file-page.html; the page source and metadata as commons-file-api.json)
+The file page says: title "Mm00a 1004 Rising Cloud"; photographer "Marsel
+Minga" (https://500px.com/ilesram); date 2010-04-03; permission {{Cc-zero}};
+source "Imported with import-500px" from
+https://500px.com/photo/77011239/mm00a-1004-rising-cloud-by-marsel-minga with
+an Internet Archive copy of the 500px file; the 500px description reads "no
+copyright - YOU ARE FREE TO USE IT". Uploaded 2020-03-08 by DarwIn (before 2022).
+Original file: 2048 x 1373 px, 1,017,911 bytes, SHA-1
+9ff1154480bf0f6896a11d39e071d3ea3eecf256 (matches the SHA-1 Commons reports).
+Seen in the picture: one green hill, one white cloud in a deep blue sky, one
+bush with its shadow. Visible sensor grain in the sky.
+Resized copies (Pillow 11.3.0, LANCZOS, optimize, progressive):
+  wallpaper-3-commons-cc0-1920.jpg      1920 x 1287, quality 80, 354,395 bytes (OVER 300 KB)
+  wallpaper-3-commons-cc0-1920-q70.jpg  1920 x 1287, quality 70, 265,763 bytes (under 300,000 bytes)

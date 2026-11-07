@@ -1,0 +1,32 @@
+- slug: communication
+  name: "Communication"
+  url: /projects/category/communication/
+  icon: /assets/images/icons/nuvola/apps-chat.png
+- slug: daily-living
+  name: "Daily living"
+  url: /projects/category/daily-living/
+  icon: /assets/images/icons/nuvola/apps-kalarm.png
+- slug: mobility
+  name: "Mobility"
+  url: /projects/category/mobility/
+  icon: /assets/images/icons/nuvola/apps-access.png
+- slug: computer-access
+  name: "Computer access"
+  url: /projects/category/computer-access/
+  icon: /assets/images/icons/nuvola/apps-input_devices_settings.png
+- slug: gaming-recreation
+  name: "Gaming recreation"
+  url: /projects/category/gaming-recreation/
+  icon: /assets/images/icons/nuvola/apps-package_games.png
+- slug: eating-drinking
+  name: "Eating drinking"
+  url: /projects/category/eating-drinking/
+  icon: /assets/images/icons/nuvola/apps-kteatime.png
+- slug: writing-drawing
+  name: "Writing drawing"
+  url: /projects/category/writing-drawing/
+  icon: /assets/images/icons/nuvola/apps-kwrite.png
+- slug: other
+  name: "Other"
+  url: /projects/category/other/
+  icon: /assets/images/icons/nuvola/apps-package.png

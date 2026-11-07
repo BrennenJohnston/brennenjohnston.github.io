@@ -1,0 +1,6 @@
+- slug: ready
+  name: "Ready to print"
+- slug: prototype
+  name: "Work in progress"
+- slug: custom
+  name: "Custom build"

@@ -1,0 +1,33 @@
+Nuvola icon theme 1.0 by David Vignoni, fetched 2026-09-23.
+The author's page: the live domain icon-king.com is now parked (a 2017 archive
+capture of the project page shows only a parking frame), so the page was read
+from the Internet Archive copy of 2009-08-31:
+http://web.archive.org/web/20090831103737/http://www.icon-king.com/projects/nuvola/
+(saved as icon-king-nuvola-page-20090831.html). It is titled "Nuvola | David
+Vignoni Visual Designer" and says the set is "a free software icon set under
+the GNU LGPL 2.1", that "Version 1.0 has been released on October 15th, 2004",
+and under Terms of Use "The Nuvola icons are licensed under the LGPL".
+The release: nuvola-1.0.tar.gz from the Internet Archive copy of
+http://www.icon-king.com/files/nuvola-1.0.tar.gz (capture 2016-03-14;
+13,594,245 bytes; gzip header dated 2004-10-15): 3,706 PNG icons from 16 to
+128 px, no SVG files.
+Its own license files, extracted beside this file:
+  license.txt  the GNU Lesser General Public License 2.1 text (26,430 bytes)
+  readme.txt   "Copyright (c)  2003-2004  David Vignoni." and the LGPL notice,
+               with an add-on for artwork. The add-on says: "The LGPL in some
+               sections obliges you to make the files carry notices. With
+               images this is in some cases impossible or hardly usefull. With
+               this library a notice is placed at a prominent place in the
+               directory containing the elements. You may follow this
+               practice." and "The exception in section 6 of the GNU Lesser
+               General Public License covers the use of elements of this art
+               library in a GUI."
+  author.txt   "David Vignoni (david@icon-king.com) ICON KING - www.icon-king.com"
+  thanks.to    the author's thanks list
+Also saved: lgpl-2.1.txt, the current text from
+https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt.
+What this means for the site: the folder that holds the icons on the site
+carries readme.txt and license.txt beside them (the add-on's practice), and
+the credits name David Vignoni.
+selected-128/ holds 20 icons extracted from the 128 px folders for looking at;
+any other icon can be extracted from the tarball later.

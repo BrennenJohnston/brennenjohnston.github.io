@@ -1,0 +1,396 @@
+/* CYANOBACTERIA.CSS v1.1 */
+/* HTML/CSS layout template from https://ribo.zone/free/layouts/ */
+/* last updated: june 28, 2026 */
+/* Adapted copy of Cyanobacteria v1.1 (cyanobacteria.css) by ribo.zone.
+   Source: https://ribo.zone/free/layouts/cyanobacteria.zip, fetched 2026-09-23; the untouched file is vendor/pristine/ribo-cyanobacteria/unzipped/cyanobacteria.css.
+   Terms: https://ribo.zone/free/layouts/ (copied in vendor/pristine/ribo-cyanobacteria/TERMS.txt): colors, fonts and margins may be changed; no commercial redistribution.
+   Changed values (first candidates for the sky glass look; later phases set the final ones):
+     light :root: --text from darkslategrey to #ffffff; --border from lightgrey to rgba(255,255,255,0.7); --accent from teal to #7cff9a; --bg from #dce3e1 to rgba(63,147,232,0.6); --gradient-top from white to rgba(255,255,255,0.35); --gradient-bottom from rgb(240, 248, 255, .8) to rgba(63,147,232,0.6);
+     dark :root, set to the same values as the light one so dark mode looks the same: --text from white; --border from #5a7678; --accent from #74C365; --bg from rgb(0,60,60,.8); --gradient-bottom from rgb(0, 50, 60); --gradient-top from darkslategrey;
+     body font-family from 'MS PGothic', sans-serif to "M PLUS Rounded 1c", sans-serif;
+     .container max-width from 55rem to 68rem.
+   Deleted:
+     the two header background rules, which pointed at ribo.zone's microscopy images (not part of the download);
+     the link color rule nested in the dark mode :root (a:link, lightblue), so dark mode looks the same as light mode;
+     the optional div.small > img rule and the comment above it (unused on this site);
+     the footer a rule (text-decoration: none), so footer links keep the underline they had before.
+   Changed in A7 (the wallpaper and the header height):
+     body background-image from the six-gradient pattern to url(/assets/images/site/wallpaper.jpg); background-size from 20px 35px to cover; background-position from 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px to center (cover and center are the values this file's header rule already uses);
+     body background-attachment: fixed added, copied from 7.css's .window.glass>.title-bar rule, so the photograph stays still behind the page;
+     body background-repeat: no-repeat added, as the phase's work order specifies, so the photograph never tiles;
+     header height from 120px to auto, so the site title and the nav no longer spill over the page content.
+   Changed in A6 part 2 (the nav column, built from this layout's template.html):
+     .large flex-basis from 82% to 65%, so the nav column beside the main content is wide enough for each nav label with its icon on one line, with room to spare.
+   Added in B1, ledger line L12 (approved by the owner at WEB-Q21, 2026-09-23):
+     .home { display: flex; flex-wrap: wrap; gap: 5px; } after the column width rules, its three declarations copied from .container, so the home page's sections sit side by side inside the main column.
+   Changed in D1 (contrast; the owner chose this deep blue set at WEB-Q30, 2026-09-24), in both :root blocks:
+     --bg and --gradient-bottom from rgba(63,147,232,0.6) to rgba(3,97,174,0.9); --gradient-top from rgba(255,255,255,0.35) to rgba(255,255,255,0.05); --accent from #7cff9a to #ffffff;
+     the a:visited selector renamed to a:link, a:visited, so unvisited links take the same color (white, underlined) instead of the browser's default blue.
+   Measured in D1 by the round's contrast.py over ten samples of the wallpaper (lightest #e4edf6, darkest #314622), the lowest ratio of each pair on this file's surfaces:
+     text and links on the frame 6.20:1; on a box or a nav 5.61:1; nav pill text 6.24:1, on a hovered or focused pill 5.09:1; box border on the frame 3.88:1, on a box 3.59:1.
+   Added in D2 (round WEB-R1, 2026-09-24), three declarations in the a:hover, a:focus rule, the focus ring for every link and nav pill (7.css kept no link rule):
+     outline: 3px solid var(--text); outline-offset: 2px; box-shadow: 0 0 0 2px var(--w7-el-c) (a black halo inside the white ring, from 7.css's element color token).
+   Measured in D2 by the round's contrast.py: the ring or its halo against the surface around it at least 4.83:1 (over the wallpaper, around the skip link), the ring against its halo 21:1.
+   Added in D3 (round WEB-R1, 2026-09-24), a copy of the dark mode block renamed for more contrast (prefers-contrast: more), holding this file's variables with
+     the glass opaque (--border, --bg and --gradient-bottom at alpha 1) and the white shine hidden (--gradient-top at alpha 0; at alpha 1 it would sit white under white text).
+   Measured in D3 by the round's contrast.py: every pair also passes in more contrast (96 pairs over the light, dark and more-contrast blocks).
+   Changed in D4 (round WEB-R1, 2026-09-24): nav a padding from 2px 7px to 0.6rem 0.75rem; footer font-size from 0.8rem to 1.0625rem.
+   Added in D4, each approved by the owner: ledger line L13, a new rule before the header rule, li > a, .site-title, .post-link { display: inline-block;
+     min-height: 44px; padding-block: 10px; max-width: 100%; overflow-wrap: break-word; } (WEB-Q31); ledger line L14, min-width: 0 and
+     overflow-wrap: break-word in the .large rule (WEB-Q32); ledger line L15, font-size: 1.0625rem and font-weight: 500 in the body rule (WEB-Q33).
+   Added in D4 after those, approved by the owner: ledger line L17, baseline-source: first as the last declaration of L13's rule, so a list link
+     that wraps keeps its bullet beside its first line (WEB-Q35). MDN's compatibility data: Chrome 111, Edge and Firefox 115 follow it; Safari does not.
+   Measured in D4 by the round's reflow.js: every page fits in 320 px, no standalone link is under 44 px, and no text outside a title is under 17 px or weight 500.
+   Added in D5 (round WEB-R1, 2026-09-24), approved by the owner: ledger line L18, height: auto in the img rule, so the width and height
+     attributes on the project photos keep each photo's shape when the rule narrows it (WEB-Q37; Bootstrap 5.3.3's .img-fluid rule has the same two declarations).
+   Changed in D8 (round WEB-R1, 2026-09-25; the compromise look A the owner chose at WEB-Q38, with two-tone edges, WEB-Q48):
+     .container: background-color from var(--gradient-bottom) to var(--frame); background-image from the two repeating gradients to linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0) 160px);
+       border from 6px ridge var(--border) to 2px solid rgba(6,42,87,0.85); border-radius from 10px to 18px; outline from 3px solid var(--gradient-top) to none; padding from 5px to 10px; gap from 5px to 10px;
+     header: border from 2px ridge var(--border) to var(--edge); border-radius from 5px to 16px;
+     nav: border from 2px ridge var(--border) to var(--edge); border-radius from 5px to 16px; background from linear-gradient(var(--gradient-top),var(--gradient-bottom)) to linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 120px), var(--sky);
+     nav div: text-align from center to left;
+     section: border from 2px ridge var(--border) to var(--edge); border-radius from 5px to 16px; background from linear-gradient(var(--gradient-top),var(--gradient-bottom)) to linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0) 90px), var(--box); padding from 5px to 8px.
+   Added in D8, each approved by the owner (WEB-Q38 and WEB-Q41, 2026-09-25; FD-48, FD-51; the edges WEB-Q48, FD-58; more contrast WEB-Q47, FD-57):
+     ledger line L19, the look's settings in the light and dark :root blocks (--sky, --frame, --box, --pill, --pill-hover, --pane, --edge, --lift, --gloss, --glow, --glow-title);
+     ledger line L20, declarations added to existing rules: body text-shadow: var(--glow); .container box-shadow; header background, box-shadow, padding and text-align; nav box-shadow; section box-shadow;
+     ledger lines L21 to L26, the rules after the img and pre rules: the title banner (.site-title), the glossy nav buttons (.site-nav a, its hover and focus, its image),
+       the title weights (.title-bar-text h1, h2, h3), the reading panes (.window-body corners, the footer's wrapper, the breadcrumb, a nav or section inside a pane),
+       the glows (.title-bar-text, .site-title and .post-list-heading take --glow-title; the panes and the code box take none) and the heading banner (.post-list-heading);
+     ledger line L27, the same eleven settings in the more-contrast :root block with the glass solid (rgba(3,97,174,1)), the edge solid and the gloss transparent, so the frame, the boxes, the buttons and the panes turn solid when the reader asks for more contrast.
+   The legacy --text, --border, --accent, --bg, --gradient-top and --gradient-bottom keep their D1 values (the skip link, the scrollbar and the h1 underline still use them).
+   Measured in D8 by the round's rendered-contrast tool (measurements/after-close/rendered_contrast.js): see the D8 RECORD in the plan.
+   Added in D10 (round WEB-R1, 2026-09-25), each approved by the owner (WEB-Q39 and WEB-Q41; FD-49, FD-51):
+     ledger line L29, the latest projects as tiles: the home page's project list as a grid of columns at least 230 px wide without bullets, each tile's window a full-height column
+       whose body grows, the tile title at 1.1875rem, and the tile photo 150 px tall, cropped to fit, with 8 px corners;
+     ledger line L30, the box rows: the Washington box at flex 2 1 300px and the small home boxes at flex 1 1 200px, so Washington, Resource Hub and the Link box share a row,
+       and the update log's section across the width with its list as a grid of columns at least 200 px wide (the preview said 240 px; at 320 px the pane is 280 px wide and a 240 px floor made the page 356 px wide, measured in D10, so the value dropped to 200 px, which fits at 320 px and still gives two columns at 1280 px).
+   Added in D11 (round WEB-R1, 2026-09-25), approved by the owner (WEB-Q39 and WEB-Q41; FD-49, FD-51):
+     ledger line L31, the categories as round bubbles: the home page's category list as a centered, wrapping row without bullets, each item 128 px wide, each link a column
+       with its icon over its name, and the 48 px icon inside a 76 px glossy circle with a white edge, a radial shine and a shadow.
+   Changed in D14 (round WEB-R1, 2026-09-25), approved by the owner (WEB-Q50, FD-60): ledger line L29's five selectors gained a second target,
+     .window-body ul.post-list[role="list"] (the card lists the projects page and the category pages build inside their reading panes),
+     so those cards are tiles too, three in a row at desktop width; the declarations did not change.
+   Measured on 2026-11-06 after the page background became Bubble Rain (FD-61; its lightest and darkest 5 %: #e0efcb, #061409), with no rule changed: the round's rendered-contrast tool over the real wallpaper, 0 of 2,668 text boxes below the need, lowest 5.49:1 normal and 3.22:1 large; box edges at least 3.29:1.
+*/
+
+/* start light mode styling */
+	:root {
+		--text: #ffffff;
+		--border: rgba(255,255,255,0.7);
+		--accent: #ffffff;
+		--bg: rgba(3,97,174,0.9);
+		--gradient-top: rgba(255,255,255,0.05);
+		--gradient-bottom: rgba(3,97,174,0.9);
+		--sky: rgba(63,147,232,0.6);
+		--frame: rgba(63,147,232,0.42);
+		--box: rgba(63,147,232,0.35);
+		--pill: rgba(33,125,215,0.9);
+		--pill-hover: rgba(20,100,190,0.95);
+		--pane: rgba(3,97,174,0.9);
+		--edge: 1px solid rgba(6,42,87,0.85);
+		--lift: inset 0 0 0 1px rgba(255,255,255,0.85), 0 3px 10px rgba(0,30,70,0.35);
+		--gloss: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.18) 49%, rgba(255,255,255,0) 50%);
+		--glow: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 4px #062a57, 0 0 7px rgba(6,42,87,0.7);
+		--glow-title: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 5px #062a57, 0 0 9px rgba(6,42,87,0.8);
+	}
+/* end light mode styling */
+
+
+/* start dark mode styling */
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--text: #ffffff;
+			--border: rgba(255,255,255,0.7);
+			--accent: #ffffff;
+			--bg: rgba(3,97,174,0.9);
+			--gradient-bottom: rgba(3,97,174,0.9);
+			--gradient-top: rgba(255,255,255,0.05);
+			--sky: rgba(63,147,232,0.6);
+			--frame: rgba(63,147,232,0.42);
+			--box: rgba(63,147,232,0.35);
+			--pill: rgba(33,125,215,0.9);
+			--pill-hover: rgba(20,100,190,0.95);
+			--pane: rgba(3,97,174,0.9);
+			--edge: 1px solid rgba(6,42,87,0.85);
+			--lift: inset 0 0 0 1px rgba(255,255,255,0.85), 0 3px 10px rgba(0,30,70,0.35);
+			--gloss: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.18) 49%, rgba(255,255,255,0) 50%);
+			--glow: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 4px #062a57, 0 0 7px rgba(6,42,87,0.7);
+			--glow-title: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 5px #062a57, 0 0 9px rgba(6,42,87,0.8);
+		}
+	}
+/* end dark mode styling */
+
+/* start more contrast styling */
+	@media (prefers-contrast: more) {
+		:root {
+			--text: #ffffff;
+			--border: rgba(255,255,255,1);
+			--accent: #ffffff;
+			--bg: rgba(3,97,174,1);
+			--gradient-bottom: rgba(3,97,174,1);
+			--gradient-top: rgba(255,255,255,0);
+			--sky: rgba(3,97,174,1);
+			--frame: rgba(3,97,174,1);
+			--box: rgba(3,97,174,1);
+			--pill: rgba(3,97,174,1);
+			--pill-hover: rgba(3,97,174,1);
+			--pane: rgba(3,97,174,1);
+			--edge: 1px solid rgba(6,42,87,1);
+			--lift: inset 0 0 0 1px rgba(255,255,255,0.85), 0 3px 10px rgba(0,30,70,0.35);
+			--gloss: linear-gradient(transparent, transparent);
+			--glow: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 4px #062a57, 0 0 7px rgba(6,42,87,0.7);
+			--glow-title: 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 1px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 2px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 3px #062a57, 0 0 5px #062a57, 0 0 9px rgba(6,42,87,0.8);
+		}
+	}
+/* end more contrast styling */
+
+
+* { 
+	box-sizing: border-box;
+	scrollbar-color:  var(--border) var(--gradient-bottom);
+}
+html {
+	overscroll-behavior: none;
+}
+body {
+	padding: 10px;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	color: var(--text);
+	font-size: 1.0625rem;
+	font-weight: 500;
+	text-shadow: var(--glow);
+
+	/* page background pattern */
+	background-color: var(--gradient-top);
+	background-image: url(/assets/images/site/wallpaper.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+
+.container {
+	max-width: 68rem;
+	margin: 5vw auto 12px auto;
+	border: 2px solid rgba(6,42,87,0.85);
+	outline: none;
+	outline-offset: 4px;
+	border-radius: 18px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	gap: 10px;
+	box-shadow: 0 6px 24px rgba(0,30,70,0.45), inset 0 0 0 1px rgba(255,255,255,0.85);
+
+	/* container background pattern */
+	background-color: var(--frame);
+	background-image: linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0) 160px);
+}
+/* these control the column widths */
+.small { flex: 1 1 9%; }
+.large { flex: 1 1 65%; min-width: 0; overflow-wrap: break-word; }
+.full { flex: 1 1 100%; }
+.half { flex: 1 1 49%; }
+.home { display: flex; flex-wrap: wrap; gap: 5px; }
+
+
+li > a, .site-title, .post-link {
+	display: inline-block;
+	min-height: 44px;
+	padding-block: 10px;
+	max-width: 100%;
+	overflow-wrap: break-word;
+	baseline-source: first;
+}
+
+
+header {
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: auto; /* change banner height here*/
+	border: var(--edge);
+	border-radius: 16px;
+	position: relative;
+	background: var(--gloss), var(--sky);
+	box-shadow: var(--lift);
+	padding: 8px 12px;
+	text-align: center;
+}
+header span {
+	font-size: 2.5rem;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	margin: 10px;
+	font-weight: bold;
+	text-shadow: 1px 1px var(--text),
+		-1px 1px var(--text),
+		1px -1px var(--accent),
+		-1px -1px var(--accent);
+	color: var(--gradient-top);
+}
+
+
+nav {
+	border: var(--edge);
+	border-radius: 16px;
+	padding: 5px;
+	background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0) 120px), var(--sky);
+	box-shadow: var(--lift);
+}
+nav div {
+	text-align: left;
+	font-size: 1.25rem;
+	margin: 5px 5px 10px 5px;
+}
+nav a {
+	display: block;
+	margin: 5px;
+	background: linear-gradient(to right,var(--bg),var(--gradient-bottom));
+	border-radius: 5px;
+	padding: 0.6rem 0.75rem;
+	text-decoration: none;
+}
+nav a:link, nav a:visited { 
+	color: var(--text);
+}
+nav a:hover, nav a:focus {
+	background: linear-gradient(to right,var(--bg), var(--gradient-bottom), var(--gradient-top));
+}
+
+
+
+section {
+	border: var(--edge);
+	border-radius: 16px;
+	background: linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0) 90px), var(--box);
+	padding: 8px;
+	box-shadow: var(--lift);
+}
+
+
+footer {
+	text-align: center;
+	margin-bottom: 5vw;
+	font-size: 1.0625rem;
+}
+
+
+h1, h2, h3, h4, h5, h6, p  { 
+	margin: 5px;
+	line-height: 1.2;
+}
+h1 { 
+	font-size: 1.4rem;
+	letter-spacing: 2px;
+	font-weight: normal;
+	text-align: center;
+	border-bottom: 2px ridge var(--border);
+	padding-bottom: 5px;
+}
+h2 { 
+	font-size: 1.25rem;
+	font-weight: normal;
+	text-align: center;
+}
+h3 { 
+	font-size: 1.1rem;
+}
+h4 { 
+	font-size: 1rem;
+	color: var(--accent);
+	padding-left: 12px;
+}
+
+/* prevents overflow on smaller screens */
+img { max-width: 100%; height: auto; }
+pre { overflow-x: auto; }
+
+
+/* the compromise look (D8): the title banner, the glossy nav buttons, the title weights, the reading panes, the glows and the heading banner */
+.site-title { font-size: clamp(1.5rem, 4vw, 2.3rem); font-weight: 700; letter-spacing: 1px; line-height: 1.25; text-underline-offset: 6px; }
+.site-nav a { background: var(--gloss), var(--pill); border: var(--edge); border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 5px rgba(0,30,70,0.4); font-size: 1.1875rem; font-weight: 700; white-space: nowrap; margin: 8px 5px; }
+.site-nav a:hover, .site-nav a:focus { background: var(--gloss), var(--pill-hover); }
+.site-nav a img { vertical-align: middle; margin-right: 4px; }
+.title-bar-text h1, .title-bar-text h2, .title-bar-text h3 { font-weight: 700; }
+.title-bar-text h3 { font-size: 1.1875rem; }
+.window-body { border-radius: 8px; }
+.site-footer .wrapper { background: var(--pane); border: var(--edge); border-radius: 12px; padding: 8px 12px; }
+nav[aria-label="Breadcrumb"] { background: var(--pane); }
+nav[aria-label="Breadcrumb"] a { background: none; }
+.window-body nav { background: none; }
+.window-body nav a { background: rgba(0,0,0,0.12); border: 1px solid rgba(255,255,255,0.55); }
+.site-footer section, .window-body section { background: none; box-shadow: none; }
+.title-bar-text, .site-title, .post-list-heading { text-shadow: var(--glow-title); }
+.window-body, .site-footer .wrapper, nav[aria-label="Breadcrumb"], textarea { text-shadow: none; }
+.post-list-heading { display: block; margin: 2px 2px 12px; padding: 6px 10px; border: var(--edge); border-radius: 12px; background: var(--gloss), var(--sky); box-shadow: var(--lift); font-weight: 700; }
+
+/* the compromise look (D10): the latest projects as tiles in a row (L29) and the box rows (L30) */
+.home > section.full > ul.post-list, .window-body ul.post-list[role="list"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home > section.full > ul.post-list > li > .window, .window-body ul.post-list[role="list"] > li > .window { height: 100%; display: flex; flex-direction: column; }
+.home > section.full > ul.post-list > li > .window > .window-body, .window-body ul.post-list[role="list"] > li > .window > .window-body { flex: 1; }
+.home > section.full > ul.post-list h3, .window-body ul.post-list[role="list"] h3 { font-size: 1.1875rem; }
+.home > section.full > ul.post-list .window-body img, .window-body ul.post-list[role="list"] .window-body img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.home > section[aria-labelledby="wa-residents"] { flex: 2 1 300px; }
+.home > section.small { flex: 1 1 200px; }
+aside.home > section[aria-labelledby="sidebar-updates"] { flex: 1 1 100%; }
+aside.home > section[aria-labelledby="sidebar-updates"] ul.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0 16px;
+}
+
+/* the compromise look (D11): the categories as round bubbles (L31) */
+aside.home > section.full ul.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+}
+aside.home > section.full ul.post-list > li { width: 128px; }
+aside.home > section.full ul.post-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding-block: 4px;
+}
+aside.home > section.full ul.post-list img {
+  box-sizing: content-box;
+  width: 48px;
+  height: 48px;
+  padding: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.9);
+  background: radial-gradient(circle at 35% 28%, rgba(255,255,255,0.95) 0 10%, rgba(255,255,255,0.35) 30%, rgba(63,147,232,0.55) 62%, rgba(20,90,180,0.8) 100%);
+  box-shadow: inset 0 -6px 10px rgba(0,30,70,0.35), 0 3px 7px rgba(0,30,70,0.4);
+}
+
+
+a:hover, a:focus {
+	font-style: italic;
+	outline: 3px solid var(--text);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 2px var(--w7-el-c);
+}
+a:link, a:visited {
+	color: var(--accent);
+}

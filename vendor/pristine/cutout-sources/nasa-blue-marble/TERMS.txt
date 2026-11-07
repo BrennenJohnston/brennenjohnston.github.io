@@ -1,0 +1,17 @@
+Cut-out source: the Earth (NASA, Apollo 17, "The Blue Marble"), fetched 2026-09-23.
+NASA Image and Video Library item as17-148-22727:
+  manifest https://images-assets.nasa.gov/image/as17-148-22727/collection.json
+  original https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg
+  (4579 x 4579 px, 1,915,552 bytes; saved as as17-148-22727-orig.jpg)
+  metadata.json: title "View of the Earth seen by the Apollo 17 crew traveling
+  toward the moon", center JSC, date created 1972-12-07.
+Usage statement: https://www.nasa.gov/nasa-brand-center/images-and-media/
+  (saved as nasa-images-and-media-usage.html). It says: "NASA content ...
+  generally are not subject to copyright in the United States. You may use this
+  material for educational or informational purposes, including ... Internet Web
+  pages. This general permission extends to personal Web pages." and "NASA
+  content used in a factual manner that does not imply endorsement may be used
+  without needing explicit permission. NASA should be acknowledged as the
+  source of the material."
+Credit to use: "Image: NASA".
+Seen: the full Earth disc on black, Africa and Antarctica visible.

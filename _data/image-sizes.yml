@@ -1,0 +1,207 @@
+# The size in pixels of every project photo, so a page can hold each photo's space before it loads.
+# The project cards and project pages read it. A photo missing here still shows, just without the
+# held space; to add one, copy an entry below with the photo's path, width and height.
+"/assets/images/projects/braille-card-embosser/cover.png":
+  width: 720
+  height: 720
+"/assets/images/projects/braille-card-embosser/embosser-01.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/braille-card-embosser/embosser-02.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/braille-card-embosser/embosser-03.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/braille-card-embosser/embosser-04.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/braille-card-embosser/embosser-05.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/braille-card-embosser-v2/card-into-slit.jpg":
+  width: 1600
+  height: 1066
+"/assets/images/projects/braille-card-embosser-v2/card-rolled-back-out.jpg":
+  width: 1600
+  height: 1066
+"/assets/images/projects/braille-card-embosser-v2/finished-standing.jpg":
+  width: 1280
+  height: 853
+"/assets/images/projects/braille-card-embosser-v2/finished-with-embossed-card.jpg":
+  width: 1600
+  height: 1066
+"/assets/images/projects/braille-card-embosser-v2/overview-all-parts.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/braille-card-embosser-v2/rollers-lifted-out.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/braille-card-maker/braille-card-customizer.jpg":
+  width: 894
+  height: 538
+"/assets/images/projects/braille-charm-maker/braille-charm-bracelet.jpg":
+  width: 1600
+  height: 783
+"/assets/images/projects/braille-charm-maker/braille-charm-customizer.jpg":
+  width: 1600
+  height: 789
+"/assets/images/projects/braille-learning-board/braille-board.jpg":
+  width: 1024
+  height: 576
+"/assets/images/projects/braille-sign-maker/braille-sign-customizer.jpg":
+  width: 1600
+  height: 789
+"/assets/images/projects/braille-sign-maker/braille-sign-printed.jpg":
+  width: 1600
+  height: 903
+"/assets/images/projects/braille-sign-maker/braille-sign-slicer.jpg":
+  width: 1297
+  height: 887
+"/assets/images/projects/bumpmesh-texture-tests/bumpmesh-texture-tests.jpg":
+  width: 1600
+  height: 1143
+"/assets/images/projects/car-seat-unbuckle-aid/child-seat-unbuckler.jpg":
+  width: 1200
+  height: 1200
+"/assets/images/projects/click-me-switch/click-me-switch-01.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/click-me-switch/click-me-switch-02.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/click-me-switch/click-me-switch-03.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/click-me-switch/click-me-switch-04.jpg":
+  width: 1600
+  height: 1028
+"/assets/images/projects/click-me-switch/click-me-switch-05.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/click-me-switch/click-me-switch-06.jpg":
+  width: 702
+  height: 395
+"/assets/images/projects/click-me-switch/click-me-switch-07.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/door-button-reacher/door-entrance.jpg":
+  width: 1200
+  height: 1600
+"/assets/images/projects/door-button-reacher/door-reacher-full.jpg":
+  width: 901
+  height: 1600
+"/assets/images/projects/door-button-reacher/door-reacher-grip.jpg":
+  width: 901
+  height: 1600
+"/assets/images/projects/door-button-reacher/door-reacher-parts.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/echo-input-guard/echo-guard-fitting.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/echo-input-guard/echo-guard-installed.jpg":
+  width: 1600
+  height: 913
+"/assets/images/projects/echo-input-guard/echo-guard-masking.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/elevator-button-learning-tool/elevator-buttons-print.jpg":
+  width: 1024
+  height: 576
+"/assets/images/projects/fidget-rings/fidget-rings-2.jpg":
+  width: 1200
+  height: 1200
+"/assets/images/projects/fidget-rings/fidget-rings.jpg":
+  width: 1098
+  height: 1098
+"/assets/images/projects/lorenz-attractor/lorenz-attractor-01.jpg":
+  width: 1600
+  height: 1200
+"/assets/images/projects/lorenz-attractor/lorenz-attractor-02.jpg":
+  width: 1600
+  height: 1200
+"/assets/images/projects/lorenz-attractor/lorenz-attractor-03.jpg":
+  width: 1032
+  height: 774
+"/assets/images/projects/lorenz-attractor/lorenz-attractor-04.jpg":
+  width: 1600
+  height: 1200
+"/assets/images/projects/pedxarm/pedxarm-01.jpg":
+  width: 1600
+  height: 900
+"/assets/images/projects/pedxarm/pedxarm-02.jpg":
+  width: 1171
+  height: 1171
+"/assets/images/projects/pedxarm/pedxarm-03.jpg":
+  width: 1227
+  height: 1227
+"/assets/images/projects/picture-charm-customizer/svg-editor.jpg":
+  width: 1600
+  height: 775
+"/assets/images/projects/picture-charm-customizer/symbol-charm-bracelet.jpg":
+  width: 374
+  height: 239
+"/assets/images/projects/picture-charm-customizer/task-charm-bracelet.jpg":
+  width: 1600
+  height: 1200
+"/assets/images/projects/picture-charm-customizer/task-charm-strip.jpg":
+  width: 1600
+  height: 1200
+"/assets/images/projects/plug-puller/plug-puller-01.jpg":
+  width: 1600
+  height: 1143
+"/assets/images/projects/plug-puller/plug-puller-02.jpg":
+  width: 1600
+  height: 1143
+"/assets/images/projects/plug-puller/plug-puller-03.jpg":
+  width: 1600
+  height: 1143
+"/assets/images/projects/plug-puller/plug-puller-04.jpg":
+  width: 1600
+  height: 1143
+"/assets/images/projects/plug-puller/finished-one-sided-lamp-plug-medium.jpg":
+  width: 1200
+  height: 800
+"/assets/images/projects/plug-puller/finished-two-sided-heavy-duty-plug.jpg":
+  width: 1436
+  height: 957
+"/assets/images/projects/plug-puller/overview-two-sided-plates.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/plug-puller/stage-pull-heavy-duty-plug-side.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/plug-puller/stage-pull-standard-plug.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/plug-puller/stage-zip-ties-threaded.jpg":
+  width: 1600
+  height: 1067
+"/assets/images/projects/plug-puller-watap/plug-puller.jpg":
+  width: 1200
+  height: 1200
+"/assets/images/projects/tactile-maps/adhesive-mounting.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/tactile-maps/corrugated-base-templates.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/tactile-maps/hybrid-map-prototypes.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/tactile-maps/overview-map-cad.jpg":
+  width: 1439
+  height: 799
+"/assets/images/projects/tactile-maps/station-map-set.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/tactile-maps/symbol-key-cad.jpg":
+  width: 1600
+  height: 766
+"/assets/images/projects/tactile-maps/symbol-key-cards.jpg":
+  width: 1600
+  height: 901
+"/assets/images/projects/unbuckler-v2/unbuckler-v2-prototypes.jpg":
+  width: 1600
+  height: 1143

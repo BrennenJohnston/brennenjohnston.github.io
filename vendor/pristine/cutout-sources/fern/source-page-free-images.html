@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Free Image - fern leaf_fern_plant</title>
+
+
+<meta charset="UTF-8">
+<meta name="msvalidate.01" content="0ED37CE71FC67FE54AE63053C072874D" />
+<meta name="viewport" content="width=device-width">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="Free-Images.com">
+<meta name="application-name" content="Free-Images.com">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="description" content="Find fern leaf_fern_plant on free-images.com. Search Millions Public Domain/CC0 stock images, clip-art, historical photos and more. Commercial use OK.">
+<meta id="fburl" property="og:url" content="https://free-images.com/display/fern_leaf_fern_plant.html" />
+<meta property="fb:app_id" content="1909955945927981" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@pubdomainimages" />
+<meta name="og:type" content="article" />
+<meta id="fbtitle" property="og:title" content="Free-Images.com - Free Public Domain Images" />
+<meta id="fbdesc" property="og:description" content="Millions of beautiful free images without restrictions"/>
+<meta id="fbimg" property="og:image" content="https://free-images.com/md/3970/fern_leaf_fern_plant.jpg" />
+<meta id="fbimgw" property="og:image:width" content="767" />
+<meta id="fbimgh" property="og:image:height" content="512" />
+
+<link rel="stylesheet" href="/css/display.css">
+
+<script src="/j/jquery.min.js" async></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-79514875-2', 'auto');ga('send', 'pageview');
+</script>
+<script>
+var rdy=[],lo=false;function doscript(a){if(typeof a=="function"){(a)()}else{$("head").append('<script src="'+a+'"><\/script>')}}function jqrdy(){if(typeof $=="undefined"){setTimeout(jqrdy,10);return}$(document).ready(function(){lo=true;for(var a=0;a<rdy.length;a++){doscript(rdy[a])}})}jqrdy();function rdypush(a){if(!lo){rdy.push(a)}else{doscript(a)}};
+</script>
+
+
+<script>
+
+  //adj(d,128,256,2,-1,true,'.someclass'));
+  var sm,md,isret = (
+  	window.devicePixelRatio > 1 || (window.matchMedia && window.matchMedia("(-webkit-min-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)").matches)
+  );
+  if(isret){sm="/md/";md="/lg/"}
+  else {sm="/sm/";md="/md/"}
+
+  function adj(d,target,max,maxrows,maxperrow,sll,sel,enlarge){
+	var last=0,r=[],j,f=false;
+	d.find('.hdn').removeClass('hdn');
+	$('body').css('overflow-y','hidden');
+	var w=d.width(),dc;
+	$('body').css('overflow-y','auto');
+	if (sel) dc=d.children(sel);
+	else dc=d.children();
+	if (!max) max=640;
+	if(!maxperrow) maxperrow=-1;
+	if(!maxrows) maxrows=-1;
+	function rs(){
+		var rw=0,nh,onh;
+		var sh=target,margins=0;
+		for (j=0;j<r.length;j++) {
+			var im=r[j].find('img');
+			rw+=im.width(); 
+			margins+=r[j].outerWidth(true)-r[j].width();
+		}
+		nh=(w-margins)*sh/rw;
+		onh=nh;
+		if (!enlarge && nh>max) return false;
+		else if (nh>max)nh=max;
+		//console.log("nh=w*sh/rw",nh,w,sh,rw);
+		//console.log("Full width of all new divs should be "+ (w-margins) + " but is "+rw);
+		//console.log(r[0].attr('id') + ": " + nh);
+		for (j=0;j<r.length;j++) {
+			var im=r[j].find('img');
+			var nw=nh * im.attr('width')/sh;
+			if(onh>max) 
+				r[j].css({'height':nh+'px','overflow':'visible','box-shadow':'initial'});
+			else
+				r[j].css({'height':nh+'px','flex-basis':(nw - 10)+'px'});
+			im.attr('height',nh);
+			im.attr('width', nw );
+		}
+		//console.log(rw,nh,sh);
+		r=[];
+		f=true;
+		return true;
+	}
+	dc.css('height',target+'px');
+	var crw=0,cnt=0,nrows=0,mpr=-1;
+	/* because count doesnt match r.length after first row adjusted in rs(); effective minimum above max is 2 for first row
+		    and 3 for subsequent rows.  The gt max rule comes from having a very wide image as second result (see "windmill")
+		    Addendum: regardless of screen width, if image is first in a row and wider than screen at 256px, show just that image
+	*/
+	dc.each(function(){
+		var t=$(this), 
+		    im=t.find('img'),
+		    ow=target*im.width()/im.height();
+		t.css({'flex-basis':(ow-10)+'px','height':target+'px'});
+		im.attr('width',ow).attr('height',target);
+	});
+	dc.each(function(i){
+		var t=$(this),o=t.offset(),im=t.find('img');
+		/* I no longer trust that it will have the correct size which I just set
+			    so use ratio * height + margin to get what our initial width should be
+		*/
+		
+		var iw=target * im.width()/im.height()+(t.outerWidth(true)-t.width());
+		crw+=iw;
+		cnt++;
+		if (typeof maxperrow == 'array' ) {
+			if (maxperrow.length>0 && maxperrow.length-1 <= nrows) mpr=maxperrow[nrows];
+		} else mpr=maxperrow;
+		//cnt==2 means we have 1 image and are considering the second, but not in r yet
+		//if( (crw>w && !(cnt<3 && w>max)) || ( cnt==2 && crw-iw > w) )
+		if( (crw>w || ( mpr > 0 && r.length >= mpr )) && !( nrows > maxrows-1 && maxrows > 0 ) ){
+			var x=rs();
+			if(x) {
+				nrows++
+				crw=iw;
+				cnt=0;
+			}
+		}
+		last=o.left;
+		r.push(t);
+	});
+	//What to do with the last line, on front page, hide it, on results reformat it to look better
+	if(!f) {
+		rs();
+	}
+	else for (j=0;j<r.length;j++) {
+		if(sll)r[j].css({
+			'width':r[j].find('img').attr('width')+'px',
+			'overflow':'visible',
+			'box-shadow':'initial'
+		});
+		else r[j].addClass('hdn');
+	}
+  }
+
+var bw = (1024 * 1.50);
+var mw = (768 * 1.50);
+var rrows=4;
+var hash='3970493f5eebe6fe7d45501f6678e1f05a64257c';
+var imname="3970/fern_leaf_fern_plant.jpg";
+var pw=2000;
+var ph=1335;
+rdypush(function(){var a='ontouchstart'in document.documentElement;function b(){if($(window).height()>1100){$('.bsh.mw').css({'max-width':bw+'px','max-height':'1024px'}).removeClass('mw').addClass('bw');}else{$('.bsh.bw').css({'max-width':mw+'px','max-height':'768px'}).removeClass('bw').addClass('mw');}}var c=$('#rel');b();adj(c,128,256,rrows);$(window).resize(function(){b();adj(c,128,256,rrows);});$('#imwrp').hover(function(){$('#lkfg').fadeIn(200);},function(){$('#lkfg').fadeOut(200);});if($('#imwrp').is(':hover')){$('#lkfg').show();}$("#like").click(function(){$.get("/like?h="+hash,function(e){if(e=='ok'){$('#like').addClass('liked');var f=$('#nlike').text();if(f=='')f=1;else f=1+parseInt(f);$('#nlike').text(f);}else if(e=='del'){$('#like').removeClass('liked');var f=$('#nlike').text();if(f=='')f=0;else f=parseInt(f)-1;if(f<0)f=0;$('#nlike').text(f);}else if(e=='erl'||e=='nl'){alert("You need to be logged in to like or flag images");}else if(e=='erLimit'){alert("you've reached the current limit of likes/flags");}else if(e=='sdt'){alert("slow down Tex");}else{alert("Something went wrong, please try again ("+e+")");}});});$('#flag').click(function(){if($(this).hasClass('flagged')){$.get("/flag?h="+hash+"&r=del",function(e){if(e=='del'){$('#flag').removeClass('flagged');var f=$('#nflag').text();if(f=='')f=0;else f=parseInt(f)-1;if(f<0)f=0;$('#nflag').text(f);}else if(e=='nl'){alert("You need to be logged in to like or flag images");}else if(e=='sdt'){alert("slow down Tex");}else if(e=='erLimit'){alert("you've reached the current limit of likes/flags");}else{alert("Something went wrong, please try again");}});return;}$('#imwrp').append('<div id="fol" style="background-color: rgba(0, 0, 0, 0.33);position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:left;display: flex;align-items: center;justify-content: center;"><div class="dl"><table><tr><th colspan=3>Flag this photo as:</th></tr><tr><td><span id="I" class="fs">Inappropriate</span></td><td><span id="Q" class="fs">Very low quality</span></td><td><span id="N" class="fs">Not Public Domain</span></td></tr><tr><td></td><td><tr><td></td><td><td><span style="float:right" id="cn" class="fs">Cancel</span></td></tr></table></div></div>');$('.fs').click(function(){var e=$(this),f=e.attr('id');var g=$('#fol');if(f=='cn'){g.remove();return;}$.get("/flag?h="+hash+"&r="+f,function(h){if(h=='ok'){$('#flag').addClass('flagged');var i=$('#nflag').text();if(i=='')i=1;else i=1+parseInt(i);$('#nflag').text(i);g.html('<span style="display:inline-block;color:white;text-shadow 0 0 1px black;">File Flagged.  Thanks!</span>');setTimeout(function(){g.remove();},2000);return;}else if(h=='erLimit'){alert("you've reached the current limit of likes/flags");}else if(h=='erl'||h=='nl'){alert("You need to be logged in to like or flag images");}else if(h=='sdt'){alert("slow down Tex");}else{alert("Something went wrong, please try again: errcode "+h);}g.remove();});});});function d(e,f){var g=window.innerWidth,h=window.innerHeight;var i,j=hash,k=$('#fs1');$('#cont').hide();$('#ft').hide();var l=g/h;var m=pw/ph;if(!k.length){$('body').append('<div id="fs1"></div>');k=$('#fs1');}var n=0,o=0,p,q;if(l>m){p=(h*m);q=h;n=(g-(h*m))/2;}else{p=g;q=(g/m);o=(h-(g/m))/2;}var r='or';if(f)r='l';var s="url('/"+r+"/"+imname+"')";var t=p,u=q;k.css({width:'100%',height:'100%',position:'fixed','z-index':'2000',top:'0px',left:'0px','background-image':s,'background-size':p+'px '+q+'px','background-color':'black','background-repeat':'no-repeat','background-position':n+'px '+o+'px'});if(a)k.append('<span class="ico" style="top:5px;height:15px;width:30px;right:15px;font-size:50px;white-space:nowrap"><span title="Close Full View" class="fclose icon-close"> &#8855; </span></span>');else k.append('<span class="ico"><span title="Reset to Fit" class="fone icon-zoom-fit"> &#8857; </span><span title="Zoom In" class="fplus icon-zoom-in"> &#8853; </span><span title="Zoom out" class="fminus icon-zoom-out"> &#8854; </span><span title="Close Full View" class="fclose icon-close"> &#8855; </span></span>');function v(){$('#fs1').remove();$(window).off("popstate");$(document).off('keydown.pz');window.history.back();$('#cont').show();$('#ft').show();if(a){$('.topd').show();resetcur();}}$(".fclose").click(v);$(".fone").click(function(){p=t;q=u;y(1);});$(".fplus").click(function(){y(1.11111111111);});$(".fminus").click(function(){y(0.9);});if(window.location.hash!='#fs')history.pushState(null,"",window.location.pathname+"#fs");$(window).on("popstate",function(C){$('#fs1').remove();$('#cont').show();$('#ft').show();$(document).off('keydown.pz');$(window).off("popstate");if(a){$('.topd').show();resetcur();}});if(a){$('#fs1').css('position','absolute');$('.topd').hide();return;}function w(C){var D=C.which||C.keyCode;switch(D){case 107:case 187:y(1.11111111111);break;case 109:case 189:y(0.9);break;case 27:v();break;case 37:n+=10;x();break;case 39:n-=10;x();break;case 38:o+=10;x();break;case 40:o-=10;x();break;default:return true;}C.preventDefault();return false;}$(document).on('keydown.pz',w);function x(){if(g<p){if(n>0)n=0;else if(n<g-p)n=g-p;}else{n=(g-p)/2;}if(h<q){if(o>0)o=0;if(o<h-q)o=h-q;}else{o=(h-q)/2;}k.css({'background-position':n+'px '+o+'px'});}function y(C,D){if((p>(pw*4)&&C>1)||(p<g*.25&&C<1))return;var E=0.5,F=0.5;if(D&&D.clientX&&D.clientY){E=(D.clientX-n)/p;F=(D.clientY-o)/q;}n=n-((p*C-p)*E);o=o-((q*C-q)*F);p*=C;q*=C;x();k.css({'background-size':p+'px '+q+'px',});}var z=true,A=0,B=0;ups=.0037,downs=0.033333333334;k.on('mousewheel',function(C){var D=Math.abs(C.deltaY);if(!B)B=D;else B=0.9*B+0.1*D;if(z){A++;if(z===true){z="x";setTimeout(function(){z=false;ups=0.1111111111/A;downs=0.1/A;if(ups>0.11111111111){ups=0.111111111111;downs=0.1;}},50);}}if(B==1){if(C.deltaY>0){y(1.111111111111111,C);}else if(C.deltaY<0){y(0.90,C);}}else{if(C.deltaY>0){y(1+(ups*D/B),C);}else if(C.deltaY<0){y(1-(downs*D/B),C);}}return false;});k.on('mousedown',function(C){var D=C.pageX,E=C.pageY;k.on('mousemove',function(F){n+=F.pageX-D;o+=F.pageY-E;D=F.pageX;E=F.pageY;x();});k.on('mouseup',function(){k.off('mousemove');});return false;});return true;}if(window.location.hash=='#fs')d();window.addEventListener("hashchange",function(){if(window.location.hash==="#fs")d();});$(document).on('click','.dofs',function(){d();});});
+rdypush(function(){(function(){try{var a=document.cookie.match(/rp_user=([^;]+)/);if(!a)return;var b=JSON.parse(atob(a[1].replace(/-/g,"+").replace(/_/g,"/")));if(!b.name)return;document.getElementById("rpUserName").textContent=b.name;var c=document.getElementById("rpUserPic");if(b.picture)c.src=b.picture;else c.style.display="none";$("#lintab").removeClass('hdn');$("#louttab").addClass('hdn');}catch(d){}}());$("body").click(function(){$('.uexpand').addClass('hdn');});$(".usr").click(function(a){var b=$(this),c=$('.uexpand');a.stopImmediatePropagation();c.toggleClass('hdn');});$(".lin").click(function(){var a=$(this),b=encodeURIComponent(document.location.href.replace(/#.*/,""));var c={gg:"/apps/auth/oauth/google?returnTo=",fb:"/apps/auth/oauth/facebook?returnTo=",gh:"/apps/auth/oauth/github?returnTo="};a.closest("div").css("height","34px");$(".usr").removeClass("exp");window.location.href=c[a.attr("id")]+b;});$("#favs").click(function(){window.location.href="/favorites.html";});$("#logout").click(function(){document.cookie="rp_user=;Path=/;Max-Age=0";window.location.href="/apps/auth/logout";});$(".mclick").click(function(a){a.stopImmediatePropagation();$(".uexpand").addClass('hdn');});});
+</script>
+
+</head><body>
+
+<div id="tbar">
+<div style="height: 40px;display: flex;align-items: center;">
+<div id="tdiv">
+<a style="text-decoration:inherit;color:inherit" href="/">Free-Images<span style="font-size:20px">.com</span></a>
+</div>
+</div>
+
+<div id="ssp">
+    <form action="/search/">
+        <table class="bsh" style="position:relative;width:100%;padding:0px;;background-color:white;border:1px solid #999;border-radius:3px;"><tr>
+                <td style="width:100%;"><input type=text name=q placeholder="Find the perfect image" value="" style="box-sizing:border-box;min-width:150px;width:100%;height:30px;font:normal 18px arial,sans-serif;padding: 1px 3px;border: 2px solid #ccc;"></td>
+                <td><select id="cat" class='sb' name=cat><option SELECTED value="st">Stock</option><option value="bw">Black and White</option><option value="vr">Vector</option><option value="ar">Fine Art</option><option value="il">Illustrations</option><option value="al">All</option></select></td><td><button class="sb"><i class="fa fa-2x fa-search" aria-hidden="true"></i></button></td></tr></table>
+    </form>
+</div>
+
+<div id="mbox">
+<div id="ldiv" class="lbox">
+<div style="height:28px">
+<table id="lintab" class="hdn" style="width:100%%;height:100%%;">
+<tr class="usr">
+<td>
+<div class="lbox ubox">
+<img class="usr rpico" id="rpUserPic" src="">
+<span class="usr" id="rpUserName"></span>
+</div>
+</td>
+</tr>
+<tr class="uexpand hdn">
+<td style="padding:0">
+<div style="background-color:#f5f5f5;border:1px solid #CCC">
+<table id="lout" class="ln" style="width:100%%">
+<tr id="favs">
+<td class="rpico lico"><i class="fa fa-heart"></i></td>
+<td style="white-space:nowrap">My Favorites</td>
+</tr><tr id="logout">
+<td class="rpico lico"><i class="fa fa-sign-out"></i></td><td>Log out</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table id="louttab" class="lbox">
+<tr>
+<td></td>
+<td>
+<div class="usr lbox ubox" id="Login" style="height:34px;">Log in</div>
+</td>
+</tr>
+<tr class="uexpand hdn">
+<td colspan=2 style="padding:0">
+<div style="background-color:#f5f5f5;border:1px solid #CCC">
+<table class="ln sln" style="width:100%%">
+<tr id="gg" class="lin"><td><i class="fa fa-google" aria-hidden="true"></i></td><td>Google</td></tr>
+<tr id="fb" class="lin"><td><i class="fa fa-facebook" aria-hidden="true"></i></td><td>Facebook</td></tr>
+<tr id="gh" class="lin"><td><i class="fa fa-github" aria-hidden="true"></i></td><td>GitHub</td></tr>
+<tr onclick="window.location.href='/apps/auth/login?returnTo='+encodeURIComponent(location.href)"><td><i class="fa fa-user" aria-hidden="true"></i></td><td>Email/Password</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div id='cont'>
+<div id="opdiv" style="margin-bottom:5px">
+<div id="opin">
+<div id="imwrp" style="display:inline-block;margin:0 5px;position:relative;cursor:pointer;">
+<img class="bsh mw" data-hash="3970493f5eebe6fe7d45501f6678e1f05a64257c" style="width:100%;max-width:1151;max-height:768px" id="timg" src="/lg/3970/fern_leaf_fern_plant.jpg">
+<div id="lkfg" style="position:absolute; top:10px; left:10px;display:none;">
+<i id="flag" class="lkfg fa fa-flag fa-2x"><span id="nflag" class="nlkfg">0</span></i>
+<i id="like" class="lkfg fa fa-heart fa-2x"><span id="nlike"class="nlkfg">0</span></i>
+</div>
+</div>
+</div>
+</div>
+<div id="sb" style="margin-bottom:5px">
+<div id="sbi">
+<div class="dl dll dlt">
+<span class="dlh" style="width:100%;position:relative;display:inline-block;">Download:
+<span class="dofs" style="cursor:pointer;font-size:0.8em;width:100%;position:relative;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">fern_leaf_fern_plant.jpg</span>
+</span> <table cell-spacing=0>
+<tr>
+<td>Tiny</td>
+<td><small>192x128</small></td>
+<td><a class="view" href="/tn/3970/fern_leaf_fern_plant.jpg">View</a></td>
+<td><a class="down" download="fern_leaf_fern_plant.jpg" href="/tn/3970/fern_leaf_fern_plant.jpg">Download</a></td>
+</tr>
+<tr>
+<td>Small</td>
+<td><small>384x256</small></td>
+<td><a class="view" href="/sm/3970/fern_leaf_fern_plant.jpg">View</a></td>
+<td><a class="down" download="fern_leaf_fern_plant.jpg" href="/sm/3970/fern_leaf_fern_plant.jpg">Download</a></td>
+</tr>
+<tr>
+<td>Medium</td>
+<td><small>767x512</small></td>
+<td><a class="view" href="/md/3970/fern_leaf_fern_plant.jpg">View</a></td>
+<td><a class="down" download="fern_leaf_fern_plant.jpg" href="/md/3970/fern_leaf_fern_plant.jpg">Download</a></td>
+</tr>
+<tr>
+<td>Large</td>
+<td><small>1534x1024</small></td>
+<td><a class="view" href="/lg/3970/fern_leaf_fern_plant.jpg">View</a></td>
+<td><a class="down" download="fern_leaf_fern_plant.jpg" href="/lg/3970/fern_leaf_fern_plant.jpg">Download</a></td>
+</tr>
+<tr>
+<td>Original</td><td><small>2000x1335</small></td>
+<td><a class="view" href="/or/3970/fern_leaf_fern_plant.jpg">View</a></td>
+<td><a class="down" download="fern_leaf_fern_plant.jpg" href="/or/3970/fern_leaf_fern_plant.jpg">Download</a></td>
+</tr></table></div>
+<script>
+var q = "fern green plant";
+var qalt="fern leaf fern plant", dldiv='"\n                    <div class=\"dl dlt\">\n                            <span class=\"dlh\" style=\"width:100%;position:relative;display:inline-block;\">\n                                    <span class=\"dofs\">View Full Screen</span><br>\n                                    <span class=\"dofs\" style=\"cursor:pointer;font-size:0.8em;width:100%;position:relative;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;\">fern_leaf_fern_plant.jpg</span>\n                            </span> <table cell-spacing=0>\n<tr>\n<td>Tiny</td>\n<td><small>192x128</small></td>\n<td><a class=\"view\" href=\"/tn/3970/fern_leaf_fern_plant.jpg\">View</a></td>\n<td><a class=\"down\" download=\"fern_leaf_fern_plant.jpg\" href=\"/tn/3970/fern_leaf_fern_plant.jpg\">Download</a></td>\n</tr>\n<tr>\n<td>Small</td>\n<td><small>384x256</small></td>\n<td><a class=\"view\" href=\"/sm/3970/fern_leaf_fern_plant.jpg\">View</a></td>\n<td><a class=\"down\" download=\"fern_leaf_fern_plant.jpg\" href=\"/sm/3970/fern_leaf_fern_plant.jpg\">Download</a></td>\n</tr>\n<tr>\n<td>Medium</td>\n<td><small>767x512</small></td>\n<td><a class=\"view\" href=\"/md/3970/fern_leaf_fern_plant.jpg\">View</a></td>\n<td><a class=\"down\" download=\"fern_leaf_fern_plant.jpg\" href=\"/md/3970/fern_leaf_fern_plant.jpg\">Download</a></td>\n</tr>\n<tr>\n<td>Large</td>\n<td><small>1534x1024</small></td>\n<td><a class=\"view\" href=\"/lg/3970/fern_leaf_fern_plant.jpg\">View</a></td>\n<td><a class=\"down\" download=\"fern_leaf_fern_plant.jpg\" href=\"/lg/3970/fern_leaf_fern_plant.jpg\">Download</a></td>\n</tr>\n<tr>\n<td>Original</td><td><small>2000x1335</small></td>\n<td><a class=\"view\" href=\"/or/3970/fern_leaf_fern_plant.jpg\">View</a></td>\n<td><a class=\"down\" download=\"fern_leaf_fern_plant.jpg\" href=\"/or/3970/fern_leaf_fern_plant.jpg\">Download</a></td>\n</tr></table></div>"';  //dldiv shows up when clicking on image, as well as always on right
+var ib=false;
+rdypush(function(){$('body').on('click',function(a){var b=$(a.target);var c=$('#ol'),d=$('#kwcar');if(c.length)$('#ol').remove();else if($(a.target).is('#imwrp img'))b.closest('div').append('<div id="ol" style="background-color: rgba(0, 0, 0, 0.33);position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:left;display: flex;align-items: center;justify-content: center;">'+dldiv+'</div>');if($(a.target).is('#kw span,#kw span i')){d.toggleClass('fa-caret-up fa-caret-down');if(!d.hasClass('fa-caret-down'))$('#kw').removeClass('col');else $('#kw').addClass('col');}});});
+</script>
+<div id="wn" class="bwp"><i class="fa fa-2x fa-camera" aria-hidden="true"></i> This image was acquired from 
+<span class="tcase"><a target="_blank" href="https://pixabay.com/en/fern-leaf-fern-plant-green-leaf-1713775/">Pixabay</a>.
+</span>  It was marked as Public Domain or CC0 and is free to use. To verify, go to the source and check the information there.
+</div>
+<div id="mi" class="bwp">
+Looking for more info about this image?<br><span class="tcase">Try a <a target=_blank href="https://www.google.com/searchbyimage?&image_url=https%3a%2f%2ffree-images.com%2fsm%2f3970%2ffern_leaf_fern_plant.jpg&client=app">Google Reverse Image Search</a></span> for it.
+</div>
+<div id="kw" class="bwp col">
+<span style="color:#699">Keywords from Image Description:</span><span style="float:right;"><i id="kwcar" class="fa fa-lg fa-caret-down" aria-hidden="true"></i></span>
+<div style="margin:0 15px;">
+fern leaf fern plant green leaf filigree fern leaf wood texture text freedom copy space brown close
+</div>
+</div>
+<div id="shold"></div>
+</div>
+</div>
+<div id="rrdiv">
+<div id="rrin">
+<div class="msg">Related Images</div>
+<div id="rel"><div title="fern_plant_nature_fern_0" class="rr bsh hdn" data-ow="240"><a href="/display/fern_plant_nature_fern_0.html"><img height=128 width=240 id="timg" src="1d8ea216413a42dafffe32f06aa7224cca9c7921/tn//fern_plant_nature_fern_0.jpg" srcset="/tn/1d8e/fern_plant_nature_fern_0.jpg 1x,/sm/1d8e/fern_plant_nature_fern_0.jpg 1.5x"></a></div><div title="fern_plant_nature_fern" class="rr bsh hdn" data-ow="85"><a href="/display/fern_plant_nature_fern.html"><img height=128 width=85 id="timg" src="895c9e4d35d0e61e59e317e9717901e4dc998759/tn//fern_plant_nature_fern.jpg" srcset="/tn/895c/fern_plant_nature_fern.jpg 1x,/sm/895c/fern_plant_nature_fern.jpg 1.5x"></a></div><div title="fern_small_fern_green_1" class="rr bsh hdn" data-ow="192"><a href="/display/fern_small_fern_green_1.html"><img height=128 width=192 id="timg" src="23f3345bce9c1ddec629dd5a76916e1e8392fa24/tn//fern_small_fern_green_1.jpg" srcset="/tn/23f3/fern_small_fern_green_1.jpg 1x,/sm/23f3/fern_small_fern_green_1.jpg 1.5x"></a></div><div title="fern_small_fern_green_3" class="rr bsh hdn" data-ow="224"><a href="/display/fern_small_fern_green_3.html"><img height=128 width=224 id="timg" src="91e3688f5ad2124eedb2ec45e83d5217dd73a706/tn//fern_small_fern_green_3.jpg" srcset="/tn/91e3/fern_small_fern_green_3.jpg 1x,/sm/91e3/fern_small_fern_green_3.jpg 1.5x"></a></div><div title="fern_small_fern_green_2" class="rr bsh hdn" data-ow="192"><a href="/display/fern_small_fern_green_2.html"><img height=128 width=192 id="timg" src="425e64cec0751e94233d411f969ac087c79f0f31/tn//fern_small_fern_green_2.jpg" srcset="/tn/425e/fern_small_fern_green_2.jpg 1x,/sm/425e/fern_small_fern_green_2.jpg 1.5x"></a></div><div title="fern_small_fern_green" class="rr bsh hdn" data-ow="85"><a href="/display/fern_small_fern_green.html"><img height=128 width=85 id="timg" src="2916f8fd3c211105066557f47da448f3ef150451/tn//fern_small_fern_green.jpg" srcset="/tn/2916/fern_small_fern_green.jpg 1x,/sm/2916/fern_small_fern_green.jpg 1.5x"></a></div><div title="fern_green_plant_wood" class="rr bsh hdn" data-ow="85"><a href="/display/fern_green_plant_wood.html"><img height=128 width=85 id="timg" src="b50eb86635ac73ce8f9a642074ddeed58e8f7bac/tn//fern_green_plant_wood.jpg" srcset="/tn/b50e/fern_green_plant_wood.jpg 1x,/sm/b50e/fern_green_plant_wood.jpg 1.5x"></a></div><div title="fern_small_fern_green_0" class="rr bsh hdn" data-ow="85"><a href="/display/fern_small_fern_green_0.html"><img height=128 width=85 id="timg" src="58580ad0f925d2ec1ea3b7b73a5fa83fe0e7d402/tn//fern_small_fern_green_0.jpg" srcset="/tn/5858/fern_small_fern_green_0.jpg 1x,/sm/5858/fern_small_fern_green_0.jpg 1.5x"></a></div><div title="fern_green_leaf_fern" class="rr bsh hdn" data-ow="192"><a href="/display/fern_green_leaf_fern.html"><img height=128 width=192 id="timg" src="56d7f21c5c071887a4bd781189a1d08023f97b9d/tn//fern_green_leaf_fern.jpg" srcset="/tn/56d7/fern_green_leaf_fern.jpg 1x,/sm/56d7/fern_green_leaf_fern.jpg 1.5x"></a></div><div title="fern_green_plant_wood_0" class="rr bsh hdn" data-ow="85"><a href="/display/fern_green_plant_wood_0.html"><img height=128 width=85 id="timg" src="3b2c3854712a3402d07c1c19463fe70e2593c272/tn//fern_green_plant_wood_0.jpg" srcset="/tn/3b2c/fern_green_plant_wood_0.jpg 1x,/sm/3b2c/fern_green_plant_wood_0.jpg 1.5x"></a></div><div title="fern_fiddlehead_green_plant_0" class="rr bsh hdn" data-ow="192"><a href="/display/fern_fiddlehead_green_plant_0.html"><img height=128 width=192 id="timg" src="9d2406df7dd25444912643c478a6ade923484f59/tn//fern_fiddlehead_green_plant_0.jpg" srcset="/tn/9d24/fern_fiddlehead_green_plant_0.jpg 1x,/sm/9d24/fern_fiddlehead_green_plant_0.jpg 1.5x"></a></div><div title="fern_brake_plant_green_0" class="rr bsh hdn" data-ow="192"><a href="/display/fern_brake_plant_green_0.html"><img height=128 width=192 id="timg" src="d2797b914ec9d53bdf9f4ad64e432d8a0434a1e8/tn//fern_brake_plant_green_0.jpg" srcset="/tn/d279/fern_brake_plant_green_0.jpg 1x,/sm/d279/fern_brake_plant_green_0.jpg 1.5x"></a></div><div title="dsc06100_3_8" class="rr bsh hdn" data-ow="192"><a href="/display/dsc06100_3_8.html"><img height=128 width=192 id="timg" src="ad7170ffe1f97fde2a6365c937a44879dcaebbaf/tn//dsc06100_3_8.jpg" srcset="/tn/ad71/dsc06100_3_8.jpg 1x,/sm/ad71/dsc06100_3_8.jpg 1.5x"></a></div><div title="fern_fiddlehead_green_plant_2" class="rr bsh hdn" data-ow="85"><a href="/display/fern_fiddlehead_green_plant_2.html"><img height=128 width=85 id="timg" src="4a1b9ef87d05f6e9cec96c7e25a838c4d0f3e7e0/tn//fern_fiddlehead_green_plant_2.jpg" srcset="/tn/4a1b/fern_fiddlehead_green_plant_2.jpg 1x,/sm/4a1b/fern_fiddlehead_green_plant_2.jpg 1.5x"></a></div><div title="fern_green_forrest_garden_2" class="rr bsh hdn" data-ow="192"><a href="/display/fern_green_forrest_garden_2.html"><img height=128 width=192 id="timg" src="8db0450ddb4343fba263c8f1d4c9d731354808b4/tn//fern_green_forrest_garden_2.jpg" srcset="/tn/8db0/fern_green_forrest_garden_2.jpg 1x,/sm/8db0/fern_green_forrest_garden_2.jpg 1.5x"></a></div><div title="k_c3_b6nigsfarn_fern" class="rr bsh hdn" data-ow="192"><a href="/display/k_c3_b6nigsfarn_fern.html"><img height=128 width=192 id="timg" src="94041d92ab9b6bd9c5592768689f8cf605a3e53d/tn//k_c3_b6nigsfarn_fern.jpg" srcset="/tn/9404/k_c3_b6nigsfarn_fern.jpg 1x,/sm/9404/k_c3_b6nigsfarn_fern.jpg 1.5x"></a></div><div title="fern_bracken_leaf_detail" class="rr bsh hdn" data-ow="96"><a href="/display/fern_bracken_leaf_detail.html"><img height=128 width=96 id="timg" src="70bca8d557f5cb58ad1b147aae8dad6ee3d9c214/tn//fern_bracken_leaf_detail.jpg" srcset="/tn/70bc/fern_bracken_leaf_detail.jpg 1x,/sm/70bc/fern_bracken_leaf_detail.jpg 1.5x"></a></div><div title="green_fern_leaves" class="rr bsh hdn" data-ow="191"><a href="/display/green_fern_leaves.html"><img height=128 width=191 id="timg" src="3b54b5b26b66a1033c747575454d4b07ced869c1/tn//green_fern_leaves.jpg" srcset="/tn/3b54/green_fern_leaves.jpg 1x,/sm/3b54/green_fern_leaves.jpg 1.5x"></a></div><div title="leaf_fern_green_nature" class="rr bsh hdn" data-ow="192"><a href="/display/leaf_fern_green_nature.html"><img height=128 width=192 id="timg" src="f6e4f47fe4ef340dc696e72e2ad76f4874a2a5d6/tn//leaf_fern_green_nature.jpg" srcset="/tn/f6e4/leaf_fern_green_nature.jpg 1x,/sm/f6e4/leaf_fern_green_nature.jpg 1.5x"></a></div><div title="fern_green_bright_green" class="rr bsh hdn" data-ow="192"><a href="/display/fern_green_bright_green.html"><img height=128 width=192 id="timg" src="a43cd4b1a3ac64306b630586f7b8cda15ea05c8e/tn//fern_green_bright_green.jpg" srcset="/tn/a43c/fern_green_bright_green.jpg 1x,/sm/a43c/fern_green_bright_green.jpg 1.5x"></a></div><div title="green_leaves_leaf_trees" class="rr bsh hdn" data-ow="192"><a href="/display/green_leaves_leaf_trees.html"><img height=128 width=192 id="timg" src="0432f665cd3e1c0833418dac467b2bb0c83b7fcb/tn//green_leaves_leaf_trees.jpg" srcset="/tn/0432/green_leaves_leaf_trees.jpg 1x,/sm/0432/green_leaves_leaf_trees.jpg 1.5x"></a></div><div title="fern_leaves_plan_green" class="rr bsh hdn" data-ow="128"><a href="/display/fern_leaves_plan_green.html"><img height=128 width=128 id="timg" src="7e7a776bce3c2e4aa021072f307464b818a83abd/tn//fern_leaves_plan_green.jpg" srcset="/tn/7e7a/fern_leaves_plan_green.jpg 1x,/sm/7e7a/fern_leaves_plan_green.jpg 1.5x"></a></div><div title="fern_forest_nature_green_1" class="rr bsh hdn" data-ow="207"><a href="/display/fern_forest_nature_green_1.html"><img height=128 width=207 id="timg" src="e61d9a6f3073c2f22b1fa17fbe2ea74d5403ccc4/tn//fern_forest_nature_green_1.jpg" srcset="/tn/e61d/fern_forest_nature_green_1.jpg 1x,/sm/e61d/fern_forest_nature_green_1.jpg 1.5x"></a></div><div title="fern_plant_green_nature_4" class="rr bsh hdn" data-ow="191"><a href="/display/fern_plant_green_nature_4.html"><img height=128 width=191 id="timg" src="40fd44ec64bc26713d3274221121255db500e28b/tn//fern_plant_green_nature_4.jpg" srcset="/tn/40fd/fern_plant_green_nature_4.jpg 1x,/sm/40fd/fern_plant_green_nature_4.jpg 1.5x"></a></div><div title="dsc_0232_1" class="rr bsh hdn" data-ow="192"><a href="/display/dsc_0232_1.html"><img height=128 width=192 id="timg" src="1f246ffa019f569db7f40f727ac7ac5bc1e58adf/tn//dsc_0232_1.jpg" srcset="/tn/1f24/dsc_0232_1.jpg 1x,/sm/1f24/dsc_0232_1.jpg 1.5x"></a></div><div title="tribe_bark_leaf_green" class="rr bsh hdn" data-ow="191"><a href="/display/tribe_bark_leaf_green.html"><img height=128 width=191 id="timg" src="e7d3ff5f60b9a56c18628327a116c3685f7c7bf7/tn//tribe_bark_leaf_green.jpg" srcset="/tn/e7d3/tribe_bark_leaf_green.jpg 1x,/sm/e7d3/tribe_bark_leaf_green.jpg 1.5x"></a></div><div title="dsc0300_6" class="rr bsh hdn" data-ow="193"><a href="/display/dsc0300_6.html"><img height=128 width=193 id="timg" src="ab779d3aba8b3bdb557051f7d4d69eed663afba3/tn//dsc0300_6.jpg" srcset="/tn/ab77/dsc0300_6.jpg 1x,/sm/ab77/dsc0300_6.jpg 1.5x"></a></div><div title="fern_plant_growth_garden" class="rr bsh hdn" data-ow="192"><a href="/display/fern_plant_growth_garden.html"><img height=128 width=192 id="timg" src="1989c3f652afd99a2fb57565a0d52be944dfcb1a/tn//fern_plant_growth_garden.jpg" srcset="/tn/1989/fern_plant_growth_garden.jpg 1x,/sm/1989/fern_plant_growth_garden.jpg 1.5x"></a></div><div title="green_leaves_tropic_close_1" class="rr bsh hdn" data-ow="192"><a href="/display/green_leaves_tropic_close_1.html"><img height=128 width=192 id="timg" src="88f2b77c1de66625cb1be1604a67d0c5901b9557/tn//green_leaves_tropic_close_1.jpg" srcset="/tn/88f2/green_leaves_tropic_close_1.jpg 1x,/sm/88f2/green_leaves_tropic_close_1.jpg 1.5x"></a></div><div title="fern_plant_green_leaf_0" class="rr bsh hdn" data-ow="192"><a href="/display/fern_plant_green_leaf_0.html"><img height=128 width=192 id="timg" src="840e00e9677063694f78bbfe189c4b87d11d1de3/tn//fern_plant_green_leaf_0.jpg" srcset="/tn/840e/fern_plant_green_leaf_0.jpg 1x,/sm/840e/fern_plant_green_leaf_0.jpg 1.5x"></a></div><div title="public_domain_pixabay_digionbew_34" class="rr bsh hdn" data-ow="192"><a href="/display/public_domain_pixabay_digionbew_34.html"><img height=128 width=192 id="timg" src="e54c59b944cead734f42aa83cfb7b64de01df94b/tn//public_domain_pixabay_digionbew_34.jpg" srcset="/tn/e54c/public_domain_pixabay_digionbew_34.jpg 1x,/sm/e54c/public_domain_pixabay_digionbew_34.jpg 1.5x"></a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="ft">
+<span id="cnot">Page <i class="fa fa-copyright"></i> 2026 Free-images.com. All images are Public Domain</span>
+</div>
+</body></html>

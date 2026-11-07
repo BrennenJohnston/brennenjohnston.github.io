@@ -1,0 +1,8 @@
+# The borrowed files under vendor/pristine/ must stay byte for byte as they
+# were fetched (their SHA-256 values are recorded), and so must the font and
+# icon files and licenses copied from them into assets/fonts/ and
+# assets/images/icons/, so git must never convert their line endings on this
+# Windows machine or any other.
+vendor/pristine/** -text
+assets/fonts/** -text
+assets/images/icons/** -text

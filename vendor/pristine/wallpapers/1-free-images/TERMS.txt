@@ -1,0 +1,19 @@
+Wallpaper candidate 1 (Free-Images.com), fetched 2026-09-23.
+Image page: https://free-images.com/display/landscape_green_mountain_hill.html
+  (saved beside this file as source-page-free-images.html)
+The page says: "Pixabay | It was marked as Public Domain or CC0 and is free to
+use. To verify, go to the source and check the information there." and
+"2026 Free-images.com. All images are Public Domain".
+Original file: https://free-images.com/or/b6aa/landscape_green_mountain_hill.jpg
+  (2991 x 1910 px, 742,742 bytes; EXIF camera "Canon EOS REBEL T3").
+Source named by the page: https://pixabay.com/en/landscape-green-mountain-hill-658056/
+  Checking the Pixabay page was NOT RUN: Pixabay answered HTTP 403 to the
+  scripted fetch (the response is saved as pixabay-page-403-response.html), and
+  the Internet Archive holds no capture of that address in three URL forms.
+  The photographer's name is therefore not known from a page read here.
+Owner rule FD-7 lists Free-Images.com as an allowed source with its page saved.
+Resized copy: wallpaper-1-free-images-1920.jpg (1920 x 1226, JPEG quality 80,
+147,982 bytes), made with Pillow 11.3.0 (LANCZOS, optimize, progressive).
+Seen in the picture: a green hill on the right under a blue sky with large
+white cumulus clouds, a strip of yellow flowers along the bottom. No people,
+no buildings, no logos.

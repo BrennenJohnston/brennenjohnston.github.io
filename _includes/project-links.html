@@ -1,0 +1,10 @@
+{% if page.links and page.links.size > 0 %}
+<section class="full" aria-labelledby="get-the-files">
+<h2 id="get-the-files">Get the files</h2>
+<ul role="list">
+{%- for link in page.links -%}
+<li><a href="{{ link.url }}" rel="noopener">{{ link.label }}</a></li>
+{%- endfor -%}
+</ul>
+</section>
+{% endif %}

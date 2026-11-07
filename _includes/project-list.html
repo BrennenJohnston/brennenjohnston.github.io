@@ -1,0 +1,9 @@
+<h2 id="{{ include.id }}">{{ include.heading }}</h2>
+{% if include.description %}<p>{{ include.description }}</p>{% endif %}
+{% if include.projects.size > 0 %}
+<ul class="post-list" role="list">
+{%- for p in include.projects -%}
+<li>{% include project-card.html project=p %}</li>
+{%- endfor -%}
+</ul>
+{% elsif include.empty %}<p>{{ include.empty }}</p>{% endif %}

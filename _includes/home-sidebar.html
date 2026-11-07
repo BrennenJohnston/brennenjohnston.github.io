@@ -1,0 +1,35 @@
+<aside class="home full">
+  <section class="small" aria-labelledby="sidebar-updates">
+    <div class="window glass active">
+      <div class="title-bar">
+        <div class="title-bar-text"><h2 id="sidebar-updates">Project update log</h2></div>
+      </div>
+      <div class="window-body has-space">
+        {%- assign updates = site.projects | sort: "date" | reverse -%}
+        <ul class="post-list" role="list">
+          {%- for post in updates limit: 6 -%}
+          <li>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="full">
+    <div class="window glass active">
+      <div class="title-bar">
+        <div class="title-bar-text"><h2>Browse by category</h2></div>
+      </div>
+      <div class="window-body has-space">
+        <ul class="post-list" role="list">
+          {%- for c in site.data.categories -%}
+          <li><a class="post-link" href="{{ c.url | relative_url }}"><img src="{{ c.icon | relative_url }}" alt="" width="48" height="48"> {{ c.name | escape }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </section>
+</aside>

@@ -1,0 +1,206 @@
+/*! 7.css v0.21.1 - https://khang-nd.github.io/7.css */
+/* Adapted copy of 7.css v0.21.1 (dist/7.css) by Khang Nguyen Duy.
+   Source: https://unpkg.com/7.css@0.21.1/dist/7.css, fetched 2026-09-23; the untouched file is vendor/pristine/7css/7.css.
+   License: MIT, Copyright (c) 2021 Khang Nguyen Duy; the full text is vendor/pristine/7css/LICENSE.
+   Formatting: a line break after every closing brace and after every semicolon that ends a declaration.
+   Kept, unchanged apart from the notes below: the banner comment; the 2 :root variable blocks the kept rules use; the button and [role=button] rules; .window, .window with .window:before, .window:before, .window-body, .window-body.has-space, .window-body pre, .window.glass:before, .window.glass:after, .window.glass>.title-bar, .window>.title-bar, .title-bar, .title-bar-text.
+   Deleted, 285 statements in all:
+     the [role=tooltip] rules (7);
+     the label[role=button] rules (2);
+     the pulse-anim keyframes (@-webkit-keyframes and @keyframes) (2);
+     the checkbox rules (9);
+     the details and summary rules (5);
+     the .combobox rules (7);
+     the single select rules (5);
+     the fieldset and .group rules (4);
+     the listbox and multiple select rules (6);
+     the table rules (13);
+     the menu, menubar and menuitem rules (30);
+     the progress bar rules and their keyframes (8);
+     the radio button rules (8);
+     the .has-scrollbar rules (34);
+     the search box rules (12);
+     the range slider rules (26);
+     the .loader and .spinner rules (2);
+     the tab rules (12);
+     the text input and textarea rules (5);
+     the .tree-view rules (11);
+     the link and text style rules (a, .instruction, .header) (8);
+     the window footer rules (.window footer, .window-footer) (2);
+     the .window.is-bright rules (3);
+     the .window fieldset rule (1);
+     the dialog window rules (.window[role=dialog]) (2);
+     the title bar control button rules (.title-bar-controls, and the .title-bar.active and .window.active control rules) (45);
+     the .status-bar rules (3);
+     the source map comment (sourceMappingURL=7.css.map, a file not shipped) (1);
+     the :root variable blocks of the deleted components (12);
+   Deleted inside kept rules, because nothing on this site moves: 9 declarations:
+     transition:opacity .3s (in [role=button]:after,[role=button]:before,button:after,button:before);
+     transition:border-color .3s (in [role=button]:not(:disabled):hover,button:not(:disabled):hover);
+     transition:opacity .3s (in [role=button]:not(:disabled):hover:before,button:not(:disabled):hover:...);
+     transition:border-color 1s linear (in [role=button]:not(:disabled):not(:hover),button:not(:disabled):not(:ho...);
+     transition:opacity 1s linear (in [role=button]:not(:disabled):not(:hover):before,button:not(:disabled):...);
+     transition:border-color .3s (in [role=button]:not(:disabled).active,[role=button]:not(:disabled):activ...);
+     transition:opacity .3s (in [role=button]:not(:disabled).active:after,[role=button]:not(:disabled)...);
+     -webkit-animation:pulse-anim 1s ease infinite alternate (in [role=button].default,[role=button].focused,[role=button]:focus,button...);
+     animation:pulse-anim 1s ease infinite alternate (in [role=button].default,[role=button].focused,[role=button]:focus,button...);
+   Changed values:
+     --w7-font from 9pt "Segoe UI","SegoeUI","Noto Sans",sans-serif to 500 1.0625rem "M PLUS Rounded 1c", sans-serif (17 px at weight 500, the body text size and weight chosen for this site);
+     --w7-w-bg from #4580c4 to rgba(63,147,232,0.6) (a first sky blue for the glass; the final value is set for contrast later);
+     --w7-surface from #f0f0f0 to transparent (B1: the only rule using it is .window-body, and the site's white text measured 1.14:1 on the light grey; now the body shows the glass; the final value is set for contrast later);
+   Changed in D1 (contrast; the owner chose this deep blue set at WEB-Q30, 2026-09-24):
+     --w7-w-bg from rgba(63,147,232,0.6) to rgba(3,97,174,0.9); --w7-w-bd from #000000b3 to #ffffffb3 (the window outline, the body border and the window shadow);
+     --w7-w-grad's stops from #ffffff66, #0000001a, #ffffff33 to #ffffff0d, #0000001a, #ffffff08; the .window:before highlight stripe from #ffffffb3 to #ffffff0d; .window.glass:before opacity from .6 to .8;
+     --w7-w-glass: the two corner glints from #fff5 to #fff0, and the light streaks from #aaa2 to #aaa1 and from #bbb2 to #bbb1;
+     .title-bar-text color from #000 to #fff, and its eight text-shadow glows from #fff to #000; the button focus outline from 1px dotted #000 to 1px dotted #fff.
+   Measured in D1 by the round's contrast.py (ten wallpaper samples; text shadows ignored, so the numbers are a lower bound), the lowest ratio of each pair on this file's surfaces:
+     body text and links on a window body 5.20:1; title-bar text and card title links 4.88:1; window outline on the frame 3.89:1, on a box 3.60:1; the code box's edge 5.20:1.
+   Changed in D2 (round WEB-R1, 2026-09-24), the button focus rule: outline from 1px dotted #fff to 3px solid #fff; outline-offset from -4px to 2px;
+     box-shadow given a second value, 0 0 0 2px var(--w7-el-c), a black halo inside the ring (the site has no button today; links use the same ring from cyanobacteria.css).
+   Added in D3 (round WEB-R1, 2026-09-24), at the end: a copy of --w7-w-bg with alpha 1 inside a more-contrast media wrapper (the wrapper copied from cyanobacteria.css's
+     dark mode block), so the glass windows are opaque when the reader asks for more contrast.
+   Changed in D8 (round WEB-R1, 2026-09-25; the compromise look A the owner chose at WEB-Q38, with two-tone edges, WEB-Q48):
+     --w7-surface from transparent to rgba(3,97,174,0.9) (the reading panes: every window body is a deep blue pane under white text);
+     --w7-w-bd from #ffffffb3 back to 7.css's own #000000b3 (the dark outline of the two-tone edge; the white line inside it is the rule's own inset shadow);
+     --w7-w-bdr from 6px to 10px; --w7-w-bg from rgba(3,97,174,0.9) to rgba(40,125,215,0.72) (the window glass, lighter than D1's and a touch deeper than the frame);
+     --w7-w-glass back to 7.css's own value (the glints #fff5 and the streaks #bbb2 and #aaa2); --w7-w-grad's stops from #ffffff0d,#0000001a,#ffffff08 to #ffffff33,#0000001a,#ffffff33 (7.css's sheen with its left stop softened);
+     .window's box-shadow from 2px 2px 10px 1px var(--w7-w-bd),inset 0 0 0 1px #fffa to 0 3px 10px rgba(0,30,70,0.35),inset 0 0 0 1px #fffa;
+     .window:before's highlight stripe from #ffffff0d back to 7.css's own #ffffffb3; .window.glass:before opacity from .8 back to 7.css's own .6;
+     .title-bar-text's text-shadow from eight 0 0 10px #000 glows to the look's title glow (five 0 0 1px, six 0 0 2px and three 0 0 3px #062a57, 0 0 5px #062a57, 0 0 9px rgba(6,42,87,0.8)), the same glow cyanobacteria.css's --glow-title holds.
+     The more-contrast block at the end is extended (ledger line L27, approved at WEB-Q47): --w7-surface solid, --w7-w-grad and --w7-w-glass without their shine, and .window:before's stripe off, so the windows turn solid when the reader asks for more contrast.
+*/
+:root{--w7-font:500 1.0625rem "M PLUS Rounded 1c", sans-serif;
+--w7-surface:rgba(3,97,174,0.9);
+--w7-el-bg:#f2f2f2;
+--w7-el-bg-d:#f4f4f4;
+--w7-el-bg-s-1:#ebebeb;
+--w7-el-bg-s-2:#cfcfcf;
+--w7-el-sd:inset 0 0 0 1px #fffc;
+--w7-el-sd-a:inset 1px 1px 0 #0003,inset -1px 1px 0 #0001;
+--w7-el-bd:#8e8f8f;
+--w7-el-bd-h:#3c7fb1;
+--w7-el-bd-a:#6d91ab;
+--w7-el-bd-d:#adb2b5;
+--w7-el-bdr:3px;
+--w7-el-c:#000;
+--w7-el-c-d:#838383;
+--w7-el-grad:linear-gradient(var(--w7-el-bg) 45%,var(--w7-el-bg-s-1) 45%,var(--w7-el-bg-s-2));
+--w7-el-grad-h:linear-gradient(#eaf6fd 45%,#bee6fd 0,#a7d9f5);
+--w7-el-grad-a:linear-gradient(#e5f4fc,#c4e5f6 30% 50%,#98d1ef 50%,#68b3db);
+--w7-li-bd-hl:#aaddfa;
+--w7-li-bg-hl:linear-gradient(#fff9,#e6ecf5cc 90%,#fffc);
+--w7-bl-bd:#0006;
+--w7-blt-size:18px;
+--w7-blt-offset:1em}
+[role=button],button,input[type=file]::file-selector-button{background:var(--w7-el-grad);
+border:1px solid var(--w7-el-bd);
+border-radius:var(--w7-el-bdr);
+box-shadow:var(--w7-el-sd);
+box-sizing:border-box;
+color:#222;
+font:var(--w7-font);
+min-height:23px;
+min-width:75px;
+padding:0 12px;
+position:relative;
+text-align:center;
+z-index:0}
+[role=button]:before,button:before{background:var(--w7-el-grad-h);
+border-radius:var(--w7-el-bdr);
+box-shadow:var(--w7-el-sd)}
+[role=button]:after,[role=button]:before,button:after,button:before{content:"";
+height:100%;
+left:0;
+margin:0;
+opacity:0;
+padding:0;
+position:absolute;
+top:0;
+width:100%;
+z-index:-1}
+[role=button]:after,button:after{background:var(--w7-el-grad-a);
+border-radius:2px;
+box-shadow:var(--w7-el-sd-a)}
+[role=button]:disabled,button:disabled{background:var(--w7-el-bg-d);
+border-color:var(--w7-el-bd-d);
+color:var(--w7-el-c-d)}
+[role=button]:not(:disabled):hover,button:not(:disabled):hover{border-color:var(--w7-el-bd-h)}
+[role=button]:not(:disabled):hover:before,button:not(:disabled):hover:before{opacity:1}
+[role=button]:not(:disabled):not(:hover),button:not(:disabled):not(:hover){border-color:var(--w7-el-bd)}
+[role=button]:not(:disabled):not(:hover):before,button:not(:disabled):not(:hover):before{opacity:0}
+[role=button]:not(:disabled).active,[role=button]:not(:disabled):active,button:not(:disabled).active,button:not(:disabled):active{border-color:var(--w7-el-bd-a)}
+[role=button]:not(:disabled).active:after,[role=button]:not(:disabled):active:after,button:not(:disabled).active:after,button:not(:disabled):active:after{opacity:1}
+[role=button].focused,[role=button]:focus-visible,button.focused,button:focus-visible{box-shadow:inset 0 0 0 2px #98d1ef,0 0 0 2px var(--w7-el-c);
+outline:3px solid #fff;
+outline-offset:2px}
+[role=button].default,[role=button].focused,[role=button]:focus,button.default,button.focused,button:focus{background-image:var(--w7-el-grad-h);
+border-color:#5586a3}
+:root{--w7-w-space:6px;
+--w7-w-bd:#000000b3;
+--w7-w-bdr:10px;
+--w7-w-bg:rgba(40,125,215,0.72);
+--w7-w-glass:linear-gradient(135deg,#fff5 70px,transparent 100px),linear-gradient(225deg,#fff5 70px,transparent 100px),linear-gradient(54deg,#0002 0 4%,#6661 6% 6%,#0002 8% 10%,#0002 15% 16%,#aaa1 17% 18%,#0002 23% 24%,#bbb2 25% 26%,#0002 31% 33%,#0002 34% 34.5%,#bbb2 36% 40%,#0002 41% 41.5%,#bbb2 44% 45%,#bbb2 46% 47%,#0002 48% 49%,#0002 50% 50.5%,#0002 56% 56.5%,#bbb2 57% 63%,#0002 67% 69%,#bbb2 69.5% 70%,#0002 73.5% 74%,#bbb2 74.5% 79%,#0002 80% 84%,#aaa2 85% 86%,#0002 87%,#bbb1 90%) left center/100vw 100vh no-repeat fixed;
+--w7-w-grad:linear-gradient(to right,#ffffff33,#0000001a,#ffffff33),var(--w7-w-bg);
+--w7-wct-bd:#0000004d;
+--w7-wct-bdr:5px;
+--w7-wct-sd:inset 0 0 0 1px #fffa;
+--w7-wct-bg:linear-gradient(#ffffff80,#ffffff4d 45%,#0000001a 50%,#0000001a 75%,#ffffff80);
+--w7-wct-bg-h:radial-gradient(circle at bottom,#2aceda,transparent 65%),linear-gradient(#b6d9ee 50%,#1a6ca1 0);
+--w7-wct-bg-a:radial-gradient(circle at bottom,#0bfdfa,transparent 65%),linear-gradient(#86a7bc 50%,#092747 0);
+--w7-wct_close-bg:radial-gradient(circle at -60% 50%,#0007 5% 10%,#0000 50%),radial-gradient(circle at 160% 50%,#0007 5% 10%,#0000 50%),linear-gradient(#e0a197e5,#cf796a 25% 50%,#d54f36 50%)}
+.window{border:1px solid var(--w7-w-bd);
+box-shadow:0 3px 10px rgba(0,30,70,0.35),inset 0 0 0 1px #fffa;
+font:var(--w7-font);
+position:relative;
+z-index:0}
+.window,.window:before{border-radius:var(--w7-w-bdr)}
+.window:before{background:linear-gradient(transparent 20%,#ffffffb3 40%,transparent 41%),var(--w7-w-grad);
+background-color:var(--w7-w-bg);
+box-shadow:inset 0 0 0 1px #fffd;
+content:"";
+height:100%;
+left:0;
+position:absolute;
+top:0;
+width:100%;
+z-index:-1}
+.window-body{background:var(--w7-surface);
+border:1px solid var(--w7-w-bd);
+box-shadow:0 0 0 1px #fff9;
+margin:var(--w7-w-space);
+margin-top:0}
+.window-body.has-space{padding:var(--w7-w-space)}
+.window-body pre{margin:calc(var(--w7-w-space)*-1)}
+.window.glass:before{opacity:.6}
+.window.glass:after{-webkit-backdrop-filter:blur(4px);
+backdrop-filter:blur(4px);
+border:none;
+border-radius:var(--w7-w-bdr);
+content:"";
+height:100%;
+left:0;
+position:absolute;
+top:0;
+width:100%;
+z-index:-10}
+.window.glass>.title-bar{background:var(--w7-w-glass);
+background-attachment:fixed}
+.window>.title-bar{border:0;
+box-shadow:inset 0 1px 0 #fffd,inset 1px 0 0 #fffd,inset -1px 0 0 #fffd}
+.title-bar{align-items:center;
+background:var(--w7-w-grad);
+background-color:var(--w7-w-bg);
+border:1px solid var(--w7-w-bd);
+border-radius:var(--w7-w-bdr) var(--w7-w-bdr) 0 0;
+box-shadow:inset 0 0 0 1px #fff9;
+display:flex;
+font:var(--w7-font);
+justify-content:space-between;
+padding:var(--w7-w-space);
+padding-top:0}
+.title-bar-text{color:#fff;
+letter-spacing:0;
+line-height:15px;
+padding-top:var(--w7-w-space);
+text-shadow:0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 3px #062a57,0 0 3px #062a57,0 0 3px #062a57,0 0 5px #062a57,0 0 9px rgba(6,42,87,0.8)}
+@media (prefers-contrast: more){:root{--w7-w-bg:rgba(3,97,174,1);--w7-surface:rgba(3,97,174,1);--w7-w-grad:linear-gradient(transparent,transparent),var(--w7-w-bg);--w7-w-glass:none}.window:before{background:var(--w7-w-grad)}}

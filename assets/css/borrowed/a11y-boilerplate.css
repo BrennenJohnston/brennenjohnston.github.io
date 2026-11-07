@@ -1,0 +1,30 @@
+/* Adapted copy of a11y.css from a11y-boilerplate by Jasper Moelker.
+   Source: https://github.com/jbmoelker/a11y-boilerplate, fetched 2026-09-23; the untouched file is vendor/pristine/ledger-sources/a11y-boilerplate/a11y.css.
+   License: MIT, Copyright (c) 2014 Jasper Moelker; the full text is vendor/pristine/ledger-sources/a11y-boilerplate/LICENSE.
+   Kept unchanged: both rules. Added in D2 (round WEB-R1, 2026-09-24): background: var(--bg) in the focus rule, so the skip link,
+   white like every link, shows on the site's deep blue glass color instead of on the photograph.
+   Added in D4 (round WEB-R1, 2026-09-24): padding: 0.75rem in the focus rule, so the skip link is at least 44 px tall while it shows.
+*/
+.a11y-sr-only,
+.a11y-kb-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.a11y-kb-only:active,
+.a11y-kb-only:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+	background: var(--bg);
+	padding: 0.75rem;
+}
