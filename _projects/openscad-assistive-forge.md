@@ -5,7 +5,7 @@ status: prototype
 categories: [communication, computer-access]
 summary: "A free web app that runs OpenSCAD customizers in your browser: type text, preview in 3D, download and print, no install needed."
 cover_image: /assets/images/projects/braille-sign-maker/braille-sign-customizer.jpg
-cover_alt: "OpenSCAD Assistive Forge web app showing the braille sign customizer: a parameter panel on the left and a yellow 3D preview of a two-part sign reading CREATE TINKER TUESDAY, with the braille section angled on a stand."
+cover_alt: "The Braille Card Designer in the OpenSCAD Assistive Forge web app with the Braille Sign tool open. On the left, the text CREATE Tinker Tuesday, English (UEB) Grade 2 contracted braille and a braille preview of the line; on the right, a yellow 3D preview seen from above of a sign plate reading CREATE TINKER TUESDAY in raised capitals, with a narrow braille plate in front of it."
 links:
   - label: Live app (openscad-assistive-forge.pages.dev)
     url: https://openscad-assistive-forge.pages.dev/
@@ -15,14 +15,14 @@ links:
     url: https://github.com/tanvibachu/GitHub-OS-AT-Hackathon-x-HuskyADAPT-UW
 gallery:
   - image: /assets/images/projects/braille-card-maker/braille-card-customizer.jpg
-    alt: "Braille Card Customizer tool page with a dropdown listing Braille Sign, Braille Card, and Braille Charm options."
-    caption: One tool page covers braille signs, braille cards, and braille charms.
+    alt: "The Braille Card Designer's card on the OpenSCAD Assistive Forge main page: a short description, a Tool menu set to Braille Sign, and a yellow Open Braille Card Designer button."
+    caption: One tool covers braille signs, braille cards and braille charms, chosen from its Tool menu.
   - image: /assets/images/projects/braille-charm-maker/braille-charm-customizer.jpg
-    alt: "Braille charm customizer showing the name Brennen translated to braille, with seven yellow charm previews standing on their sides in the 3D viewer."
-    caption: The charm customizer running in the browser; the same OpenSCAD file also works in desktop OpenSCAD.
+    alt: "The Braille Charm tool with the name Brennen typed in and English (UEB) Grade 1 uncontracted chosen, a braille preview listing each charm's cells, and seven yellow charms standing on their sides in the 3D preview, each with braille dots on its face."
+    caption: The Braille Charm tool running in the browser; the same OpenSCAD file also works in desktop OpenSCAD.
   - image: /assets/images/projects/picture-charm-customizer/svg-editor.jpg
-    alt: "SVG preparation editor comparing an original rocket graphic to a simplified print version, next to a yellow 3D charm preview engraved with the rocket."
-    caption: The SVG editing tool highlights individual line features so small details can be adjusted for printability. The rocket icon is by Iconatrenda from Noun Project, used under the Creative Commons Attribution 3.0 license.
+    alt: "The Charm Designer's drawing editor open beside its settings. On the left, a row of built-in symbols (smiley face, heart, star, lightning bolt, crown, sun) with the smiley face chosen; in the middle, the smiley face shown large under Will print as; on the right, a Shapes panel saying one shape is thinner than 0.5 mm and may not print, with controls to delete small shapes."
+    caption: The drawing editor checking the built-in smiley face before it goes on a charm.
 help_wanted: "Try the Braille Card Designer (signs, cards, and charms) and the Charm Designer's drawing editing, and share what works and what doesn't, especially braille readability on your printer."
 ---
 OpenSCAD Assistive Forge is a free web app that runs OpenSCAD customizers directly in your browser, with no install and no account, built to work with a keyboard, a screen reader, high contrast and a small screen. Open one of its built-in tools or your own OpenSCAD file, set the parameters, preview the model in 3D, and download the STL (stereolithography) model file for a 3D printer, or a flat file for a laser cutter. Everything runs on your device: nothing you type or upload leaves your browser, and braille translation uses [Liblouis](https://liblouis.io/), the open-source braille translator.
