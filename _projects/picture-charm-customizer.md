@@ -1,5 +1,5 @@
 ---
-title: Charm Customizer
+title: Charm Designer
 date: 2026-06-18
 status: ready
 categories: [communication]
@@ -21,8 +21,8 @@ links:
     url: https://www.thingiverse.com/thing:7155293
 gallery:
   - image: /assets/images/projects/picture-charm-customizer/svg-editor.jpg
-    alt: "SVG preparation editor comparing an original rocket graphic to a simplified print version, next to a yellow 3D charm preview engraved with the rocket."
-    caption: The SVG editing tool highlights individual line features so small details can be adjusted for printability. The rocket icon is by Iconatrenda from Noun Project, used under the Creative Commons Attribution 3.0 license.
+    alt: "The Charm Designer's drawing editor open beside its settings. On the left, a row of built-in symbols (smiley face, heart, star, lightning bolt, crown, sun) with the smiley face chosen; in the middle, the smiley face shown large under Will print as; on the right, a Shapes panel saying one shape is thinner than 0.5 mm and may not print, with controls to delete small shapes."
+    caption: The drawing editor checking the built-in smiley face before it goes on a charm.
   - image: /assets/images/projects/picture-charm-customizer/task-charm-bracelet.jpg
     alt: "Red bracelet with numbered yellow and red square charms worn as a task list; the first charm shows a hearing aid and the second a microphone."
     caption: A task-list charm bracelet made by an assistive technology paraeducator for a student who is hard of hearing.
@@ -31,19 +31,19 @@ gallery:
     caption: The four numbered task charms before assembly.
 help_wanted: ""
 ---
-The Charm Customizer makes small 3D-printable charms carrying picture symbols, for communication aids, wearable task-list prompts, and picture bracelets. Pick a symbol, preview the charm in 3D, and download the STL (stereolithography) model file to print.
+The Charm Designer makes small 3D-printable charms carrying picture symbols, for communication aids, wearable task-list prompts, and picture bracelets. Pick a symbol, preview the charm in 3D, and download the STL (stereolithography) model file to print.
 
 It builds three shapes:
 
 - **Bracelet Clip Charms** that snap directly onto a silicone bracelet.
-- **Flat pendants** in circle, square, hexagon, or oval.
+- **Flat pendants** in circle, square, rounded rectangle, hexagon or oval, or in the outline of the design itself.
 - **Logo plates** built from an imported SVG (scalable vector graphics) drawing.
 
-You do not need to supply artwork. The tool ships with a built-in symbol library you can pick from, and importing your own SVG file is the alternative for anything the library does not cover.
+You do not need to supply artwork. The tool ships with a built-in symbol library you can pick from, and your own SVG drawing, or a PNG or JPG picture that it converts to a drawing, covers anything the library does not.
 
-This is a separate tool from the braille charms in the [Braille Card Customizer]({{ '/projects/braille-card-customizer/' | relative_url }}): those carry braille letters, while these carry picture symbols. Both run in the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}), but they are independent customizers with different inputs.
+This is a separate tool from the braille charms in the [Braille Card Designer]({{ '/projects/braille-card-customizer/' | relative_url }}): those carry braille letters, while these carry picture symbols. Both run in the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}), but they are independent customizers with different inputs.
 
-An SVG editing step is built in: it highlights individual line features so small details can be simplified until they print reliably at charm size.
+A drawing editor is built in: it shows how the design will print, flags shapes too thin or too small to print at charm size, and can remove them until the design prints reliably.
 
 ## Where it came from
 
@@ -53,7 +53,7 @@ The first answer to that request was a fixed, non-customizable model by Duy Do, 
 
 ## Credits
 
-The Charm Customizer exists because of work by several people and groups:
+The Charm Designer exists because of work by several people and groups:
 
 - **Nasif Zaman** wrote the OpenSCAD charm generator that the tool runs.
 - **Duy Do (UW WOOF3D)** created the original AAC charm design the tool is descended from.
@@ -61,7 +61,7 @@ The Charm Customizer exists because of work by several people and groups:
 
 ## A real-world example
 
-A paraeducator working in audiology and assistive technology, Daniel K., used the Charm Customizer to make a task-list charm bracelet for a student who is hard of hearing. The numbered charms are a visual reminder to put on their hearing aid, get the teacher's DM microphone, connect it wirelessly to the hearing aid, and charge it at the end of the school day. Daniel shared the charm photos on this page for public use.
+A paraeducator working in audiology and assistive technology, Daniel K., used the Charm Designer to make a task-list charm bracelet for a student who is hard of hearing. The numbered charms are a visual reminder to put on their hearing aid, get the teacher's DM microphone, connect it wirelessly to the hearing aid, and charge it at the end of the school day. Daniel shared the charm photos on this page for public use.
 
 ## Two ways to use it
 

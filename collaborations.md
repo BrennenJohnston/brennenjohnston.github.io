@@ -40,13 +40,13 @@ KEMi held its [inaugural symposium](https://kemi.uw.edu/kemi-inaugural-symposium
 
 ## HuskyADAPT
 
-[HuskyADAPT](https://www.huskyadapt.me.uw.edu/our-mission) is the University of Washington student organization for accessible design and inclusive play, and it houses Washington's GoBabyGo! program. HuskyADAPT hosted much of the hackathon work behind the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) and its [Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }}).
+[HuskyADAPT](https://www.huskyadapt.me.uw.edu/our-mission) is the University of Washington student organization for accessible design and inclusive play, and it houses Washington's GoBabyGo! program. HuskyADAPT hosted much of the hackathon work behind the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) and its [Charm Designer]({{ '/projects/picture-charm-customizer/' | relative_url }}).
 
 ## WOOF3D
 
 [WOOF3D](https://www.woof3d.org/projects) is the University of Washington's student 3D printing club and has been a remarkable partner. Over the last year they have worked through every custom assistive technology request I've sent them, and then some, which is what makes it possible for a request not to sit waiting on one person's schedule.
 
-The [Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }}) is directly descended from a WOOF3D student design, and the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) grew out of it.
+The [Charm Designer]({{ '/projects/picture-charm-customizer/' | relative_url }}) is directly descended from a WOOF3D student design, and the [OpenSCAD Assistive Forge]({{ '/projects/openscad-assistive-forge/' | relative_url }}) grew out of it.
 
 ## Makers Making Change and TOM
 
@@ -63,9 +63,9 @@ Both are where a single charm request turned into a general-purpose web front en
 
 ## Contributors
 
-- **Nasif Zaman** wrote the OpenSCAD charm generator that the [Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }}) runs on.
+- **Nasif Zaman** wrote the OpenSCAD charm generator that the [Charm Designer]({{ '/projects/picture-charm-customizer/' | relative_url }}) runs on.
 - **Duy Do (UW WOOF3D)** created the original AAC (augmentative and alternative communication) charm design that started the whole line of work.
-- **Daniel K.**, a paraeducator working in audiology and assistive technology, built the task-list charm bracelet documented on the Charm Customizer page and shared the photos for public use.
+- **Daniel K.**, a paraeducator working in audiology and assistive technology, built the task-list charm bracelet documented on the Charm Designer page and shared the photos for public use.
 
 ## Working together
 
