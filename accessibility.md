@@ -62,6 +62,8 @@ Despite my best efforts to ensure the accessibility of this site, there are some
 
 4. **Third-party model pages are outside my control.** Printables, MakerWorld, Thingiverse, and YouTube host the downloadable files, and their accessibility is set by those platforms. Every design is also published as source on GitHub, which can be browsed and downloaded as plain files.
 
+5. **Links inside sentences can be smaller than 44 by 44 pixels.** Links in the site's menu are at least 44 pixels tall, but a link inside a sentence keeps the size of its text. WCAG 2.2 allows this for links in a sentence, but they can still be hard to hit with a tremor or limited hand control. Zooming the page in makes them larger, and every link can be reached with the Tab key.
+
 ## Assessment approach
 
 I assessed the accessibility of this site by the following approaches:

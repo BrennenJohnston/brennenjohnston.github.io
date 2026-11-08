@@ -47,20 +47,14 @@ cover_image: /assets/images/projects/adaptive-spoon-grip/cover.jpg
 cover_alt: "Blue 3D-printed grip with finger grooves attached to a metal spoon, on a kitchen table."
 
 # Download / related links. Delete any lines you don't need.
-# Label words matter: the button text is built from the label:
-#   "Printables" / "MakerWorld" / "Thingiverse"  ->  "Download the <project title> on Printables"
-#   a label starting with "GitHub"               ->  "Source files on GitHub (...)"
-#   a label starting with "Video"                ->  shown exactly as written
-#   any other label containing "video"           ->  "Watch: <label>"
-#   anything else                                ->  shown exactly as written
-# So if a label is already self-describing (an app name, a guide title, the
-# title of a specific model listing), just write it out and it is used as-is.
+# Each label is shown exactly as written, so write it out in full: say what
+# the link gives and where it goes.
 links:
-  - label: Printables
+  - label: "Download the Adaptive Spoon Grip on Printables"
     url: https://www.printables.com/model/XXXXXX
-  - label: MakerWorld
+  - label: "Download the Adaptive Spoon Grip on MakerWorld"
     url: https://makerworld.com/en/models/XXXXXX
-  - label: Thingiverse
+  - label: "Download the Adaptive Spoon Grip on Thingiverse"
     url: https://www.thingiverse.com/thing:XXXXXX
 
 # Optional extra photos shown at the bottom of the page. Delete this whole
@@ -69,11 +63,6 @@ gallery:
   - image: /assets/images/projects/adaptive-spoon-grip/in-use.jpg
     alt: "A hand holding the spoon by the printed grip while eating soup."
     caption: The grip in use.
-
-# Optional print details: delete any line you don't want shown:
-print_time: "1 hour 45 minutes"
-material: "PLA or PETG, about 30 g"
-supports: "None required"
 
 # Only used when status is "prototype": what feedback do you want?
 help_wanted: "Looking for feedback on grip diameter and dishwasher durability."

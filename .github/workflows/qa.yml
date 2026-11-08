@@ -63,7 +63,7 @@ jobs:
       # .pa11yci turns off axe's color-contrast rule, because this design's
       # gradient and pseudo-element backgrounds make axe report "background could
       # not be determined" for literally every text node. Contrast is verified by
-      # hand instead — every pair is listed at the top of assets/css/style.css.
+      # hand instead; the measured pairs are listed in the header comments of assets/css/borrowed/cyanobacteria.css and 7css.css.
       - name: Check WCAG 2.2 AA with pa11y-ci
         run: |
           npx --yes pa11y-ci@3 \
