@@ -23,20 +23,22 @@ gallery:
   - image: /assets/images/projects/picture-charm-customizer/svg-editor.jpg
     alt: "SVG preparation editor comparing an original rocket graphic to a simplified print version, next to a yellow 3D charm preview engraved with the rocket."
     caption: The SVG editing tool highlights individual line features so small details can be adjusted for printability. The rocket icon is by Iconatrenda from Noun Project, used under the Creative Commons Attribution 3.0 license.
-help_wanted: "Try the Braille Card Customizer (signs, cards, and charms) and the drawing-editing feature, and share what works and what doesn't, especially braille readability on your printer."
+help_wanted: "Try the Braille Card Designer (signs, cards, and charms) and the Charm Designer's drawing editing, and share what works and what doesn't, especially braille readability on your printer."
 ---
-OpenSCAD Assistive Forge is a working web app prototype that runs OpenSCAD customizers for assistive designs directly in your browser, with no install and no account. Pick a tool, set the parameters, preview the model in 3D, and download the STL (stereolithography) model file. Braille translation runs on your device using [Liblouis](https://liblouis.io/), the open-source braille translator.
+OpenSCAD Assistive Forge is a free web app that runs OpenSCAD customizers directly in your browser, with no install and no account, built to work with a keyboard, a screen reader, high contrast and a small screen. Open one of its built-in tools or your own OpenSCAD file, set the parameters, preview the model in 3D, and download the STL (stereolithography) model file for a 3D printer, or a flat file for a laser cutter. Everything runs on your device: nothing you type or upload leaves your browser, and braille translation uses [Liblouis](https://liblouis.io/), the open-source braille translator.
+
+It opens by asking which interface you want: Assistive Forge, a guided layout for screen readers, keyboard use and people new to OpenSCAD, in light, dark and high-contrast themes; or Classic, the layout of the desktop OpenSCAD program, for people who already know it. A design can be shared as one link that opens it ready to customize, as the links on the [Parametric Plug Puller]({{ '/projects/plug-puller/' | relative_url }}) page do, and the app can be installed from the browser to work offline.
 
 ## What's in it
 
-The Forge's welcome screen offers two tools, each with its own project page.
+The Forge's main page offers two built-in tools, each with its own project page here.
 
-- **[Braille Card Customizer]({{ '/projects/braille-card-customizer/' | relative_url }})**: turns text into a [Liblouis](https://liblouis.io/) braille translation, with a Sign / Card / Charm selector choosing between tactile signs, braille cards, and bracelet charms.
-- **[Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }})**: charms carrying picture symbols instead of braille, from a built-in symbol library or an imported SVG (scalable vector graphics) drawing, with a built-in drawing-editing step.
+- **[Braille Card Designer]({{ '/projects/braille-card-customizer/' | relative_url }})**: turns text into a [Liblouis](https://liblouis.io/) braille translation, with a Sign / Card / Charm selector choosing between tactile signs, braille cards, and bracelet charms, and a braille editor that takes hand corrections and six-key entry.
+- **[Charm Designer]({{ '/projects/picture-charm-customizer/' | relative_url }})**: bracelet clip charms, flat pendants and logo plates carrying picture symbols instead of braille, from a built-in symbol library or your own SVG (scalable vector graphics) drawing or photo, with a built-in drawing-editing step.
 
 Every tool is an ordinary OpenSCAD file underneath (the braille variants come from the [braille-sign-openscad](https://github.com/BrennenJohnston/braille-sign-openscad), [braille-wedge-card-openscad](https://github.com/BrennenJohnston/braille-wedge-card-openscad), and [braille-charm-openscad](https://github.com/BrennenJohnston/braille-charm-openscad) repositories), so each one also works in desktop OpenSCAD's Customizer if you prefer working offline.
 
-The Forge is built by Nasif Zaman, Duy Do (UW WOOF3D), and [HuskyADAPT](https://www.huskyadapt.me.uw.edu/our-mission), alongside my own work on it.
+The Charm Designer is the work of Nasif Zaman, Duy Do (UW WOOF3D) and [HuskyADAPT](https://www.huskyadapt.me.uw.edu/our-mission); I build and maintain the Forge itself.
 
 ## Why it exists
 
