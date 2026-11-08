@@ -50,7 +50,7 @@ The [Charm Customizer]({{ '/projects/picture-charm-customizer/' | relative_url }
 
 ## Makers Making Change and TOM
 
-Local capacity only goes so far, so I also work to connect Washington's maker groups to the wider networks: [Makers Making Change](https://www.makersmakingchange.com/s/assistive-devices) across North America and [TOM (Tikkun Olam Makers)](https://tomglobal.org/about) globally. Makers Making Change documentation is in progress for the [Custom Braille Card Embosser]({{ '/projects/braille-card-embosser/' | relative_url }}).
+Local capacity only goes so far, so I also work to connect Washington's maker groups to the wider networks: [Makers Making Change](https://www.makersmakingchange.com/s/assistive-devices) across North America and [TOM (Tikkun Olam Makers)](https://tomglobal.org/about) globally. The guides for the [Custom Braille Card Embosser V2]({{ '/projects/braille-card-embosser-v2/' | relative_url }}) and the [Parametric Plug Puller]({{ '/projects/plug-puller/' | relative_url }}) follow the Makers Making Change Open AT (open assistive technology) documentation template.
 
 ## Hackathons
 

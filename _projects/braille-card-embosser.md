@@ -44,6 +44,6 @@ Everything needed to build one is on the project pages linked above: print-ready
 
 The braille content itself comes from a companion generator: either the [web app](https://braille-cylinder-stl-generator.vercel.app) (type text, it translates for you) or the [OpenSCAD version](https://github.com/BrennenJohnston/braille-cylinder-stl-generator-openscad) for offline and fully parametric use. One embosser serves as many people as you have plates.
 
-A "Lego-style" illustrated guide and Makers Making Change documentation are still in progress. In the meantime, a complete three-part video series covers the whole build: part 1 customizes the braille, downloads the files, and walks through print settings; part 2 assembles the printed parts; part 3 shows the finished embosser in use. All three are linked above, so there is enough direction to get started now.
+The illustrated guide and Makers Making Change documentation planned here came with Version 2 instead. For Version 1, a complete three-part video series covers the whole build: part 1 customizes the braille, downloads the files, and walks through print settings; part 2 assembles the printed parts; part 3 shows the finished embosser in use. All three are linked above.
 
 If you print, build, test, or adapt this design, feedback is very welcome. If anything is unclear or you run into a problem, please reach out through the model pages linked above.
