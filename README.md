@@ -57,9 +57,14 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L29 | The latest projects as tiles in a row | `assets/css/borrowed/cyanobacteria.css` |
 | L30 | The home page's smaller boxes in rows, and the update log across the width | `assets/css/borrowed/cyanobacteria.css` |
 | L31 | The categories as round glossy bubbles | `assets/css/borrowed/cyanobacteria.css` |
+| L32 | Shows a project page's cover photo, status sections, help request and photo gallery only when the project has them | `_layouts/project.html` |
+| L33 | Shows a project card's photo and category links only when the project has them | `_includes/project-card.html` |
+| L34 | Shows a project's "Get the files" section only when it has links | `_includes/project-links.html` |
+| L35 | Shows a section's sentence and its project cards, or its empty message when it has none | `_includes/project-list.html` |
+| L36 | Shows each status section of a category page only when it has projects, and a message when the category has none | `_includes/category-page.html` |
 | L37 | Aligns the Tactile Map guide's row headers to the left at normal weight, like the PDF | `assets/css/borrowed/cyanobacteria.css` |
 
-The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work.
+The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page.
 
 - **Adding a piece.** First save it untouched, with its license text, in `vendor/pristine/`; then add its row to `vendor/pristine/PROVENANCE.md`; then add its author to `_data/credits.yml`, so the footer and the Credits page name them; only then use it in a stylesheet or a template.
 - **Photo sizes.** `_data/image-sizes.yml` holds every project photo's width and height, so a page holds each photo's space while it loads. A new photo missing from that list still shows, just without the held space; to add it, copy an entry with the photo's path, width and height.
