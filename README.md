@@ -57,6 +57,7 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L29 | The latest projects as tiles in a row | `assets/css/borrowed/cyanobacteria.css` |
 | L30 | The home page's smaller boxes in rows, and the update log across the width | `assets/css/borrowed/cyanobacteria.css` |
 | L31 | The categories as round glossy bubbles | `assets/css/borrowed/cyanobacteria.css` |
+| L37 | Aligns the Tactile Map guide's row headers to the left at normal weight, like the PDF | `assets/css/borrowed/cyanobacteria.css` |
 
 The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work.
 
