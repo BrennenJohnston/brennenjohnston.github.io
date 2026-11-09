@@ -75,4 +75,4 @@ This site has not been evaluated by an external accessibility auditor and has no
 
 ## Date
 
-This statement was created on 27 July 2026 and updated on 24 September 2026.
+This statement was created on 27 July 2026 and updated on 8 November 2026.
