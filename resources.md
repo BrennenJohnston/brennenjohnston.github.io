@@ -52,7 +52,7 @@ Here is my curated list of DIY (do it yourself) assistive technology resources a
 ## Getting started guides
 
 - [Onshape CAD Quick Start Guide]({{ '/guides/onshape/' | relative_url }}): my five-step beginner path from a free CAD (computer-aided design) account to your first parametric, printable part.
-- [Tactile Map Making Quick Reference Guide (draft PDF)]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}): research-based dimensions and methods for making tactile maps. This is a working draft; feedback is welcome.
+- [Tactile Map Making Quick Reference Guide (draft)]({{ '/tactile-map-guide/' | relative_url }}), also as a [PDF]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}): research-based dimensions and methods for making tactile maps. This is a working draft; feedback is welcome.
 
 ## Assistive technology and 3D printing information pages
 

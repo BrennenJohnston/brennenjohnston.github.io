@@ -7,6 +7,8 @@ summary: Hybrid 3D-printed tactile station maps with a detachable Velcro symbol 
 cover_image: /assets/images/projects/tactile-maps/station-map-set.jpg
 cover_alt: "Set of white tactile station maps with raised lines, symbols, and large-print labels such as SEATAC OVERVIEW and PARKING LEVEL 4, next to a stack of labeled symbol key cards."
 links:
+  - label: Tactile Map Making Quick Reference Guide (draft)
+    url: /tactile-map-guide/
   - label: Tactile Map Making Quick Reference Guide (draft PDF)
     url: /assets/docs/tactile-map-guide.pdf
 gallery:
@@ -37,6 +39,6 @@ I'm working alongside a research team from Portland State University and Seattle
 
 ## Sharing the method
 
-Alongside the maps, I've been writing a tactile map-making quick reference guide with precise dimension sizing based on current research. The goal is to share it with other Assistive Technology Act programs across the United States, promoting research-based tactile map standardization shaped by feedback from the people who actually use tactile maps. You can read the [draft guide (PDF)]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}) now.
+Alongside the maps, I've been writing a tactile map-making quick reference guide with precise dimension sizing based on current research. The goal is to share it with other Assistive Technology Act programs across the United States, promoting research-based tactile map standardization shaped by feedback from the people who actually use tactile maps. You can read the [draft guide]({{ '/tactile-map-guide/' | relative_url }}) now, or download it as a [PDF]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}).
 
 An inspiration for this work is [Maptimizer](https://dl.acm.org/doi/10.1145/3491102.3517436), a research project on generating tactile maps tailored to individual user needs and a great example of inclusive design in wayfinding.

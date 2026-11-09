@@ -54,7 +54,7 @@ The site's typeface, M PLUS Rounded 1c, is served from this site under the SIL O
 
 Despite my best efforts to ensure the accessibility of this site, there are some known limitations. Please contact me if you observe an issue not listed here.
 
-1. **The Tactile Map Making Quick Reference Guide is only available as a PDF.** The [guide]({{ '/assets/docs/tactile-map-guide.pdf' | relative_url }}) is written partly for people who are blind and make tactile maps, which is exactly the audience a PDF serves worst. Its tagging and reading order have not yet been verified against PDF/UA. I intend to publish an HTML version of the guide alongside the PDF. Until then, please [ask for the guide's content in another format](https://github.com/BrennenJohnston) and I will send it as plain text or HTML.
+1. **The PDF version of the Tactile Map Making Quick Reference Guide is not accessible.** Its tags mark no headings or tables, and its figures have no text alternatives. The same guide is published as a [web page]({{ '/tactile-map-guide/' | relative_url }}), which has all of its text and describes what the figures show. Please use the web page with a screen reader, a braille display or a magnifier.
 
 2. **Video captions and transcripts are unverified.** The three-part [Custom Braille Card Embosser]({{ '/projects/braille-card-embosser/' | relative_url }}) series and the two [Charm Designer]({{ '/projects/picture-charm-customizer/' | relative_url }}) videos are hosted on YouTube, and I have not confirmed that they carry accurate human-authored captions or a text transcript. Auto-generated captions are not sufficient, and without a transcript the videos are unusable for people who are deaf-blind. Every step shown in the videos is also written out on the project pages, so no build information exists only in video. Verified captions and published transcripts are planned.
 
@@ -75,4 +75,4 @@ This site has not been evaluated by an external accessibility auditor and has no
 
 ## Date
 
-This statement was created on 27 July 2026 and updated on 8 November 2026.
+This statement was created on 27 July 2026 and updated on 9 November 2026.
