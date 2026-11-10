@@ -1,0 +1,55 @@
+The sounds of this site.
+
+Each sound file here is cut from a recording another person made and
+shared. The changes are the same for every file: a short piece cut out,
+mixed to one channel, a short rise at its start and a fade at its end, its
+level changed, and saved as WAV (48,000 Hz, 16 bit). The untouched
+recordings, the pages they came from and their checksums are in
+vendor/pristine/sounds/, and vendor/pristine/PROVENANCE.md lists them.
+
+keys/button-1.wav, button-2.wav
+  "cork.aif" and "cork2.aif" by Traveler
+  https://freesound.org/people/Traveler/sounds/13635/
+  https://freesound.org/people/Traveler/sounds/14634/
+  Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+keys/link-1.wav, link-2.wav, link-3.wav
+  "RBH_Household_drip 02.wav" by RHumphries
+  https://freesound.org/people/RHumphries/sounds/1014/
+  Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+moments/arrive.wav
+  "Dropping tiny pebble in still water surface" by jorickhoofd
+  https://freesound.org/people/jorickhoofd/sounds/160119/
+  Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+scroll/tick-1.wav, tick-2.wav, tick-3.wav, tick-4.wav
+  "md09.aif", "md07.aif", "md08.aif" and "md02.aif" by lsprice
+  https://freesound.org/people/lsprice/sounds/89812/
+  https://freesound.org/people/lsprice/sounds/89810/
+  https://freesound.org/people/lsprice/sounds/89811/
+  https://freesound.org/people/lsprice/sounds/89805/
+  Attribution 3.0: http://creativecommons.org/licenses/by/3.0/
+
+scroll/end.wav
+  "Glass Being Set on Counter.wav" by jpkweli
+  https://freesound.org/people/jpkweli/sounds/154773/
+  Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/
+
+hover/hover.wav
+  "Dripping.wav" by digifishmusic
+  https://freesound.org/people/digifishmusic/sounds/46934/
+  Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
+
+keys/typing-1.wav, typing-2.wav
+  "Pen Clicks-GAIN_01.wav" by XxBirdoxX
+  https://freesound.org/people/XxBirdoxX/sounds/52283/
+  Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/
+
+moments/on.wav
+  "dialog-information.ogg" from the Oxygen sound theme
+  https://github.com/KDE/oxygen-sounds (sounds/oxygen/stereo, commit 114e2b8)
+  Copyright 2008 Nuno Filipe Povoa
+  LGPL-3.0-or-later. The license text is LICENSE-LGPL-3.0.txt beside this
+  note, and the GPL it builds on is LICENSE-GPL-3.0.txt. The site's script
+  also plays this file slower to make seven lower notes.

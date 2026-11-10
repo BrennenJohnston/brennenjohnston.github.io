@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 1014
+  Address:      https://freesound.org/people/RHumphries/sounds/1014/
+  Title:        RBH_Household_drip 02.wav
+  Uploaded by:  RHumphries
+  Uploaded on:  April 18th, 2005
+  License:      Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+  File:         Type Wave (.wav); Duration 0:09.471; File size 1.7 MB; Sample rate 48 kHz; Bit depth 16 bit; Channels Stereo
+  Description:  water drip in sink. Stereo Recording, Recorded with a Zaxcom Deva II, and Sennheiser MKH 30 and MKH 40 as mid-side, decoded to AB stereo.
+  Saved page:   SHA-256 c110a5f491ddc9221e1d076e35ab6fda3971625603befaece7a6249df54f89fe

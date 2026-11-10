@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 52283
+  Address:      https://freesound.org/people/XxBirdoxX/sounds/52283/
+  Title:        Pen Clicks-GAIN_01.wav
+  Uploaded by:  XxBirdoxX
+  Uploaded on:  April 24th, 2008
+  License:      Creative Commons 0, http://creativecommons.org/publicdomain/zero/1.0/
+  File:         Type Wave (.wav); Duration 0:01.950; File size 253.8 KB; Sample rate 44.1 kHz; Bit depth 24 bit; Channels Mono
+  Description:  Retractable pen click with a slight increase in gain
+  Saved page:   SHA-256 68b06858bbdd0beffc641c1981ad114a1ee4926277bdc6848c81e3832d23635e

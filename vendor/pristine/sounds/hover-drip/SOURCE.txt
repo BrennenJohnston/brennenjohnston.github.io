@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 46934
+  Address:      https://freesound.org/people/digifishmusic/sounds/46934/
+  Title:        Dripping.wav
+  Uploaded by:  digifishmusic
+  Uploaded on:  January 16th, 2008
+  License:      Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+  File:         Type Wave (.wav); Duration 0:11.526; File size 1.9 MB; Sample rate 44.1 kHz; Bit depth 16 bit; Channels Stereo
+  Description:  Sound of a dripping tap as recorded about 15 cm below the surface of the water directly under the impact point. Hydrophones were resting in the bottom of a metal sink.
+  Saved page:   SHA-256 6849dc7f054992615b553ce4b214b886e1347ccf04d8ea4e6c37ef33dcafc0ce

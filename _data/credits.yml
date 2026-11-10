@@ -48,3 +48,43 @@
   url: "https://kemi.uw.edu/kemi-inaugural-symposium"
   license: "KEMi's photographs, used with permission"
   where: "the collaborations page"
+- author: "Traveler"
+  piece: "the button sound, two cork pops"
+  url: "https://freesound.org/people/Traveler/sounds/13635/"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "every page, when you press a button"
+- author: "RHumphries"
+  piece: "the link sound, a water drip"
+  url: "https://freesound.org/people/RHumphries/sounds/1014/"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "every page, when you follow a link"
+- author: "jorickhoofd"
+  piece: "the arrival sound, a pebble dropped in water"
+  url: "https://freesound.org/people/jorickhoofd/sounds/160119/"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "every page, as it opens after a press"
+- author: "lsprice"
+  piece: "the scroll sound, four marble clicks"
+  url: "https://freesound.org/people/lsprice/sounds/89812/"
+  license: '<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>'
+  where: "every page, when you scroll"
+- author: "jpkweli"
+  piece: "the sound at the top and bottom of a page, a glass set down"
+  url: "https://freesound.org/people/jpkweli/sounds/154773/"
+  license: '<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>'
+  where: "every page, at its top and bottom"
+- author: "XxBirdoxX"
+  piece: "the typing sound, a pen click"
+  url: "https://freesound.org/people/XxBirdoxX/sounds/52283/"
+  license: '<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>'
+  where: "the link code box on the home page"
+- author: "digifishmusic"
+  piece: "the sound for pointing at a button, a drip recorded under water"
+  url: "https://freesound.org/people/digifishmusic/sounds/46934/"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "every page, when the mouse comes onto a button"
+- author: "Nuno Filipe Povoa"
+  piece: "the sound for turning sounds on, from the Oxygen sound theme"
+  url: "https://github.com/KDE/oxygen-sounds"
+  license: "GNU LGPL 3.0 or later"
+  where: "the Sounds switch on every page"
