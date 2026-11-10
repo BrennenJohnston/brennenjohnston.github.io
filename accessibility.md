@@ -36,7 +36,13 @@ I try to respond to accessibility feedback within five business days.
 
 This site is designed to be compatible with current versions of Chrome, Edge, Firefox, and Safari on desktop and mobile, used with the screen readers, screen magnifiers, refreshable braille displays, speech input, and switch access built into or commonly used with those platforms.
 
-The site is plain HTML and CSS with no JavaScript, so it does not depend on scripting being available, and content stays readable at 400% zoom and with a user stylesheet applied.
+The site is plain HTML and CSS. One small script adds optional sounds; every page works the same without it, and content stays readable at 400% zoom and with a user stylesheet applied.
+
+## Sound
+
+This site plays short sounds when you press a button or a link, point at a button with a mouse, scroll by hand, or type in the link code box. They are optional. The switch at the top of every page, "Sounds: on" or "Sounds: off", turns all of them off, and your choice is kept on your device. Sounds start off when your device asks for reduced motion or more contrast, or uses a Windows contrast theme.
+
+Moving keyboard focus makes no sound, so the site does not talk over a screen reader, and nothing is told by sound alone. The [sounds page]({{ '/sounds/' | relative_url }}) lists every sound, when it plays, and what you get without it.
 
 ## Technical specifications
 
@@ -64,6 +70,8 @@ Despite my best efforts to ensure the accessibility of this site, there are some
 
 5. **Links inside sentences can be smaller than 44 by 44 pixels.** Links in the site's menu are at least 44 pixels tall, but a link inside a sentence keeps the size of its text. WCAG 2.2 allows this for links in a sentence, but they can still be hard to hit with a tremor or limited hand control. Zooming the page in makes them larger, and every link can be reached with the Tab key.
 
+6. **The Sounds switch has not been checked with a screen reader yet.** Pressing it changes its visible text between "Sounds: on" and "Sounds: off". I have not yet confirmed that a screen reader says the change as it happens; the new text is on the button to read either way. I will test it with NVDA and update this statement.
+
 ## Assessment approach
 
 I assessed the accessibility of this site by the following approaches:
@@ -75,4 +83,4 @@ This site has not been evaluated by an external accessibility auditor and has no
 
 ## Date
 
-This statement was created on 27 July 2026 and updated on 9 November 2026.
+This statement was created on 27 July 2026 and updated on 10 November 2026.

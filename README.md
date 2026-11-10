@@ -2,7 +2,7 @@
 
 A free, accessible static website showcasing open-source 3D-printed assistive technology by Brennen Johnston, lead of WATAP's 3D Printed Assistive Technology Program. The site presents ready-to-print devices, works in progress seeking collaboration, and completed custom builds, plus a curated hub of assistive technology maker resources.
 
-Built with [Jekyll](https://jekyllrb.com/) and hosted for free on GitHub Pages. There is no JavaScript, no build pipeline to maintain, and no framework: adding a project is just adding one Markdown file.
+Built with [Jekyll](https://jekyllrb.com/) and hosted for free on GitHub Pages. There is one small script, for optional sounds; there is no build pipeline to maintain and no framework: adding a project is just adding one Markdown file.
 
 ## Adding or editing projects
 
@@ -23,6 +23,14 @@ The look of this site is a collage of pieces other people made and shared under 
 | The feed link, [jekyll-feed](https://github.com/jekyll/jekyll-feed) | Ben Balter and jekyll-feed contributors | MIT License |
 | The skip link and the hidden heading, [a11y-boilerplate](https://github.com/jbmoelker/a11y-boilerplate) | Jasper Moelker | MIT License |
 | The two KEMi symposium photographs on the collaborations page | Kren Engineering-based Medicine Initiative (KEMi), University of Washington | used with KEMi's permission |
+| The button sound, two cork pops, [cork.aif](https://freesound.org/people/Traveler/sounds/13635/) and [cork2.aif](https://freesound.org/people/Traveler/sounds/14634/) | Traveler | CC BY 4.0 |
+| The link sound, a water drip, [RBH_Household_drip 02.wav](https://freesound.org/people/RHumphries/sounds/1014/) | RHumphries | CC BY 4.0 |
+| The arrival sound, [Dropping tiny pebble in still water surface](https://freesound.org/people/jorickhoofd/sounds/160119/) | jorickhoofd | CC BY 4.0 |
+| The scroll sound, four marble clicks from the pack [MarbleDrop](https://freesound.org/people/lsprice/packs/5842/) | lsprice | CC BY 3.0 |
+| The sound at the top and bottom of a page, [Glass Being Set on Counter.wav](https://freesound.org/people/jpkweli/sounds/154773/) | jpkweli | CC0 |
+| The typing sound, a pen click, [Pen Clicks-GAIN_01.wav](https://freesound.org/people/XxBirdoxX/sounds/52283/) | XxBirdoxX | CC0 |
+| The sound for pointing at a button, a drip recorded under water, [Dripping.wav](https://freesound.org/people/digifishmusic/sounds/46934/) | digifishmusic | CC BY 4.0 |
+| The sound for turning sounds on, from the [Oxygen sound theme](https://github.com/KDE/oxygen-sounds) | Nuno Filipe Povoa | GNU LGPL 3.0 or later |
 
 The project photographs are my own; the two symposium photographs on the collaborations page are KEMi's. The footer of every page names each author, and the Credits page (`credits.md`, published at /credits/) lists every piece with its license.
 
@@ -63,8 +71,45 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L35 | Shows a section's sentence and its project cards, or its empty message when it has none | `_includes/project-list.html` |
 | L36 | Shows each status section of a category page only when it has projects, and a message when the category has none | `_includes/category-page.html` |
 | L37 | Aligns the Tactile Map guide's row headers to the left at normal weight, like the PDF | `assets/css/borrowed/cyanobacteria.css` |
+| L38 | Names the sound files for a button press, a link press and typing | `assets/js/sound.js` |
+| L39 | Names the sound files for a scroll tick and for the top and bottom of a page | `assets/js/sound.js` |
+| L40 | Builds a press sound's address | `assets/js/sound.js` |
+| L41 | Plays a press sound's takes in turn, so a repeated press does not repeat one recording | `assets/js/sound.js` |
+| L42 | Says which links count as big buttons: the menu, the site's title, a project's title, a category bubble | `assets/js/sound.js` |
+| L43 | Names the switch's two texts and the one thing the browser remembers | `assets/js/sound.js` |
+| L44 | Decides whether sounds start on: a saved choice first, then off for reduced motion, more contrast or a contrast theme | `assets/js/sound.js` |
+| L45 | Reads the device's preferences and the saved choice | `assets/js/sound.js` |
+| L46 | Asks for the press sounds ahead of the first press, and writes the switch's text | `assets/js/sound.js` |
+| L47 | Puts a choice to work, and saves it when the switch is pressed | `assets/js/sound.js` |
+| L48 | Finds what a press landed on, and tells a plain press from one made with a modifier key | `assets/js/sound.js` |
+| L49 | Plays a press sound and the switch's sound | `assets/js/sound.js` |
+| L50 | Listens for presses by mouse, touch and keyboard, one sound to a press | `assets/js/sound.js` |
+| L51 | Starts everything up, answers the switch, and keeps a page shown again by Back in step with the choice | `assets/js/sound.js` |
+| L52 | Starts the script only in a browser | `assets/js/sound.js` |
+| L53 | Loads the script | `_includes/head.html` |
+| L54 | The Sounds switch, hidden until the script runs | `_includes/header.html` |
+| L55 | Makes the switch at least 44 px tall | `assets/css/borrowed/cyanobacteria.css` |
+| L56 | The scroll tick's settings: one tick for every 40 px, at most one every 70 ms | `assets/js/sound.js` |
+| L57 | Holds every sound back until the visitor has pressed something, as browsers require | `assets/js/sound.js` |
+| L58 | Plays a scroll tick and the sound for the top and bottom of a page | `assets/js/sound.js` |
+| L59 | Listens for scrolling by hand and tells it from a scroll the page makes by itself | `assets/js/sound.js` |
+| L60 | Plays a pen click for each change in the link code box | `assets/js/sound.js` |
+| L61 | Starts the scroll and typing sounds | `assets/js/sound.js` |
+| L62 | The arrival sound: a note left at a press and read by the page it leads to | `assets/js/sound.js` |
+| L63 | Starts the arrival sound | `assets/js/sound.js` |
+| L64 | Fetches the sounds at the first sign of a hand, not as the page loads, so pages stay light | `assets/js/sound.js` |
+| L65 | Asks for that fetch when sounds are turned on | `assets/js/sound.js` |
+| L66 | Adds the arrival sound to that fetch | `assets/js/sound.js` |
+| L67 | Starts listening for the first sign of a hand | `assets/js/sound.js` |
+| L68 | The sound for pointing at a button: a quiet drip as the mouse comes onto one | `assets/js/sound.js` |
+| L69 | The switch's tune: which note comes next | `assets/js/sound.js` |
+| L70 | Lets the switch's sound play slower, and so lower | `assets/js/sound.js` |
+| L71 | The pointing sound's level, and its start | `assets/js/sound.js` |
+| L72 | Keeps an audio player inside a narrow page | `assets/css/borrowed/cyanobacteria.css` |
+| L73 | Each sound's player on the sounds page: its label, the browser's own player and its caption | `sounds.md` |
+| L74 | A captions track in each player, with its caption file | `sounds.md`, `assets/sounds/captions/` |
 
-The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page.
+The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L74 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 
 - **Adding a piece.** First save it untouched, with its license text, in `vendor/pristine/`; then add its row to `vendor/pristine/PROVENANCE.md`; then add its author to `_data/credits.yml`, so the footer and the Credits page name them; only then use it in a stylesheet or a template.
 - **Photo sizes.** `_data/image-sizes.yml` holds every project photo's width and height, so a page holds each photo's space while it loads. A new photo missing from that list still shows, just without the held space; to add it, copy an entry with the photo's path, width and height.
@@ -80,6 +125,7 @@ The missing numbers were never needed in the site: licensed pieces covered L2, L
 ├── about.md               # Bio, profile links, contact
 ├── accessibility.md       # Accessibility statement (/accessibility/)
 ├── credits.md             # Credits: every borrowed piece and its author (/credits/)
+├── sounds.md              # Every sound: when it plays, why, and who recorded it (/sounds/)
 ├── 404.html               # Page-not-found page
 ├── _projects/             # ONE FILE PER DEVICE: this is where projects live
 ├── projects/category/     # One stub per category (/projects/category/<name>/)
@@ -94,6 +140,8 @@ The missing numbers were never needed in the site: licensed pieces covered L2, L
     ├── css/fonts.css      # The typeface's font faces
     ├── css/borrowed/      # The adapted stylesheets: 7.css, Cyanobacteria, a11y-boilerplate
     ├── fonts/             # M PLUS Rounded 1c, self-hosted, with its license
+    ├── js/sound.js        # The one script: optional sounds and their switch
+    ├── sounds/            # The sound files, with their notice, licenses and captions
     ├── docs/              # PDFs (tactile map guide)
     └── images/
         ├── icons/nuvola/  # Nuvola icons, with their license
