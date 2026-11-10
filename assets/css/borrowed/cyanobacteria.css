@@ -75,6 +75,8 @@
      so each reads like the PDF's first column: the name bold through its own strong element, the words in brackets regular.
    Added on 2026-11-10 (round WEB-R2), approved by the owner (FD-81, FD-83): ledger line L55, .site-nav button { min-height: 44px; } after the nav
      links' rules, so the Sounds switch at the top of the nav is at least 44 px tall like the links under it.
+   Added the same day, approved by the owner (FD-126): ledger line L72, audio { max-width: 100%; } after the img rule, so the browser's own
+     audio player on the sounds page stays inside the page at 320 px (it was 300 px wide in a 280 px pane, and the page measured 344 px).
 */
 
 /* start light mode styling */
@@ -310,6 +312,7 @@ h4 {
 
 /* prevents overflow on smaller screens */
 img { max-width: 100%; height: auto; }
+audio { max-width: 100%; }
 pre { overflow-x: auto; }
 
 
