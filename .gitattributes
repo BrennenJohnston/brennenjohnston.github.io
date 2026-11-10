@@ -6,3 +6,6 @@
 vendor/pristine/** -text
 assets/fonts/** -text
 assets/images/icons/** -text
+# The same holds for the sound files in assets/sounds/ and the license texts
+# beside them.
+assets/sounds/** -text
