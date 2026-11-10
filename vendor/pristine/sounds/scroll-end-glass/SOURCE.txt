@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 154773
+  Address:      https://freesound.org/people/jpkweli/sounds/154773/
+  Title:        Glass Being Set on Counter.wav
+  Uploaded by:  jpkweli
+  Uploaded on:  May 4th, 2012
+  License:      Creative Commons 0, http://creativecommons.org/publicdomain/zero/1.0/
+  File:         Type Wave (.wav); Duration 0:01.408; File size 268.1 KB; Sample rate 48 kHz; Bit depth 16 bit; Channels Stereo
+  Description:  Glass on marble calendar. What a swell sound.
+  Saved page:   SHA-256 11c3c2814f70d1c405ade47e73e7a95638ab7f723c4cc449565cd629353ba3b4

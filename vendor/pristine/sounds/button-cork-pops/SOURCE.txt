@@ -1,0 +1,26 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 13635
+  Address:      https://freesound.org/people/Traveler/sounds/13635/
+  Title:        cork.aif
+  Uploaded by:  Traveler
+  Uploaded on:  January 4th, 2006
+  License:      Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+  File:         Type AIFF (.aiff); Duration 0:00.629; File size 82.2 KB; Sample rate 44.1 kHz; Bit depth 24 bit; Channels Mono
+  Description:  "Pop" sound of cork extracted from 2003 Côtes du Rhône. Recorded with Blue 8-ball (mic) into Mbox.
+  Saved page:   SHA-256 65f058e7382e241e2093143583107d8a0e6d5a707ae1fd73804b3f9fdadf3c5b
+
+Sound 14634
+  Address:      https://freesound.org/people/Traveler/sounds/14634/
+  Title:        cork2.aif
+  Uploaded by:  Traveler
+  Uploaded on:  January 23rd, 2006
+  License:      Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+  File:         Type AIFF (.aiff); Duration 0:00.261; File size 34.5 KB; Sample rate 44.1 kHz; Bit depth 24 bit; Channels Mono
+  Description:  "Pop" sound of cork (plastic) extracted from 2005 Argentine Malbec. Blue 8-ball into Mbox.
+  Saved page:   SHA-256 1d33cd339c7bf510487e560a63df487012c2ad3731f100fb5c2d6cd29909e79e

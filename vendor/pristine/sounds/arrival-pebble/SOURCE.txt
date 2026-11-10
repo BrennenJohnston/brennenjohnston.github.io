@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 160119
+  Address:      https://freesound.org/people/jorickhoofd/sounds/160119/
+  Title:        Dropping tiny pebble in still water surface
+  Uploaded by:  jorickhoofd
+  Uploaded on:  June 30th, 2012
+  License:      Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+  File:         Type Wave (.wav); Duration 0:01.165; File size 202.0 KB; Sample rate 44.1 kHz; Bit depth 16 bit; Channels Stereo
+  Description:  Dropping tiny pebble in still water surface
+  Saved page:   SHA-256 62399dafa9f3d91ab6916d2c5ac6f6912bd718ceea7a9564a81c70fd5e84c704

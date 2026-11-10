@@ -1,0 +1,14 @@
+Where each license text in this folder came from, unchanged.
+
+CC0-1.0.txt, CC-BY-3.0.txt, LGPL-3.0-or-later.txt
+  The KDE Oxygen sound theme's own copies: the LICENSES folder of
+  https://github.com/KDE/oxygen-sounds at commit
+  114e2b856deebc2153444d5707c0ed17001b252c, fetched on 2026-11-09.
+
+CC-BY-4.0.txt
+  https://creativecommons.org/licenses/by/4.0/legalcode.txt
+  fetched on 2026-11-10.
+
+GPL-3.0.txt
+  https://www.gnu.org/licenses/gpl-3.0.txt
+  fetched on 2026-11-10. The LGPL 3.0 is written as additions to it.

@@ -1,0 +1,5 @@
+apps-kmix.png is the file nuvola/128x128/apps/kmix.png taken, unchanged,
+from the Nuvola 1.0 archive already kept in this repository at
+vendor/pristine/nuvola/nuvola-1.0.tar.gz. Its author, license and the
+license texts are in vendor/pristine/nuvola/. Added on 2026-11-10 for the
+site's Sounds switch.
