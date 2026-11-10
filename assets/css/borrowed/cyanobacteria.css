@@ -73,6 +73,8 @@
    Measured on 2026-11-06 after the page background became Bubble Rain (FD-61; its lightest and darkest 5 %: #e0efcb, #061409), with no rule changed: the round's rendered-contrast tool over the real wallpaper, 0 of 2,668 text boxes below the need, lowest 5.49:1 normal and 3.22:1 large; box edges at least 3.29:1.
    Added on 2026-11-09, approved by the owner (FD-69): ledger line L37, the Tactile Map guide's row headers (th[scope="row"]) at normal weight and aligned to the start,
      so each reads like the PDF's first column: the name bold through its own strong element, the words in brackets regular.
+   Added on 2026-11-10 (round WEB-R2), approved by the owner (FD-81, FD-83): ledger line L55, .site-nav button { min-height: 44px; } after the nav
+     links' rules, so the Sounds switch at the top of the nav is at least 44 px tall like the links under it.
 */
 
 /* start light mode styling */
@@ -316,6 +318,7 @@ pre { overflow-x: auto; }
 .site-nav a { background: var(--gloss), var(--pill); border: var(--edge); border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 5px rgba(0,30,70,0.4); font-size: 1.1875rem; font-weight: 700; white-space: nowrap; margin: 8px 5px; }
 .site-nav a:hover, .site-nav a:focus { background: var(--gloss), var(--pill-hover); }
 .site-nav a img { vertical-align: middle; margin-right: 4px; }
+.site-nav button { min-height: 44px; }
 .title-bar-text h1, .title-bar-text h2, .title-bar-text h3 { font-weight: 700; }
 .title-bar-text h3 { font-size: 1.1875rem; }
 .window-body { border-radius: 8px; }

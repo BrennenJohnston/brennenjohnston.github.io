@@ -11,7 +11,7 @@
     <div class="small">
       <nav class="site-nav" aria-label="Main">
 
-        <div class="trigger">
+        <div class="trigger"><button type="button" id="sounds-switch" hidden><img src="{{ '/assets/images/icons/nuvola/apps-kmix.png' | relative_url }}" alt="" width="24" height="24"> <span>Sounds: off</span></button>
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
