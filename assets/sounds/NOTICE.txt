@@ -24,12 +24,9 @@ moments/arrive.wav
   Attribution 4.0: https://creativecommons.org/licenses/by/4.0/
 
 scroll/tick-1.wav, tick-2.wav, tick-3.wav, tick-4.wav
-  "md09.aif", "md07.aif", "md08.aif" and "md02.aif" by lsprice
-  https://freesound.org/people/lsprice/sounds/89812/
-  https://freesound.org/people/lsprice/sounds/89810/
-  https://freesound.org/people/lsprice/sounds/89811/
-  https://freesound.org/people/lsprice/sounds/89805/
-  Attribution 3.0: http://creativecommons.org/licenses/by/3.0/
+  "20081117kijjaz-PowerBookCDROM01.wav" by kijjaz
+  https://freesound.org/people/kijjaz/sounds/63249/
+  Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/
 
 scroll/end.wav
   "Glass Being Set on Counter.wav" by jpkweli
