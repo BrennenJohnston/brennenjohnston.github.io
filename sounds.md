@@ -102,7 +102,7 @@ Recorded by XxBirdoxX: "[Pen Clicks-GAIN_01.wav](https://freesound.org/people/Xx
 
 ### Turning sounds on
 
-- When: you press the switch to turn sounds on. Turning them off is silent. The note you hear changes from one time to the next. If you keep turning sounds on, the switch may rest for 3 seconds while a longer piece plays; after that, pressing it turns sounds off and stops the piece.
+- When: you press the switch to turn sounds on. Turning them off is silent. The notes you hear change from one time to the next. If you keep turning sounds on, the switch may rest for 3 seconds while a longer piece plays; after that, pressing it turns sounds off and stops the piece.
 - Why: it shows you what "on" sounds like.
 - Without sound: the switch reads "Sounds: on".
 
