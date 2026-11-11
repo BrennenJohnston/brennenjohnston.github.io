@@ -41,6 +41,7 @@ const GROUP_LEVELS_DB = {
   typing: -12,
   scroll: -16,
   hover: -18,
+  whoosh: -14,
   moments: 0,
 };
 // Muting fades the master out over this, so a sound stops without a click.
@@ -208,7 +209,7 @@ async function _start(
 
 /**
  * The gain a group's sounds pass through, or null before the first sound.
- * @param {'buttons'|'links'|'arrive'|'typing'|'scroll'|'hover'|'moments'} name
+ * @param {'buttons'|'links'|'arrive'|'typing'|'scroll'|'hover'|'whoosh'|'moments'} name
  * @returns {GainNode|null}
  */
 export function soundGroup(name) {
@@ -801,6 +802,96 @@ function _installArrival() {
   if (arrivalIsFresh(stored, Date.now())) _playArrival();
 }
 
+// The whoosh. This block and its one call in _startSounds are the whole cue:
+// take both out and it is gone.
+// A press on the mouse's wheel starts the browser's own auto scroll: the page
+// glides while the pointer sits above or below where the wheel was pressed.
+// While it glides, a bamboo stick swishes past, one pass after another, and
+// none starts once it stops. Going down the passes play lower and slower,
+// going up higher and quicker; a turn starts a pass the other way at once.
+// A pass that has begun plays to its end.
+const WHOOSH_FILE = '/assets/sounds/whoosh/pass.wav';
+const WHOOSH_WAY_CENTS = 300;
+const WHOOSH_GAP_MS = 360;
+const WHOOSH_REST_MS = 150;
+const WHOOSH_HELD_MS = 300;
+let _autoScroll = false;
+let _wheelDownAt = 0;
+let _whoosh = null;
+
+function _playWhoosh(rate) {
+  const context = _audioContext();
+  const running = context.resume();
+  _bufferFor(WHOOSH_FILE, context)
+    .then((buffer) => _start(context, running, buffer, 'whoosh', { rate }))
+    .catch((error) => {
+      console.warn('[Sounds] The whoosh did not play:', error);
+    });
+}
+
+function _installWhoosh() {
+  let top = 0;
+  const end = () => {
+    _autoScroll = false;
+    clearTimeout(_whoosh?.timer);
+    _whoosh = null;
+  };
+  const down = (event) => {
+    const wheel = event.pointerType === 'mouse' && event.button === 1;
+    if (!wheel || !event.isTrusted || event.target?.closest?.('a[href]')) {
+      end();
+      return;
+    }
+    _autoScroll = _soundsOn;
+    _wheelDownAt = performance.now();
+    top = document.scrollingElement.scrollTop;
+    if (_soundsOn) _fetchAhead([WHOOSH_FILE], 'whoosh');
+  };
+  // The wheel let go at once leaves auto scroll on; let go after being held,
+  // it ends it. The press that ends auto scroll reaches the page only as
+  // its release.
+  const up = (event) => {
+    const quick = performance.now() - _wheelDownAt < WHOOSH_HELD_MS;
+    if (event.button === 1 && quick) return;
+    end();
+  };
+  // Each pass is due a gap after the last was due, so a pass that waited
+  // for the next scroll does not make the one after it late.
+  const scrolled = (event) => {
+    if (!_autoScroll || event.target !== document) return;
+    const now = document.scrollingElement.scrollTop;
+    const moved = now - top;
+    top = now;
+    if (!moved) return;
+    const way = moved > 0 ? -1 : 1;
+    const at = performance.now();
+    if (_whoosh?.way !== way) {
+      clearTimeout(_whoosh?.timer);
+      _whoosh = { way, due: at, timer: null };
+    }
+    const motion = _whoosh;
+    if (at >= motion.due) {
+      const rate = 2 ** ((way * WHOOSH_WAY_CENTS) / 1200);
+      _playWhoosh(rate);
+      motion.due += WHOOSH_GAP_MS / rate;
+    }
+    clearTimeout(motion.timer);
+    motion.timer = setTimeout(() => {
+      if (_whoosh === motion) _whoosh = null;
+    }, WHOOSH_REST_MS);
+  };
+  const listeners = [
+    ['pointerdown', down],
+    ['pointerup', up],
+    ['keydown', end],
+    ['wheel', end],
+    ['scroll', scrolled],
+  ];
+  for (const [type, fn] of listeners) {
+    document.addEventListener(type, fn, { capture: true, passive: true });
+  }
+}
+
 // The switch's melody: Pachelbel's Canon in D, as the Mutopia Project's
 // edition of his parts gives it ("Canon per 3 Violini e Basso", typeset by
 // Michael Fischer v. Mollard, CC BY 4.0). Each time sounds come on, the
@@ -974,6 +1065,7 @@ function _startSounds() {
   _installTypingSounds();
   _installHoverSounds();
   _installArrival();
+  _installWhoosh();
   _installFirstHand();
   const button = document.getElementById('sounds-switch');
   button?.addEventListener('click', () => {

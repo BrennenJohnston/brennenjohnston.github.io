@@ -28,6 +28,7 @@ The look of this site is a collage of pieces other people made and shared under 
 | The arrival sound, [Dropping tiny pebble in still water surface](https://freesound.org/people/jorickhoofd/sounds/160119/) | jorickhoofd | CC BY 4.0 |
 | The scroll sound, a laptop's disc drive spinning, [20081117kijjaz-PowerBookCDROM01.wav](https://freesound.org/people/kijjaz/sounds/63249/) | kijjaz | CC0 |
 | The sound at the top and bottom of a page, [Glass Being Set on Counter.wav](https://freesound.org/people/jpkweli/sounds/154773/) | jpkweli | CC0 |
+| The auto scroll sound, a bamboo stick swished, [Whoosh](https://freesound.org/people/qubodup/sounds/60013/) | qubodup | CC0 |
 | The typing sound, a pen click, [Pen Clicks-GAIN_01.wav](https://freesound.org/people/XxBirdoxX/sounds/52283/) | XxBirdoxX | CC0 |
 | The sound for pointing at a button, a drip recorded under water, [Dripping.wav](https://freesound.org/people/digifishmusic/sounds/46934/) | digifishmusic | CC BY 4.0 |
 | The sound for turning sounds on, from the [Oxygen sound theme](https://github.com/KDE/oxygen-sounds) | Nuno Filipe Povoa | GNU LGPL 3.0 or later |
@@ -117,6 +118,9 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L80 | Greys the switch while it rests, with 7.css's own look for a disabled button | `assets/css/borrowed/cyanobacteria.css` |
 | L81 | The Canon a bar per press; removed when a beat per press came back | none |
 | L82 | Plays the Canon a beat per press with shorter stages: 8 single notes, then 16 beats as the other parts come in, and the rest of the piece from press 25 | `assets/js/sound.js` |
+| L83 | The auto scroll sound's own level, 14 dB under a button press | `assets/js/sound.js` |
+| L84 | Plays a bamboo swish again and again while the mouse wheel's auto scroll moves the page, lower going down and higher going up | `assets/js/sound.js` |
+| L85 | The auto scroll sound's player on the sounds page, with its caption file | `sounds.md`, `assets/sounds/captions/` |
 
 The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L82 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 

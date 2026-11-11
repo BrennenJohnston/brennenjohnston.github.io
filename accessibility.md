@@ -40,7 +40,7 @@ The site is plain HTML and CSS. One small script adds optional sounds; every pag
 
 ## Sound
 
-This site plays short sounds when you press a button or a link, point at a button with a mouse, scroll by hand, or type in the link code box. They are optional. The switch at the top of every page, "Sounds: on" or "Sounds: off", turns all of them off, and your choice is kept on your device. Sounds start off when your device asks for reduced motion or more contrast, or uses a Windows contrast theme.
+This site plays short sounds when you press a button or a link, point at a button with a mouse, scroll by hand or with auto scroll, or type in the link code box. They are optional. The switch at the top of every page, "Sounds: on" or "Sounds: off", turns all of them off, and your choice is kept on your device. Sounds start off when your device asks for reduced motion or more contrast, or uses a Windows contrast theme.
 
 Moving keyboard focus makes no sound, so the site does not talk over a screen reader, and nothing is told by sound alone. The [sounds page]({{ '/sounds/' | relative_url }}) lists every sound, when it plays, and what you get without it.
 
