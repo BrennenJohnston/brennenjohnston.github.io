@@ -49,4 +49,5 @@ moments/on.wav
   Copyright 2008 Nuno Filipe Povoa
   LGPL-3.0-or-later. The license text is LICENSE-LGPL-3.0.txt beside this
   note, and the GPL it builds on is LICENSE-GPL-3.0.txt. The site's script
-  also plays this file slower to make seven lower notes.
+  also plays this file slower and faster to make the notes of Pachelbel's
+  Canon in D, from D3 to D6.

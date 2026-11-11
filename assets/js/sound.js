@@ -303,6 +303,37 @@ export async function playMomentSound(name, rate = 1) {
 }
 
 /**
+ * Play one of the moments as notes, each at its own time and pitch, all
+ * through one level, so they can be stopped together.
+ * @param {keyof typeof MOMENT_FILES} name
+ * @param {Array<[number, number]>} notes - Seconds from now, and a pitch as a
+ *   MIDI number
+ * @param {number} own - The MIDI number of the file's own note
+ * @param {number} [levelDb] - Every note's level, under the moment's own
+ * @returns {Promise<AudioBufferSourceNode[]>} The notes, once they are set
+ */
+export async function playMomentNotes(name, notes, own, levelDb = 0) {
+  if (!MOMENT_FILES[name]) throw new Error(`No such moment: ${name}`);
+  const [url, momentDb] = MOMENT_FILES[name];
+  const context = _audioContext();
+  const running = context.resume();
+  const buffer = await _bufferFor(url, context);
+  await _whenRunning(running);
+  const voice = context.createGain();
+  voice.gain.value = _gainOf(momentDb + levelDb);
+  voice.connect(_mixerFor(context).groups.moments);
+  const now = context.currentTime;
+  return notes.map(([seconds, pitch]) => {
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    source.playbackRate.value = 2 ** ((pitch - own) / 12);
+    source.connect(voice);
+    source.start(now + seconds);
+    return source;
+  });
+}
+
+/**
  * Play a scroll's tick, its takes in turn; or the end of the page.
  * @param {{way?: -1|0|1, end?: boolean}} [how] - way: down (-1), a little
  *   lower, or up (1), a little higher
@@ -436,6 +467,7 @@ function _syncSoundsButton(on) {
 function _useSounds(on) {
   _soundsOn = Boolean(on);
   setMuted(!_soundsOn);
+  if (!_soundsOn) _cutCanon();
   _syncSoundsButton(_soundsOn);
   // On: the sounds are fetched ahead, once a hand has shown itself.
   _fetchForHand();
@@ -467,13 +499,6 @@ function _playPress(el) {
   const set = el.matches(BIG_BUTTONS) ? 'buttons' : 'links';
   playKeySound(set).catch((error) => {
     console.warn('[Sounds] A press sound did not play:', error);
-  });
-}
-
-function _playMoment(name, rate) {
-  if (!_soundsOn) return;
-  playMomentSound(name, rate).catch((error) => {
-    console.warn(`[Sounds] The ${name} sound did not play:`, error);
   });
 }
 
@@ -776,18 +801,161 @@ function _installArrival() {
   if (arrivalIsFresh(stored, Date.now())) _playArrival();
 }
 
-// The switch's melody. Each time sounds are turned on, the chime plays the
-// next note of the tune that opens Pachelbel's Canon in D: F sharp, E, D,
-// C sharp, B, A, B, C sharp, and round again. The chime's own note is the
-// first, F sharp. Each other note is the same recording played slower, and
-// so lower, by that many twelfths of an octave.
-const ON_MELODY_STEPS = [0, -2, -4, -5, -7, -9, -7, -5];
-let _onNote = 0;
+// The switch's melody: Pachelbel's Canon in D, as the Mutopia Project's
+// edition of his parts gives it ("Canon per 3 Violini e Basso", typeset by
+// Michael Fischer v. Mollard, CC BY 4.0). Each time sounds come on, the
+// chime plays the next beat in its own rhythm: 24 beats of the first violin
+// alone, then 56 with all four parts, the bass an octave higher than
+// written. The press after that hands over to the piece: the rest plays by
+// itself, and the switch rests for 3 seconds before it can stop it. After
+// the hand over, the next time sounds come on starts from the top again.
+// A note is the chime played faster or slower. Times are in thirty-second
+// notes, 8 to a beat; each violin comes in two bars after the one before it
+// and plays the same line, then the first violin's ending or the start of it.
+const CANON_LINE = [
+  78, 8, 76, 8, 74, 8, 73, 8,
+  71, 8, 69, 8, 71, 8, 73, 8,
+  74, 8, 73, 8, 71, 8, 69, 8,
+  67, 8, 66, 8, 67, 8, 64, 8,
+  62, 4, 66, 4, 69, 4, 67, 4, 66, 4, 62, 4, 66, 4, 64, 4,
+  62, 4, 59, 4, 62, 4, 69, 4, 67, 4, 71, 4, 69, 4, 67, 4,
+  66, 4, 62, 4, 64, 4, 73, 4, 74, 4, 78, 4, 81, 4, 69, 4,
+  71, 4, 67, 4, 69, 4, 66, 4, 62, 4, 74, 4, 74, 6, 73, 2,
+  74, 2, 73, 2, 74, 2, 62, 2, 61, 2, 69, 2, 64, 2, 66, 2, 62, 2, 74, 2, 73, 2, 71, 2, 73, 2, 78, 2, 81, 2, 83, 2,
+  79, 2, 78, 2, 76, 2, 79, 2, 78, 2, 76, 2, 74, 2, 73, 2, 71, 2, 69, 2, 67, 2, 66, 2, 64, 2, 67, 2, 66, 2, 64, 2,
+  62, 2, 64, 2, 66, 2, 67, 2, 69, 2, 64, 2, 69, 2, 67, 2, 66, 2, 71, 2, 69, 2, 67, 2, 69, 2, 67, 2, 66, 2, 64, 2,
+  62, 2, 59, 2, 71, 2, 73, 2, 74, 2, 73, 2, 71, 2, 69, 2, 67, 2, 66, 2, 64, 2, 71, 2, 69, 2, 71, 2, 69, 2, 67, 2,
+  66, 4, 78, 4, 76, 12, 74, 4, 78, 8,
+  83, 8, 81, 8, 83, 8, 85, 8,
+  86, 4, 74, 4, 73, 12, 71, 4, 74, 8,
+  74, 12, 74, 4, 74, 4, 79, 4, 76, 4, 81, 4,
+  81, 2, 78, 1, 79, 1, 81, 2, 78, 1, 79, 1, 81, 1, 69, 1, 71, 1, 73, 1, 74, 1, 76, 1, 78, 1, 79, 1, 78, 2, 74, 1, 76, 1, 78, 2, 66, 1, 67, 1, 69, 1, 71, 1, 69, 1, 67, 1, 69, 1, 66, 1, 67, 1, 69, 1,
+  67, 2, 71, 1, 69, 1, 67, 2, 66, 1, 64, 1, 66, 1, 64, 1, 62, 1, 64, 1, 66, 1, 67, 1, 69, 1, 71, 1, 67, 2, 71, 1, 69, 1, 71, 2, 73, 1, 74, 1, 69, 1, 71, 1, 73, 1, 74, 1, 76, 1, 78, 1, 79, 1, 81, 1,
+  78, 2, 74, 1, 76, 1, 78, 2, 76, 1, 74, 1, 76, 1, 73, 1, 74, 1, 76, 1, 78, 1, 76, 1, 74, 1, 73, 1, 74, 2, 71, 1, 73, 1, 74, 2, 62, 1, 64, 1, 66, 1, 67, 1, 66, 1, 64, 1, 66, 1, 74, 1, 73, 1, 74, 1,
+  71, 2, 74, 1, 73, 1, 71, 2, 69, 1, 67, 1, 69, 1, 67, 1, 66, 1, 67, 1, 69, 1, 71, 1, 73, 1, 74, 1, 71, 2, 74, 1, 73, 1, 74, 2, 73, 1, 71, 1, 73, 1, 74, 1, 76, 1, 74, 1, 73, 1, 74, 1, 71, 1, 73, 1,
+  74, 8, 73, 8, 71, 8, 74, 8,
+  62, 8, 62, 8, 62, 8, 64, 12,
+  69, 8, 69, 8, 66, 8, 69, 8,
+  67, 8, 66, 8, 67, 8, 76, 4,
+  78, 2, 66, 2, 67, 2, 66, 2, 64, 2, 76, 2, 78, 2, 76, 2, 74, 2, 66, 2, 62, 2, 71, 2, 69, 2, 57, 2, 55, 2, 57, 2,
+  59, 2, 71, 2, 73, 2, 71, 2, 69, 2, 57, 2, 55, 2, 57, 2, 59, 2, 71, 2, 69, 2, 71, 2, 73, 2, 61, 2, 59, 2, 61, 2,
+  62, 2, 74, 2, 76, 2, 74, 2, 73, 2, 61, 2, 62, 2, 61, 2, 59, 2, 71, 2, 69, 2, 71, 2, 73, 2, 61, 2, 66, 2, 64, 2,
+  62, 2, 74, 2, 76, 2, 79, 2, 78, 2, 66, 2, 69, 2, 78, 2, 74, 2, 79, 2, 78, 2, 79, 2, 76, 2, 69, 2, 67, 2, 69, 2,
+  66, 2, 69, 2, 69, 2, 69, 2, 69, 2, 69, 2, 69, 2, 69, 2, 66, 2, 66, 2, 66, 2, 66, 2, 66, 2, 66, 2, 69, 2, 69, 2,
+  67, 2, 67, 2, 67, 2, 74, 2, 74, 2, 74, 2, 74, 2, 74, 2, 74, 2, 74, 2, 71, 2, 71, 2, 69, 2, 69, 2, 76, 2, 73, 2,
+  69, 2, 78, 2, 78, 2, 78, 2, 76, 2, 76, 2, 76, 2, 76, 2, 74, 2, 74, 2, 74, 2, 74, 2, 81, 2, 81, 2, 81, 2, 81, 2,
+  83, 2, 83, 2, 83, 2, 83, 2, 81, 2, 81, 2, 81, 2, 81, 2, 83, 2, 83, 2, 83, 2, 83, 2, 85, 2, 73, 2, 73, 2, 73, 2,
+  74, 2, 62, 1, 64, 1, 66, 2, 62, 2, 61, 2, 73, 1, 74, 1, 76, 2, 73, 2, 71, 2, 59, 1, 61, 1, 62, 2, 59, 2, 61, 2, 69, 1, 67, 1, 66, 2, 64, 2,
+  62, 2, 67, 1, 66, 1, 64, 2, 67, 2, 66, 2, 62, 1, 64, 1, 66, 2, 69, 2, 67, 2, 71, 1, 69, 1, 67, 2, 66, 2, 64, 2, 69, 1, 67, 1, 66, 2, 64, 2,
+  66, 2, 74, 1, 73, 1, 74, 2, 66, 2, 69, 2, 69, 1, 71, 1, 73, 2, 69, 2, 66, 2, 74, 1, 76, 1, 78, 2, 74, 2, 78, 2, 78, 1, 76, 1, 74, 2, 73, 2,
+  71, 2, 71, 1, 69, 1, 71, 2, 73, 2, 74, 2, 78, 1, 76, 1, 74, 2, 78, 2, 79, 2, 74, 1, 73, 1, 71, 2, 71, 2, 69, 2, 64, 2, 69, 2, 69, 2,
+  69, 12, 69, 4, 62, 12, 69, 4,
+  67, 8, 69, 8, 67, 4, 62, 4, 62, 6, 61, 2,
+  62, 4, 74, 4, 73, 8, 71, 8, 69, 8,
+  62, 6, 64, 2, 66, 8, 71, 8, 64, 6, 64, 2,
+  66, 6, 78, 2, 78, 2, 79, 2, 78, 2, 76, 2, 74, 6, 74, 2, 74, 2, 76, 2, 74, 2, 73, 2,
+  71, 8, 74, 8, 74, 2, 72, 2, 71, 2, 72, 2, 69, 6, 69, 2,
+  69, 6, 81, 2, 81, 2, 83, 2, 81, 2, 79, 2, 78, 6, 78, 2, 78, 2, 79, 2, 78, 2, 76, 2,
+  74, 2, 72, 2, 71, 2, 72, 2, 69, 6, 69, 2, 67, 4, 74, 4, 73, 6, 73, 2,
+  74, 4, 74, 8, 73, 8, 71, 8, 69, 8,
+  67, 8, 66, 10, 64, 2, 64, 8,
+  66, 4, 78, 8, 76, 4, 74, 4, 86, 8, 84, 4,
+  83, 8, 86, 4, 81, 4, 83, 8, 81, 8,
+  81, 8, 69, 6, 67, 2, 66, 8, 78, 6, 76, 2,
+  74, 12, 74, 4, 74, 8, 73, 8,
+];
+const CANON_ENDING = [
+  74, 4, 62, 4, 61, 4, 73, 4, 71, 4, 59, 4, 57, 4, 69, 4,
+  67, 4, 79, 4, 78, 4, 66, 4, 64, 4, 71, 4, 64, 4, 76, 4,
+  78, 4, 66, 4, 64, 4, 76, 4, 74, 4, 62, 4, 61, 4, 73, 4,
+  71, 4, 83, 4, 81, 4, 69, 4, 67, 6, 76, 2, 69, 4, 69, 4,
+  69, 32,
+];
+const CANON_ENDINGS = [33, 17, 1];
+const CANON_GROUND = [50, 45, 47, 42, 43, 38, 43, 45];
+const CANON_CHIME = 78;
+const CANON_ENTRY = 64;
+const CANON_END = 57 * 32;
+const CANON_ALONE = 24;
+const CANON_FINALE = 80;
+const CANON_BEAT_S = 1.1;
+const CANON_PARTS_DB = -7;
+const CANON_REST_MS = 3000;
+let _canonScore = null;
+let _canonNext = 0;
+let _canonPlaying = [];
+let _canonRun = 0;
 
-function _nextOnRate() {
-  const step = ON_MELODY_STEPS[_onNote];
-  _onNote = (_onNote + 1) % ON_MELODY_STEPS.length;
-  return 2 ** (step / 12);
+// Every note of the piece as [time, pitch, part]: parts 0 to 2 are the
+// violins, 3 the bass.
+function _canonNotes() {
+  if (_canonScore) return _canonScore;
+  _canonScore = [];
+  CANON_ENDINGS.forEach((ending, violin) => {
+    const line = CANON_LINE.concat(CANON_ENDING.slice(0, 2 * ending));
+    let at = CANON_ENTRY * (violin + 1);
+    for (let i = 0; i < line.length; i += 2) {
+      _canonScore.push([at, line[i], violin]);
+      at += line[i + 1];
+    }
+  });
+  for (let at = 0; at < CANON_END - 32; at += 8) {
+    _canonScore.push([at, CANON_GROUND[(at / 8) % 8] + 12, 3]);
+  }
+  _canonScore.push([CANON_END - 32, CANON_GROUND[0] + 12, 3]);
+  return _canonScore;
+}
+
+/**
+ * What a press of "on" plays, counted from the first since the Canon began.
+ * @param {number} press - 0 for the first
+ * @returns {{notes: Array<[number, number]>, alone: boolean,
+ *   finale: boolean}} Each note as seconds after the press and a MIDI
+ *   pitch; whether the first violin plays alone; whether it is the hand over
+ */
+export function canonPress(press) {
+  const from = CANON_ENTRY + 8 * press;
+  const alone = press < CANON_ALONE;
+  const finale = press >= CANON_FINALE;
+  const to = finale ? CANON_END : from + 8;
+  const notes = _canonNotes()
+    .filter(([at, , part]) => at >= from && at < to && (!alone || part === 0))
+    .map(([at, pitch]) => [((at - from) * CANON_BEAT_S) / 8, pitch]);
+  return { notes, alone, finale };
+}
+
+function _playCanon() {
+  const press = canonPress(_canonNext);
+  _canonNext = press.finale ? 0 : _canonNext + 1;
+  if (press.finale) _restSwitch();
+  const run = _canonRun;
+  const levelDb = press.alone ? 0 : CANON_PARTS_DB;
+  playMomentNotes('on', press.notes, CANON_CHIME, levelDb)
+    .then((sources) => {
+      if (run === _canonRun) _canonPlaying = sources;
+      else for (const source of sources) source.stop();
+    })
+    .catch((error) => {
+      console.warn('[Sounds] The on sound did not play:', error);
+    });
+}
+
+// Turning sounds off stops every note the Canon has set, as the master
+// fades out.
+function _cutCanon() {
+  _canonRun += 1;
+  const at = _context ? _context.currentTime + MUTE_RAMP_S : 0;
+  for (const source of _canonPlaying) source.stop(at);
+  _canonPlaying = [];
+}
+
+// A button that is disabled loses keyboard focus, so the switch keeps it and
+// says it is unavailable instead.
+function _restSwitch() {
+  const button = document.getElementById('sounds-switch');
+  if (!button) return;
+  button.setAttribute('aria-disabled', 'true');
+  setTimeout(() => button.removeAttribute('aria-disabled'), CANON_REST_MS);
 }
 
 function _startSounds() {
@@ -808,10 +976,14 @@ function _startSounds() {
   _installFirstHand();
   const button = document.getElementById('sounds-switch');
   button?.addEventListener('click', () => {
+    if (button.getAttribute('aria-disabled') === 'true') return;
     const on = !_soundsOn;
     _setSoundsOn(on);
-    if (on) _playMoment('on', _nextOnRate());
+    if (on) _playCanon();
   });
+  // Leaving the page ends the Canon, so a page kept for Back does not bring
+  // it back part way.
+  window.addEventListener('pagehide', _cutCanon);
   // Back can show a page the browser kept as it was, from before the choice
   // was changed on a later page.
   window.addEventListener('pageshow', (event) => {

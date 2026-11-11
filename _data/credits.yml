@@ -88,3 +88,8 @@
   url: "https://github.com/KDE/oxygen-sounds"
   license: "GNU LGPL 3.0 or later"
   where: "the Sounds switch on every page"
+- author: "Michael Fischer v. Mollard, for the Mutopia Project"
+  piece: "the notes of the switch's tune, from his edition of Pachelbel's Canon per 3 Violini e Basso (the Canon in D); the bass is played an octave higher than written"
+  url: "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2047"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "every page, when you turn sounds on"

@@ -31,6 +31,7 @@ The look of this site is a collage of pieces other people made and shared under 
 | The typing sound, a pen click, [Pen Clicks-GAIN_01.wav](https://freesound.org/people/XxBirdoxX/sounds/52283/) | XxBirdoxX | CC0 |
 | The sound for pointing at a button, a drip recorded under water, [Dripping.wav](https://freesound.org/people/digifishmusic/sounds/46934/) | digifishmusic | CC BY 4.0 |
 | The sound for turning sounds on, from the [Oxygen sound theme](https://github.com/KDE/oxygen-sounds) | Nuno Filipe Povoa | GNU LGPL 3.0 or later |
+| The notes of the switch's tune, [Canon per 3 Violini e Basso](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2047), Pachelbel, typeset by Michael Fischer v. Mollard | Mutopia Project | CC BY 4.0 |
 
 The project photographs are my own; the two symposium photographs on the collaborations page are KEMi's. The footer of every page names each author, and the Credits page (`credits.md`, published at /credits/) lists every piece with its license.
 
@@ -82,7 +83,7 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L46 | Asks for the press sounds ahead of the first press, and writes the switch's text | `assets/js/sound.js` |
 | L47 | Puts a choice to work, and saves it when the switch is pressed | `assets/js/sound.js` |
 | L48 | Finds what a press landed on, and tells a plain press from one made with a modifier key | `assets/js/sound.js` |
-| L49 | Plays a press sound and the switch's sound | `assets/js/sound.js` |
+| L49 | Plays a press sound | `assets/js/sound.js` |
 | L50 | Listens for presses by mouse, touch and keyboard, one sound to a press | `assets/js/sound.js` |
 | L51 | Starts everything up, answers the switch, and keeps a page shown again by Back in step with the choice | `assets/js/sound.js` |
 | L52 | Starts the script only in a browser | `assets/js/sound.js` |
@@ -102,14 +103,20 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L66 | Adds the arrival sound to that fetch | `assets/js/sound.js` |
 | L67 | Starts listening for the first sign of a hand | `assets/js/sound.js` |
 | L68 | The sound for pointing at a button: a quiet drip as the mouse comes onto one | `assets/js/sound.js` |
-| L69 | The switch's tune: which note comes next | `assets/js/sound.js` |
+| L69 | The switch's first tune, eight notes; removed when the Canon replaced it | none |
 | L70 | Lets the switch's sound play slower, and so lower | `assets/js/sound.js` |
 | L71 | The pointing sound's level, and its start | `assets/js/sound.js` |
 | L72 | Keeps an audio player inside a narrow page | `assets/css/borrowed/cyanobacteria.css` |
 | L73 | Each sound's player on the sounds page: its label, the browser's own player and its caption | `sounds.md` |
 | L74 | A captions track in each player, with its caption file | `sounds.md`, `assets/sounds/captions/` |
+| L75 | Plays one sound as many notes, each at its own time and pitch, so they can be stopped together | `assets/js/sound.js` |
+| L76 | What the Canon on the switch is, its numbers, and what the script remembers between presses | `assets/js/sound.js` |
+| L77 | The Canon's notes as numbers, from the Mutopia Project's edition | `assets/js/sound.js` |
+| L78 | Builds the piece from those numbers, works out what each press plays, plays it, stops it, and rests the switch for 3 seconds | `assets/js/sound.js` |
+| L79 | Turning sounds off, or leaving the page, stops the Canon, and the switch waits out its rest | `assets/js/sound.js` |
+| L80 | Greys the switch while it rests, with 7.css's own look for a disabled button | `assets/css/borrowed/cyanobacteria.css` |
 
-The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L74 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
+The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L80 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 
 - **Adding a piece.** First save it untouched, with its license text, in `vendor/pristine/`; then add its row to `vendor/pristine/PROVENANCE.md`; then add its author to `_data/credits.yml`, so the footer and the Credits page name them; only then use it in a stylesheet or a template.
 - **Photo sizes.** `_data/image-sizes.yml` holds every project photo's width and height, so a page holds each photo's space while it loads. A new photo missing from that list still shows, just without the held space; to add it, copy an entry with the photo's path, width and height.

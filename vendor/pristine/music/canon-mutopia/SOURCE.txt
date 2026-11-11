@@ -1,0 +1,34 @@
+What the edition says about itself, and where it came from.
+
+The Mutopia Project's edition of Pachelbel's Canon, as the LilyPond text
+files it is typeset from. The zip beside this note is untouched, as it was
+downloaded on 2026-11-10. Nothing in the zip is used by the site as a file:
+the site's script holds the edition's notes, read into it by tools kept
+with the owner's working files (the line the three violins share, the first
+violin's ending, how much of it each violin plays, and the bass's eight
+notes). The bass is played an octave higher than written.
+
+The piece's page on the Mutopia Project is not kept here; the SHA-256 of the
+copy saved with the owner's working files is given so it can be checked.
+
+Piece 2047
+  Address:      https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2047
+  File:         https://www.mutopiaproject.org/ftp/PachelbelJ/Canon_per_3_Violini_e_Basso/Canon_per_3_Violini_e_Basso-lys.zip
+  Saved page:   SHA-256 2d29858f1e26cfd11e76e474e493c3deb789f0fdd5ee4330cbaeeeec5d330f87
+
+What the edition's own header (header.ily, inside the zip) says:
+  Title:        Canon per 3 Violini e Basso
+  Composer:     Johann Pachelbel (1653-1706)
+  Date:         1694
+  Source:       IMSLP
+  Instruments:  3 Violins, Cello
+  Typeset:      2015, using LilyPond, by Michael Fischer v. Mollard
+  License:      Creative Commons Attribution 4.0, http://creativecommons.org/licenses/by/4.0/
+  Mutopia ID:   Mutopia-2015/09/02-2047
+The header also gives the maintainer's email address, as Mutopia publishes
+it. The piece's page, read on 2026-11-10, says the same: the title,
+Pachelbel, 1694, the source IMSLP, "Copyright: Creative Commons Attribution
+4.0", the maintainer Michael Fischer v. Mollard and "Music ID Number:
+Mutopia-2015/09/02-2047".
+
+The license text is ../../sounds/licenses/CC-BY-4.0.txt.

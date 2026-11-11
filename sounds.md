@@ -102,7 +102,7 @@ Recorded by XxBirdoxX: "[Pen Clicks-GAIN_01.wav](https://freesound.org/people/Xx
 
 ### Turning sounds on
 
-- When: you press the switch to turn sounds on. Turning them off is silent. The note you hear changes from one time to the next.
+- When: you press the switch to turn sounds on. Turning them off is silent. The note you hear changes from one time to the next. If you keep turning sounds on, the switch may rest for 3 seconds while a longer piece plays; after that, pressing it turns sounds off and stops the piece.
 - Why: it shows you what "on" sounds like.
 - Without sound: the switch reads "Sounds: on".
 
@@ -110,7 +110,7 @@ Recorded by XxBirdoxX: "[Pen Clicks-GAIN_01.wav](https://freesound.org/people/Xx
 <audio controls preload="none" aria-labelledby="play-on" src="{{ '/assets/sounds/moments/on.wav' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/sounds/captions/on.vtt' | relative_url }}"></audio>
 <p>[chime]</p>
 
-By Nuno Filipe Povoa, 2008: "[dialog-information](https://github.com/KDE/oxygen-sounds)" from the Oxygen sound theme, LGPL 3.0 or later. The first note is the recording as it is; the others are the same recording played slower.
+By Nuno Filipe Povoa, 2008: "[dialog-information](https://github.com/KDE/oxygen-sounds)" from the Oxygen sound theme, LGPL 3.0 or later. The first note is the recording as it is; the others are the same recording played slower or faster.
 
 ## What stays silent
 
