@@ -2,7 +2,7 @@
 
 Every piece of this site's look was made by someone else and is listed here: the page templates, the box layout, the glass windows, the typeface, the icons and the photographs. Each folder beside this file holds an untouched copy of what I borrowed, exactly as it was fetched, with its license or the page that states its terms. The only files here that were made rather than fetched are the three 1920 px wallpaper copies, resized from the originals beside them, and the `TERMS.txt` and `SHA256SUMS.txt` notes. The copies the site actually uses live under `assets/` and in the templates, and each of those says in a header comment what was changed. Nothing in this folder is ever edited.
 
-Everything was fetched on 2026-09-23. The two KEMi symposium photographs in `kemi-symposium/` came later, on 2026-11-05, from the owner's own copies. The Bubble Rain photograph in `wallpapers/4-wikimedia-commons-cc-by/` was fetched on 2026-11-05 and the pages beside it on 2026-11-06. The recordings in `sounds/` came from Freesound on 2026-11-09 and 2026-11-10, and the Oxygen sound and three of the license texts from KDE's repository on 2026-11-09; the Mutopia Project's edition of Pachelbel's Canon in `music/canon-mutopia/` was fetched on 2026-11-10; where each license text came from is in `sounds/licenses/SOURCES.txt`. The Freesound pages themselves are not kept here, because they carry a map token of Freesound's own that GitHub does not accept; what each page said is in the `SOURCE.txt` beside its recording. To check that nothing here has changed, compare each file with the SHA-256 in the list at the bottom, or run `sha256sum -c SHA256SUMS.txt` inside any folder.
+Everything was fetched on 2026-09-23. The two KEMi symposium photographs in `kemi-symposium/` came later, on 2026-11-05, from the owner's own copies. The Bubble Rain photograph in `wallpapers/4-wikimedia-commons-cc-by/` was fetched on 2026-11-05 and the pages beside it on 2026-11-06. The recordings in `sounds/` came from Freesound on 2026-11-09 and 2026-11-10, and the Oxygen sound and two of the license texts from KDE's repository on 2026-11-09; the Mutopia Project's edition of Pachelbel's Canon in `music/canon-mutopia/` was fetched on 2026-11-10; where each license text came from is in `sounds/licenses/SOURCES.txt`. The Freesound pages themselves are not kept here, because they carry a map token of Freesound's own that GitHub does not accept; what each page said is in the `SOURCE.txt` beside its recording. To check that nothing here has changed, compare each file with the SHA-256 in the list at the bottom, or run `sha256sum -c SHA256SUMS.txt` inside any folder.
 
 ## The pieces
 
@@ -162,13 +162,12 @@ The hashes of the fetched files were recorded when they were fetched; each `SHA2
 | `sounds/hover-drip/46934__digifishmusic__dripping.wav` | `414f54d40c909283a65a94bff7e8355781802a1039fa3727060cb4ba2765b04e` |
 | `sounds/hover-drip/SHA256SUMS.txt` | `3741bed80a8aef98417a841cb44dc4f566a7be7e054f1aeff19f146f304ac2e6` |
 | `sounds/hover-drip/SOURCE.txt` | `08b435ff9a4665431da1e6427bccc4483fd2213dfe393f35a823c7653722d3fe` |
-| `sounds/licenses/CC-BY-3.0.txt` | `d748955f9d8e7551cf0a0f23e4bd2d273092e2f942feb3f6fab800e5f6d20300` |
 | `sounds/licenses/CC-BY-4.0.txt` | `9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411` |
 | `sounds/licenses/CC0-1.0.txt` | `a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499` |
 | `sounds/licenses/GPL-3.0.txt` | `3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986` |
 | `sounds/licenses/LGPL-3.0-or-later.txt` | `da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768` |
-| `sounds/licenses/SHA256SUMS.txt` | `ec7e1b11ab393b6b9967ae46b0ad3cd9f97cd1a0bcd7840852607241a1d0dea5` |
-| `sounds/licenses/SOURCES.txt` | `011689cd615b03aba78b81e590fb1a81c8a94adb78dbbaae66827c6b03bfcb2c` |
+| `sounds/licenses/SHA256SUMS.txt` | `7d440302999b8852ccdb0550558e99162045ec8783b1a7fb8200270d3fb693e9` |
+| `sounds/licenses/SOURCES.txt` | `8196efaf89fff425a8eb15fba5e17c44046a7ba01f0217f1ab8d6af808889275` |
 | `sounds/link-drip/1014__rhumphries__rbh_household_drip-02.wav` | `d049bb30b052a5b0d2d268ed7211cf2fac112946c914774c71f6363113221baf` |
 | `sounds/link-drip/SHA256SUMS.txt` | `9107b192dd45a91158ec14373aa38c59b8998a0b12f2a0dcf55f2b9552a2bcbd` |
 | `sounds/link-drip/SOURCE.txt` | `c1403a672a5df803e16458eded89440947d507ee1a041a660511e6c96b9682f2` |
