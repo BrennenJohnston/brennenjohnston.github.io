@@ -26,7 +26,7 @@ The look of this site is a collage of pieces other people made and shared under 
 | The button sound, two cork pops, [cork.aif](https://freesound.org/people/Traveler/sounds/13635/) and [cork2.aif](https://freesound.org/people/Traveler/sounds/14634/) | Traveler | CC BY 4.0 |
 | The link sound, a water drip, [RBH_Household_drip 02.wav](https://freesound.org/people/RHumphries/sounds/1014/) | RHumphries | CC BY 4.0 |
 | The arrival sound, [Dropping tiny pebble in still water surface](https://freesound.org/people/jorickhoofd/sounds/160119/) | jorickhoofd | CC BY 4.0 |
-| The scroll sound, four marble clicks from the pack [MarbleDrop](https://freesound.org/people/lsprice/packs/5842/) | lsprice | CC BY 3.0 |
+| The scroll sound, a laptop's disc drive spinning, [20081117kijjaz-PowerBookCDROM01.wav](https://freesound.org/people/kijjaz/sounds/63249/) | kijjaz | CC0 |
 | The sound at the top and bottom of a page, [Glass Being Set on Counter.wav](https://freesound.org/people/jpkweli/sounds/154773/) | jpkweli | CC0 |
 | The typing sound, a pen click, [Pen Clicks-GAIN_01.wav](https://freesound.org/people/XxBirdoxX/sounds/52283/) | XxBirdoxX | CC0 |
 | The sound for pointing at a button, a drip recorded under water, [Dripping.wav](https://freesound.org/people/digifishmusic/sounds/46934/) | digifishmusic | CC BY 4.0 |

@@ -1,0 +1,16 @@
+What each recording's page on Freesound said when it was read and saved.
+
+The saved pages themselves are not in this repository: Freesound's pages
+carry a map token of Freesound's own, and GitHub does not accept a commit
+that holds it. They are kept with the owner's working files. The SHA-256
+of each saved page is given here so that copy can be checked.
+
+Sound 63249
+  Address:      https://freesound.org/people/kijjaz/sounds/63249/
+  Title:        20081117kijjaz-PowerBookCDROM01.wav
+  Uploaded by:  kijjaz
+  Uploaded on:  November 17th, 2008
+  License:      Creative Commons 0, http://creativecommons.org/publicdomain/zero/1.0/
+  File:         Type Wave (.wav); Duration 0:27.338; File size 3.8 MB; Sample rate 48 kHz; Bit depth 24 bit; Channels Mono
+  Description:  Mac iBook G3's cdrom working and producing various sound including some air noise from the spinning CD. Recorded very close to the cdrom with Rode NT1000 condensor microphone through TLAudio Fat2 tube preamp through RME Hammerfall DSP audio interface.
+  Saved page:   SHA-256 13573e92549ff7f7d54459edcc6ab1abd5c8729ae83574270fdd6f3fa2c816e2

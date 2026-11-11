@@ -66,15 +66,15 @@ Recorded by digifishmusic: "[Dripping.wav](https://freesound.org/people/digifish
 
 ### Scrolling
 
-- When: you scroll by hand. You hear one soft click for about every 40 pixels the page moves, a little higher in pitch going up and a little lower going down.
+- When: you scroll by hand. You hear a short whirr, a laptop's disc drive spinning, for about every 40 pixels the page moves, a little higher in pitch going up and a little lower going down.
 - Why: it tells you the page is moving, and which way.
 - Without sound: the page moving.
 
-<p id="play-tick">Play the marble click</p>
+<p id="play-tick">Play the disc drive</p>
 <audio controls preload="none" aria-labelledby="play-tick" src="{{ '/assets/sounds/scroll/tick-1.wav' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/sounds/captions/tick.vtt' | relative_url }}"></audio>
-<p>[marble click]</p>
+<p>[disc drive whirr]</p>
 
-Recorded by lsprice: "[md09.aif](https://freesound.org/people/lsprice/sounds/89812/)", "[md07.aif](https://freesound.org/people/lsprice/sounds/89810/)", "[md08.aif](https://freesound.org/people/lsprice/sounds/89811/)" and "[md02.aif](https://freesound.org/people/lsprice/sounds/89805/)", [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+Recorded by kijjaz: "[20081117kijjaz-PowerBookCDROM01.wav](https://freesound.org/people/kijjaz/sounds/63249/)", [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ### Reaching the top or bottom
 
