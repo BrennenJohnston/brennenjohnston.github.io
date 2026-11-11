@@ -1,0 +1,38 @@
+---
+layout: player
+title: Music player
+permalink: /player/
+---
+<div id="music-deck" hidden>
+  <div class="music-screen">
+    <p class="music-now" role="status">Now playing <strong id="music-title">Wallpaper</strong> Kevin MacLeod</p>
+    <p class="music-seek"><span id="music-elapsed">0:00</span> <label for="music-position" class="a11y-sr-only">Position in the piece</label><input type="range" id="music-position" min="0" max="220" step="1" value="0"> <span id="music-length">3:40</span></p>
+  </div>
+  <div class="music-toolbar">
+    <button type="button" id="music-previous"><img src="{{ '/assets/images/icons/nuvola/actions-player_start.png' | relative_url }}" alt="" width="24" height="24"> Previous</button>
+    <button type="button" id="music-toggle"><img src="{{ '/assets/images/icons/nuvola/actions-player_play.png' | relative_url }}" alt="" width="32" height="32"> <span>Play</span></button>
+    <button type="button" id="music-next"><img src="{{ '/assets/images/icons/nuvola/actions-player_end.png' | relative_url }}" alt="" width="24" height="24"> Next</button>
+  </div>
+  <p id="music-waiting" hidden>Your browser is waiting for you to start the music. Press play on a track.</p>
+  <p class="music-volume"><label for="music-volume">Volume</label> <input type="range" id="music-volume" min="0" max="100" step="5" value="100"></p>
+  <h2>Playlist</h2>
+  <ol class="music-list">
+    <li><button type="button" data-title="Wallpaper" data-seconds="220">Wallpaper <span>3:40</span></button></li>
+    <li><button type="button" data-title="Pinball Spring" data-seconds="235">Pinball Spring <span>3:55</span></button></li>
+    <li><button type="button" data-title="Disco Lounge" data-seconds="253">Disco Lounge <span>4:13</span></button></li>
+  </ol>
+</div>
+<p>Music from the years this site's look comes from. It plays in this window while you browse. Close the window to stop it.</p>
+<p>Turning sounds off pauses the music. Pressing play here starts it again.</p>
+
+<div id="music-tracks">
+<h2 id="track-wallpaper">Wallpaper</h2>
+<audio controls preload="none" aria-labelledby="track-wallpaper" src="{{ '/assets/music/wallpaper.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/wallpaper.vtt' | relative_url }}"></audio>
+<h2 id="track-pinball-spring">Pinball Spring</h2>
+<audio controls preload="none" aria-labelledby="track-pinball-spring" src="{{ '/assets/music/pinball-spring.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/pinball-spring.vtt' | relative_url }}"></audio>
+<h2 id="track-disco-lounge">Disco Lounge</h2>
+<audio controls preload="none" aria-labelledby="track-disco-lounge" src="{{ '/assets/music/disco-lounge.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/disco-lounge.vtt' | relative_url }}"></audio>
+</div>
+<p>"Wallpaper" Kevin MacLeod (<a href="https://incompetech.com/">incompetech.com</a>). Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons: By Attribution 4.0</a>.</p>
+<p>"Pinball Spring" Kevin MacLeod (<a href="https://incompetech.com/">incompetech.com</a>). Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons: By Attribution 4.0</a>.</p>
+<p>"Disco Lounge" Kevin MacLeod (<a href="https://incompetech.com/">incompetech.com</a>). Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons: By Attribution 4.0</a>.</p>

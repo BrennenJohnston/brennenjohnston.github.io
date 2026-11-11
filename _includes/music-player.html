@@ -1,0 +1,33 @@
+<section class="window glass active music-mini" aria-labelledby="music-mini-title">
+  <div class="title-bar">
+    <div class="title-bar-text" id="music-mini-title">Music player</div>
+  </div>
+  <div class="window-body has-space">
+    <div id="music-deck" hidden>
+      <div class="music-screen">
+        <p class="music-now" role="status"><strong id="music-title">Wallpaper</strong> Kevin MacLeod</p>
+        <p class="music-seek"><span id="music-elapsed">0:00</span> <label for="music-position" class="a11y-sr-only">Position in the piece</label><input type="range" id="music-position" min="0" max="220" step="1" value="0"> <span id="music-length">3:40</span></p>
+      </div>
+      <div class="music-toolbar">
+        <button type="button" id="music-previous"><img src="{{ '/assets/images/icons/nuvola/actions-player_start.png' | relative_url }}" alt="" width="24" height="24"><span class="a11y-sr-only">Previous</span></button>
+        <button type="button" id="music-toggle"><img src="{{ '/assets/images/icons/nuvola/actions-player_play.png' | relative_url }}" alt="" width="32" height="32"><span class="a11y-sr-only">Play</span></button>
+        <button type="button" id="music-next"><img src="{{ '/assets/images/icons/nuvola/actions-player_end.png' | relative_url }}" alt="" width="24" height="24"><span class="a11y-sr-only">Next</span></button>
+      </div>
+      <p id="music-waiting" hidden>Your browser is waiting for you to start the music. Press play on a track.</p>
+      <details class="music-playlist">
+        <summary>Playlist</summary>
+        <ol class="music-list">
+        <li><button type="button" data-title="Wallpaper" data-seconds="220">Wallpaper <span>3:40</span></button></li>
+        <li><button type="button" data-title="Pinball Spring" data-seconds="235">Pinball Spring <span>3:55</span></button></li>
+        <li><button type="button" data-title="Disco Lounge" data-seconds="253">Disco Lounge <span>4:13</span></button></li>
+        </ol>
+      </details>
+    </div>
+    <p class="music-popout"><a id="music-popout" href="{{ '/player/' | relative_url }}"><img src="{{ '/assets/images/icons/nuvola/actions-window_new.png' | relative_url }}" alt="" width="24" height="24"> Pop out<span class="a11y-sr-only"> into a small window</span></a></p>
+    <div id="music-tracks" hidden>
+      <audio preload="none" src="{{ '/assets/music/wallpaper.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/wallpaper.vtt' | relative_url }}"></audio>
+      <audio preload="none" src="{{ '/assets/music/pinball-spring.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/pinball-spring.vtt' | relative_url }}"></audio>
+      <audio preload="none" src="{{ '/assets/music/disco-lounge.mp3' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/music/captions/disco-lounge.vtt' | relative_url }}"></audio>
+    </div>
+  </div>
+</section>

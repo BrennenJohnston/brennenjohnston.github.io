@@ -1,0 +1,20 @@
+The music of this site's player.
+
+Each file here is an MP3 file downloaded from incompetech.com on
+2026-11-11, unchanged but for its name. What incompetech said about each,
+and the checksums, are in vendor/pristine/music/incompetech-kevin-macleod/.
+
+wallpaper.mp3
+  "Wallpaper" Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0
+  https://creativecommons.org/licenses/by/4.0/
+
+pinball-spring.mp3
+  "Pinball Spring" Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0
+  https://creativecommons.org/licenses/by/4.0/
+
+disco-lounge.mp3
+  "Disco Lounge" Kevin MacLeod (incompetech.com)
+  Licensed under Creative Commons: By Attribution 4.0
+  https://creativecommons.org/licenses/by/4.0/

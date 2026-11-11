@@ -98,3 +98,8 @@
   url: "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2047"
   license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
   where: "every page, when you turn sounds on"
+- author: "Kevin MacLeod (incompetech.com)"
+  piece: "the music player's three pieces, Wallpaper, Pinball Spring and Disco Lounge"
+  url: "https://incompetech.com/music/royalty-free/"
+  license: '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+  where: "the music player"

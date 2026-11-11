@@ -468,7 +468,10 @@ function _syncSoundsButton(on) {
 function _useSounds(on) {
   _soundsOn = Boolean(on);
   setMuted(!_soundsOn);
-  if (!_soundsOn) _cutCanon();
+  if (!_soundsOn) {
+    _cutCanon();
+    _pauseMusic();
+  }
   _syncSoundsButton(_soundsOn);
   // On: the sounds are fetched ahead, once a hand has shown itself.
   _fetchForHand();
@@ -892,6 +895,197 @@ function _installWhoosh() {
   }
 }
 
+// Music. This block, its one call in _startSounds and the pause in
+// _useSounds are the script's whole part in it: take them out and the
+// player's Pop out link and the player page still work, as a plain link and
+// plain players.
+// Every page has the player in its menu column, and the player page in its
+// small window has the same player, larger. Nothing plays until Play is
+// pressed. The player shows the piece playing, its place in it, Previous,
+// Play or Pause, Next and the playlist; the small window also the volume.
+// When a piece ends the next starts, and after the last the first; starting
+// one pauses the others. Leaving a page keeps the piece, its place and
+// whether it plays for the next page of the tab, which carries on where it
+// was; if the browser does not let it, a line says to press play. Pop out
+// moves the music, at the same place, into the small window, and the page's
+// player pauses. Turning sounds off pauses the music in every window of the
+// site; pressing play afterwards plays it.
+const MUSIC_WINDOW = 'music-player';
+const MUSIC_FEATURES = 'popup,width=380,height=560';
+const MUSIC_KEY = 'sounds-music';
+const MUSIC_ICONS = {
+  play: '/assets/images/icons/nuvola/actions-player_play.png',
+  pause: '/assets/images/icons/nuvola/actions-player_pause.png',
+};
+
+function _musicTracks() {
+  return [...document.querySelectorAll('#music-tracks audio')];
+}
+
+function _pauseMusic() {
+  for (const track of _musicTracks()) track.pause();
+}
+
+function _playMusic(track) {
+  track.play().catch((error) => {
+    if (error.name !== 'NotAllowedError') {
+      console.warn('[Sounds] The music did not play:', error);
+    }
+    const waiting = document.getElementById('music-waiting');
+    if (waiting) waiting.hidden = false;
+  });
+}
+
+function _keepMusic(state) {
+  try {
+    sessionStorage.setItem(MUSIC_KEY, JSON.stringify(state));
+  } catch (error) {
+    console.warn("[Sounds] Could not keep the music's place:", error);
+  }
+}
+
+function _keptMusic() {
+  try {
+    return JSON.parse(sessionStorage.getItem(MUSIC_KEY) || 'null');
+  } catch (error) {
+    console.warn("[Sounds] Could not read the music's place:", error);
+    return null;
+  }
+}
+
+// Seconds as minutes and seconds, 3:40.
+const _clock = (seconds) => {
+  const whole = Math.max(0, Math.floor(seconds || 0));
+  return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`;
+};
+
+function _installMusic() {
+  const deck = document.getElementById('music-deck');
+  const tracks = _musicTracks();
+  if (!deck || !tracks.length) return;
+  const part = (id) => document.getElementById(id);
+  const title = part('music-title');
+  const position = part('music-position');
+  const toggle = part('music-toggle');
+  const volume = part('music-volume');
+  const pieces = [...deck.querySelectorAll('.music-list button')];
+  let current = 0;
+  const show = () => {
+    const track = tracks[current];
+    const piece = pieces[current];
+    const total = Number.isFinite(track.duration)
+      ? track.duration
+      : Number(piece.dataset.seconds);
+    // The title is in a status line: it is written only when it changes,
+    // so a screen reader says it once for each new piece.
+    if (title.textContent !== piece.dataset.title) {
+      title.textContent = piece.dataset.title;
+    }
+    position.max = String(Math.floor(total));
+    position.value = String(Math.floor(track.currentTime));
+    position.setAttribute(
+      'aria-valuetext',
+      `${_clock(track.currentTime)} of ${_clock(total)}`
+    );
+    part('music-elapsed').textContent = _clock(track.currentTime);
+    part('music-length').textContent = _clock(total);
+    toggle.querySelector('span').textContent = track.paused ? 'Play' : 'Pause';
+    toggle.querySelector('img').src = track.paused
+      ? MUSIC_ICONS.play
+      : MUSIC_ICONS.pause;
+    pieces.forEach((other, at) => {
+      if (at === current) other.setAttribute('aria-current', 'true');
+      else other.removeAttribute('aria-current');
+    });
+  };
+  const go = (at) => {
+    tracks[current].pause();
+    current = (at + tracks.length) % tracks.length;
+    tracks[current].currentTime = 0;
+    show();
+    _playMusic(tracks[current]);
+  };
+  const place = () => ({
+    piece: current,
+    time: tracks[current].currentTime,
+    playing: !tracks[current].paused,
+    volume: tracks[current].volume,
+  });
+  // The place the last page of this tab left, if any.
+  const carryOn = () => {
+    const kept = _keptMusic();
+    if (!kept || !tracks[kept.piece]) return;
+    _pauseMusic();
+    current = kept.piece;
+    tracks[current].currentTime = kept.time;
+    for (const track of tracks) track.volume = kept.volume;
+    if (volume) volume.value = String(Math.round(kept.volume * 100));
+    show();
+    if (kept.playing) _playMusic(tracks[current]);
+  };
+  tracks.forEach((track, at) => {
+    track.addEventListener('play', () => {
+      for (const other of tracks) if (other !== track) other.pause();
+      current = at;
+      show();
+    });
+    for (const type of ['pause', 'timeupdate', 'durationchange']) {
+      track.addEventListener(type, () => {
+        if (at === current) show();
+      });
+    }
+    track.addEventListener('ended', () => go(at + 1));
+  });
+  toggle.addEventListener('click', () => {
+    const track = tracks[current];
+    if (track.paused) _playMusic(track);
+    else track.pause();
+  });
+  part('music-previous').addEventListener('click', () => go(current - 1));
+  part('music-next').addEventListener('click', () => go(current + 1));
+  pieces.forEach((piece, at) => {
+    piece.addEventListener('click', () => go(at));
+  });
+  position.addEventListener('input', () => {
+    tracks[current].currentTime = Number(position.value);
+  });
+  volume?.addEventListener('input', () => {
+    for (const track of tracks) track.volume = Number(volume.value) / 100;
+  });
+  const popOut = part('music-popout');
+  popOut?.addEventListener('click', (event) => {
+    if (event.button !== 0 || !_plain(event)) return;
+    // The new window takes a copy of what this tab keeps: the music's
+    // place, and no arrival note, since the window answers the press.
+    _keepMusic(place());
+    try {
+      sessionStorage.removeItem(ARRIVE_KEY);
+    } catch (error) {
+      console.warn('[Sounds] Could not clear the arrival note:', error);
+    }
+    if (!window.open(popOut.href, MUSIC_WINDOW, MUSIC_FEATURES)) return;
+    event.preventDefault();
+    _pauseMusic();
+    _keepMusic(place());
+  });
+  // Another window of the site turning sounds off.
+  window.addEventListener('storage', (event) => {
+    if (event.key === STORAGE_KEY_SOUNDS && event.newValue === 'off') {
+      _pauseMusic();
+    }
+  });
+  window.addEventListener('pagehide', () => _keepMusic(place()));
+  // Back can show a page the browser kept as it was, its music paused at an
+  // older place.
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) carryOn();
+  });
+  part('music-tracks').hidden = true;
+  deck.hidden = false;
+  show();
+  carryOn();
+}
+
 // The switch's melody: Pachelbel's Canon in D, as the Mutopia Project's
 // edition of his parts gives it ("Canon per 3 Violini e Basso", typeset by
 // Michael Fischer v. Mollard, CC BY 4.0). Each time sounds come on, the
@@ -1066,6 +1260,7 @@ function _startSounds() {
   _installHoverSounds();
   _installArrival();
   _installWhoosh();
+  _installMusic();
   _installFirstHand();
   const button = document.getElementById('sounds-switch');
   button?.addEventListener('click', () => {

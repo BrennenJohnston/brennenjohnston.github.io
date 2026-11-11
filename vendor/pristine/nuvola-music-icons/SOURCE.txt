@@ -1,0 +1,10 @@
+Each file here is taken, unchanged, from the Nuvola 1.0 archive already
+kept in this repository at vendor/pristine/nuvola/nuvola-1.0.tar.gz. Its
+author, license and the license texts are in vendor/pristine/nuvola/.
+Added on 2026-11-11 for the music player.
+
+actions-window_new.png: nuvola/48x48/actions/window_new.png, for the player's Pop out link
+actions-player_start.png: nuvola/48x48/actions/player_start.png, for the player's Previous button
+actions-player_play.png: nuvola/48x48/actions/player_play.png, for the player's Play button
+actions-player_pause.png: nuvola/48x48/actions/player_pause.png, for the player's Pause button
+actions-player_end.png: nuvola/48x48/actions/player_end.png, for the player's Next button

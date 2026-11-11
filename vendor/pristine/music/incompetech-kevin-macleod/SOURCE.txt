@@ -1,0 +1,41 @@
+What incompetech.com said about each piece of the music player when it
+was read and its file downloaded, on 2026-11-11.
+
+The music files are kept once. The site plays the downloads themselves,
+unchanged but for their names, from assets/music/; SHA256SUMS.txt beside
+this file holds their checksums from the download, so those copies can be
+checked against it (run sha256sum -c SHA256SUMS.txt in this folder). The
+pages that were read are not kept in this repository but with the owner's
+working files; the SHA-256 of each is given here so that copy can be
+checked.
+
+The license, as incompetech's FAQ (https://incompetech.com/music/royalty-free/faq.html) gives it:
+  "Licensed under Creative Commons: By Attribution 4.0"
+  https://creativecommons.org/licenses/by/4.0/
+  The text: vendor/pristine/sounds/licenses/CC-BY-4.0.txt
+  The credit it asks for: the piece's title, "Kevin MacLeod (incompetech.com)",
+  the license line and the license address.
+
+Wallpaper
+  Address:       https://incompetech.com/music/royalty-free/mp3-royaltyfree/Wallpaper.mp3
+  Downloaded as: Wallpaper.mp3, 8,804,339 bytes; on the site as assets/music/wallpaper.mp3
+  Catalogue:     length 00:03:40; ISRC USUAN1100843; uploaded 2011-07-21; instruments Synths, Drum Kit, Guitar; feel Bouncy, Bright, Calming, Uplifting
+  Its own tags:  title Wallpaper; artist Kevin MacLeod; year 2011
+
+Pinball Spring
+  Address:       https://incompetech.com/music/royalty-free/mp3-royaltyfree/Pinball%20Spring.mp3
+  Downloaded as: Pinball Spring.mp3, 9,441,615 bytes; on the site as assets/music/pinball-spring.mp3
+  Catalogue:     length 00:03:56; ISRC USUAN1100741; uploaded 2010-06-22; instruments Synths; feel Bouncy, Bright, Humorous, Uplifting
+  Its own tags:  title Pinball Spring; artist Kevin MacLeod; year 2010
+
+Disco Lounge
+  Address:       https://incompetech.com/music/royalty-free/mp3-royaltyfree/Disco%20Lounge.mp3
+  Downloaded as: Disco Lounge.mp3, 10,220,639 bytes; on the site as assets/music/disco-lounge.mp3
+  Catalogue:     length 00:04:13; ISRC USUAN1100602; uploaded 2009-07-22; instruments Synths, Drum Kit, Vibraphone, Strings; feel Grooving, Relaxed
+  Its own tags:  title Disco Lounge; artist Kevin MacLeod; year 2009
+
+Saved pages (SHA-256):
+  https://incompetech.com/music/royalty-free/pieces.json, the catalogue each piece's page reads: 54802ad340562624b9d1c9c97aa9f005e2b9bf79001f8a1a07ed857e68b2164a
+  https://incompetech.com/music/royalty-free/index.html?isrc=<the piece's ISRC>, the same page for each piece: 0aaccc3d496fc4ae189e27e3fe2d4f5216266e3bcccf2e0ba77fb1b57a28fa94
+  https://incompetech.com/music/royalty-free/faq.html: f5fb799a8c719568be80dab1edb201dbe6e91309c786b2d100e9cce3fe171ba6
+  https://incompetech.com/music/royalty-free/licenses/: 479019ed42fd8384c63c04bd95dc6d0e0e0da505ddd6f567a13018c724f8416d
