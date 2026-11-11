@@ -88,6 +88,18 @@ Recorded by kijjaz: "[20081117kijjaz-PowerBookCDROM01.wav](https://freesound.org
 
 Recorded by jpkweli: "[Glass Being Set on Counter.wav](https://freesound.org/people/jpkweli/sounds/154773/)", [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
+### Gliding with auto scroll
+
+- When: you press the mouse wheel, then move the pointer above or below where you pressed, and the page glides that way. This is the browser's auto scroll, found in some browsers on desktop computers. You hear a bamboo stick swished through the air, again and again for as long as the page moves, a little lower and slower going down and a little higher and quicker going up. Once the page stops, no new swish starts.
+- Why: it tells you the page is gliding, and which way.
+- Without sound: the page moving, and the browser's auto scroll pointer.
+
+<p id="play-whoosh">Play the bamboo swish</p>
+<audio controls preload="none" aria-labelledby="play-whoosh" src="{{ '/assets/sounds/whoosh/pass.wav' | relative_url }}"><track kind="captions" srclang="en" label="English" src="{{ '/assets/sounds/captions/whoosh.vtt' | relative_url }}"></audio>
+<p>[bamboo swish]</p>
+
+Recorded by qubodup: "[Whoosh](https://freesound.org/people/qubodup/sounds/60013/)", [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+
 ### Typing in the link code box
 
 - When: you type or paste in the box named "Code for a link to this site" on the home page.
@@ -131,5 +143,6 @@ Sounds start off, until you turn them on, when your device asks for reduced moti
 - A press sound stops when the page changes, so a quick press can cut it short.
 - To keep pages light, the sounds are fetched the first time you move the mouse, touch the page or press a key. If the first thing you do on a visit is a press, that one press may be silent.
 - The arrival sound plays only in browsers that allow it.
+- The auto scroll sound has been tried only in Chrome and Edge on Windows.
 
 If a sound gets in your way, the switch turns them all off. I would like to hear about it too: the [accessibility statement]({{ '/accessibility/' | relative_url }}) says how to reach me.

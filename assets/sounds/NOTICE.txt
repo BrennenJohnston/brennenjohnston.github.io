@@ -33,6 +33,11 @@ scroll/end.wav
   https://freesound.org/people/jpkweli/sounds/154773/
   Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/
 
+whoosh/pass.wav
+  "Whoosh" by qubodup
+  https://freesound.org/people/qubodup/sounds/60013/
+  Creative Commons 0: http://creativecommons.org/publicdomain/zero/1.0/
+
 hover/hover.wav
   "Dripping.wav" by digifishmusic
   https://freesound.org/people/digifishmusic/sounds/46934/
