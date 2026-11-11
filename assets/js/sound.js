@@ -804,14 +804,15 @@ function _installArrival() {
 // The switch's melody: Pachelbel's Canon in D, as the Mutopia Project's
 // edition of his parts gives it ("Canon per 3 Violini e Basso", typeset by
 // Michael Fischer v. Mollard, CC BY 4.0). Each time sounds come on, the
-// chime plays the next beat in its own rhythm: 24 beats of the first violin
-// alone, then 56 with all four parts, the bass an octave higher than
+// chime plays the next bar in its own rhythm: 6 bars of the first violin
+// alone, then 14 with all four parts, the bass an octave higher than
 // written. The press after that hands over to the piece: the rest plays by
 // itself, and the switch rests for 3 seconds before it can stop it. After
 // the hand over, the next time sounds come on starts from the top again.
 // A note is the chime played faster or slower. Times are in thirty-second
-// notes, 8 to a beat; each violin comes in two bars after the one before it
-// and plays the same line, then the first violin's ending or the start of it.
+// notes, 8 to a beat and 32 to a bar; each violin comes in two bars after
+// the one before it and plays the same line, then the first violin's ending
+// or the start of it.
 const CANON_LINE = [
   78, 8, 76, 8, 74, 8, 73, 8,
   71, 8, 69, 8, 71, 8, 73, 8,
@@ -875,9 +876,10 @@ const CANON_ENDINGS = [33, 17, 1];
 const CANON_GROUND = [50, 45, 47, 42, 43, 38, 43, 45];
 const CANON_CHIME = 78;
 const CANON_ENTRY = 64;
+const CANON_BAR = 32;
 const CANON_END = 57 * 32;
-const CANON_ALONE = 24;
-const CANON_FINALE = 80;
+const CANON_ALONE = 6;
+const CANON_FINALE = 20;
 const CANON_BEAT_S = 1.1;
 const CANON_PARTS_DB = -7;
 const CANON_REST_MS = 3000;
@@ -914,10 +916,10 @@ function _canonNotes() {
  *   pitch; whether the first violin plays alone; whether it is the hand over
  */
 export function canonPress(press) {
-  const from = CANON_ENTRY + 8 * press;
+  const from = CANON_ENTRY + CANON_BAR * press;
   const alone = press < CANON_ALONE;
   const finale = press >= CANON_FINALE;
-  const to = finale ? CANON_END : from + 8;
+  const to = finale ? CANON_END : from + CANON_BAR;
   const notes = _canonNotes()
     .filter(([at, , part]) => at >= from && at < to && (!alone || part === 0))
     .map(([at, pitch]) => [((at - from) * CANON_BEAT_S) / 8, pitch]);
