@@ -79,6 +79,9 @@
      audio player on the sounds page stays inside the page at 320 px (it was 300 px wide in a 280 px pane, and the page measured 344 px).
    Added on 2026-11-11, approved by the owner (FD-140, FD-142): ledger line L80, .site-nav button[aria-disabled="true"] after L55, with 7.css's own
      look for a disabled button (its three tokens, MIT), so the Sounds switch looks unavailable for the 3 seconds it rests after the Canon's last press.
+   Added on 2026-11-11 (round WEB-R2, the music player), approved by the owner (FD-159): ledger line L89, the player's 19 rules after L80
+     (.music-screen to .music-popout a): its screen in the panes' own gloss and blue, the sliders, buttons and Pop out link at least 44 px tall,
+     the sliders with the links' focus ring, the playlist's piece playing in bold, and the smaller player in the menu column of every page.
 */
 
 /* start light mode styling */
@@ -325,6 +328,25 @@ pre { overflow-x: auto; }
 .site-nav a img { vertical-align: middle; margin-right: 4px; }
 .site-nav button { min-height: 44px; }
 .site-nav button[aria-disabled="true"] { background: var(--w7-el-bg-d); border-color: var(--w7-el-bd-d); color: var(--w7-el-c-d); }
+.music-screen { background: var(--gloss), var(--pane); border: var(--edge); border-radius: 12px; box-shadow: var(--lift); padding: 8px 12px; }
+.music-now { margin: 0; }
+.music-now strong { display: block; font-size: 1.375rem; }
+.music-seek, .music-volume { display: flex; align-items: center; gap: 8px; margin: 0; }
+.music-seek input[type=range], .music-volume input[type=range] { flex: 1 1 auto; width: auto; min-width: 0; min-height: 44px; }
+.music-seek input[type=range]:focus-visible, .music-volume input[type=range]:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; box-shadow: 0 0 0 2px var(--w7-el-c); }
+.music-toolbar { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 10px 0; }
+.music-toolbar button, .music-list button { min-height: 44px; min-width: 44px; }
+.music-toolbar button { padding: 0 6px; }
+.music-toolbar img { vertical-align: middle; }
+.music-list { list-style: none; margin: 0; padding: 0; }
+.music-list button { display: flex; justify-content: space-between; width: 100%; margin: 4px 0; }
+.music-list button[aria-current="true"] { font-weight: 700; box-shadow: inset 0 0 0 2px var(--pill); }
+.music-mini { margin: 8px 5px; }
+.music-mini .music-now strong { font-size: 1.0625rem; }
+.music-mini .music-toolbar button { padding: 0; }
+.music-playlist summary { padding: 10px 0; }
+.music-popout { margin: 8px 0 0; }
+.music-popout a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; }
 .title-bar-text h1, .title-bar-text h2, .title-bar-text h3 { font-weight: 700; }
 .title-bar-text h3 { font-size: 1.1875rem; }
 .window-body { border-radius: 8px; }

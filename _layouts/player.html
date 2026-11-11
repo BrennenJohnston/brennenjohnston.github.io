@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    <div class="container">
+
+    <main class="page-content large" id="main" tabindex="-1" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+          <div class="window glass active">
+            <div class="title-bar">
+              <div class="title-bar-text"><h1 class="post-title">{{ page.title | escape }}</h1></div>
+            </div>
+            <div class="window-body has-space">
+              <div class="post-content">
+                {{ content }}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    </div>
+
+  </body>
+
+</html>

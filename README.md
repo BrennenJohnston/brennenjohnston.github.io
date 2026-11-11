@@ -2,7 +2,7 @@
 
 A free, accessible static website showcasing open-source 3D-printed assistive technology by Brennen Johnston, lead of WATAP's 3D Printed Assistive Technology Program. The site presents ready-to-print devices, works in progress seeking collaboration, and completed custom builds, plus a curated hub of assistive technology maker resources.
 
-Built with [Jekyll](https://jekyllrb.com/) and hosted for free on GitHub Pages. There is one small script, for optional sounds; there is no build pipeline to maintain and no framework: adding a project is just adding one Markdown file.
+Built with [Jekyll](https://jekyllrb.com/) and hosted for free on GitHub Pages. There is one small script, for optional sounds and a music player; there is no build pipeline to maintain and no framework: adding a project is just adding one Markdown file.
 
 ## Adding or editing projects
 
@@ -33,6 +33,8 @@ The look of this site is a collage of pieces other people made and shared under 
 | The sound for pointing at a button, a drip recorded under water, [Dripping.wav](https://freesound.org/people/digifishmusic/sounds/46934/) | digifishmusic | CC BY 4.0 |
 | The sound for turning sounds on, from the [Oxygen sound theme](https://github.com/KDE/oxygen-sounds) | Nuno Filipe Povoa | GNU LGPL 3.0 or later |
 | The notes of the switch's tune, [Canon per 3 Violini e Basso](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2047), Pachelbel, typeset by Michael Fischer v. Mollard | Mutopia Project | CC BY 4.0 |
+| The music player's three pieces, [Wallpaper, Pinball Spring and Disco Lounge](https://incompetech.com/music/royalty-free/) | Kevin MacLeod (incompetech.com) | CC BY 4.0 |
+| The music player's icons, from [Nuvola](http://web.archive.org/web/20090831103737/http://www.icon-king.com/projects/nuvola/) | David Vignoni | GNU LGPL 2.1 |
 
 The project photographs are my own; the two symposium photographs on the collaborations page are KEMi's. The footer of every page names each author, and the Credits page (`credits.md`, published at /credits/) lists every piece with its license.
 
@@ -121,6 +123,10 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L83 | The auto scroll sound's own level, 14 dB under a button press | `assets/js/sound.js` |
 | L84 | Plays a bamboo swish again and again while the mouse wheel's auto scroll moves the page, lower going down and higher going up | `assets/js/sound.js` |
 | L85 | The auto scroll sound's player on the sounds page, with its caption file | `sounds.md`, `assets/sounds/captions/` |
+| L86 | The music player under the menu on every page: the piece playing and its place, Previous, Play or Pause, Next, the playlist and Pop out, and its line in the header | `_includes/music-player.html`, `_includes/header.html` |
+| L87 | The player page for the small window and its small layout: the same player with the volume, the words, the browser's own player for each piece as the page without its script, a caption file and a credit per piece | `player.html`, `_layouts/player.html`, `assets/music/captions/` |
+| L88 | Works the player: plays the pieces in turn, carries the music's place from page to page, pops it out into the small window, and pauses it when sounds are turned off | `assets/js/sound.js` |
+| L89 | The music player's look: its screen, buttons, sliders, playlist and Pop out link | `assets/css/borrowed/cyanobacteria.css` |
 
 The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L82 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 

@@ -36,13 +36,15 @@ I try to respond to accessibility feedback within five business days.
 
 This site is designed to be compatible with current versions of Chrome, Edge, Firefox, and Safari on desktop and mobile, used with the screen readers, screen magnifiers, refreshable braille displays, speech input, and switch access built into or commonly used with those platforms.
 
-The site is plain HTML and CSS. One small script adds optional sounds; every page works the same without it, and content stays readable at 400% zoom and with a user stylesheet applied.
+The site is plain HTML and CSS. One small script adds optional sounds and a music player; every page works the same without it, and content stays readable at 400% zoom and with a user stylesheet applied.
 
 ## Sound
 
 This site plays short sounds when you press a button or a link, point at a button with a mouse, scroll by hand or with auto scroll, or type in the link code box. They are optional. The switch at the top of every page, "Sounds: on" or "Sounds: off", turns all of them off, and your choice is kept on your device. Sounds start off when your device asks for reduced motion or more contrast, or uses a Windows contrast theme.
 
 Moving keyboard focus makes no sound, so the site does not talk over a screen reader, and nothing is told by sound alone. The [sounds page]({{ '/sounds/' | relative_url }}) lists every sound, when it plays, and what you get without it.
+
+Every page also has a small music player under the menu; nothing plays until you press Play, and it can pop out into a small window of its own. Its buttons and sliders work with a keyboard and a screen reader, and turning sounds off pauses it.
 
 ## Technical specifications
 
@@ -83,4 +85,4 @@ This site has not been evaluated by an external accessibility auditor and has no
 
 ## Date
 
-This statement was created on 27 July 2026 and updated on 10 November 2026.
+This statement was created on 27 July 2026 and updated on 11 November 2026.

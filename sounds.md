@@ -124,6 +124,12 @@ Recorded by XxBirdoxX: "[Pen Clicks-GAIN_01.wav](https://freesound.org/people/Xx
 
 By Nuno Filipe Povoa, 2008: "[dialog-information](https://github.com/KDE/oxygen-sounds)" from the Oxygen sound theme, LGPL 3.0 or later. The first note is the recording as it is; the others are the same recording played slower or faster.
 
+## Music
+
+Every page has a small music player under the menu, with three pieces by Kevin MacLeod. Nothing plays until you press Play. The pieces play one after another, starting over after the last, and the music carries on from page to page where it was; some browsers want Play pressed again on the new page. Pop out moves the music into a small window of its own, so it keeps playing while you browse. Turning sounds off pauses the music. Pressing play in the player starts it again. On a phone the small window opens as a tab, and the music may stop when you leave that tab.
+
+The pieces are "Wallpaper", "Pinball Spring" and "Disco Lounge" by Kevin MacLeod ([incompetech.com](https://incompetech.com/)), licensed under [Creative Commons: By Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
+
 ## What stays silent
 
 - Moving keyboard focus, with Tab or with a screen reader's keys, so that the site never talks over a screen reader.

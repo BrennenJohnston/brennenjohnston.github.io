@@ -20,7 +20,7 @@
      the radio button rules (8);
      the .has-scrollbar rules (34);
      the search box rules (12);
-     the range slider rules (26);
+     the range slider rules (26; nine came back on 2026-11-11, see the end of this note);
      the .loader and .spinner rules (2);
      the tab rules (12);
      the text input and textarea rules (5);
@@ -68,6 +68,11 @@
      .window:before's highlight stripe from #ffffff0d back to 7.css's own #ffffffb3; .window.glass:before opacity from .8 back to 7.css's own .6;
      .title-bar-text's text-shadow from eight 0 0 10px #000 glows to the look's title glow (five 0 0 1px, six 0 0 2px and three 0 0 3px #062a57, 0 0 5px #062a57, 0 0 9px rgba(6,42,87,0.8)), the same glow cyanobacteria.css's --glow-title holds.
      The more-contrast block at the end is extended (ledger line L27, approved at WEB-Q47): --w7-surface solid, --w7-w-grad and --w7-w-glass without their shine, and .window:before's stripe off, so the windows turn solid when the reader asks for more contrast.
+   Restored on 2026-11-11 (round WEB-R2, the music player), approved by the owner with it (FD-159): nine of the range slider rules deleted above,
+     unchanged, for the player's position and volume sliders (input[type=range], its -webkit- and -moz- thumbs with their :hover and :active, and its
+     two tracks), and the five :root variables they use (--w7-sdt-w, --w7-sdt-h, --w7-sdt-icon, --w7-sdt-icon-h, --w7-sdt-icon-a) in a :root block of
+     their own, just before the more-contrast block. Left out: the slider's :focus-visible rule (1px dotted #000; the player's sliders take the links'
+     focus ring from cyanobacteria.css), and the .has-box-indicator, :disabled and .is-vertical rules.
 */
 :root{--w7-font:500 1.0625rem "M PLUS Rounded 1c", sans-serif;
 --w7-surface:rgba(3,97,174,0.9);
@@ -203,4 +208,41 @@ letter-spacing:0;
 line-height:15px;
 padding-top:var(--w7-w-space);
 text-shadow:0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 1px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 2px #062a57,0 0 3px #062a57,0 0 3px #062a57,0 0 3px #062a57,0 0 5px #062a57,0 0 9px rgba(6,42,87,0.8)}
+:root{--w7-sdt-w:10px;
+--w7-sdt-h:18px;
+--w7-sdt-icon:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC7SURBVHgBlZLBCYQwEEVj9CDYgRfbswF7sRAbsArPdhBICDmEzPoDE9CdXeKH0eHP48fINOrSPM+k/mhd16YDtCyLmqZJhM7zxIs6PAF570WQAzJIRLkksd89DUl939eB1Ym3b0wpiQBmIYSXiTFGZYwRgWEY6o8uIPQLZGlu2rYtP54L3g3c912N45gHSEahh4dZERZj2zZyztFxHLnQw/vaLIattbmeULkMdg6XxLFaa3WB7MlCirTIHxVUkxicbwSEAAAAAElFTkSuQmCC");
+--w7-sdt-icon-h:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAMAAABVab95AAAAWlBMVEUAAAAAjf8AVpo8f7G44/v5/f7l9P3g8/za8Pzp9v32+/7u+f695v2z4PmWvdjr9/1onMKu3vjQ4e2Zv9l+pcJLc5GTu9eMtNGCqseLrcVhlbt0l7BWfptOdpOMIi2BAAAAA3RSTlMADUenYG6gAAAAWklEQVQI113GRwKAIAwEwCBBRaUo9vL/b0qWG3MaaqKG2FBcDCw3aWPB6NwW6nYgHUoHaQ9VxwlGKUPVwC7joOlIgeeZQ3pJnd46Z/2miNTqbZl8918efj2yH/8dBY1fB+zGAAAAAElFTkSuQmCC");
+--w7-sdt-icon-a:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACsSURBVHgB3ZKxCoMwEIYvJWOn0r10LHTuVDp1KIU+RN+gT9FZ6AP0LYqDY+nQWXAScXMQdRYh+ouRqEF0cPGHHJfcl7sbfkaFroYlqEefx5lxQK/blu6rjRZ6R34RLcFxAWSkmRZEbUkeLWigZgVymZhuoid264lGjwMvTkhmtYsqvKEGMQQY43jYNwoy//7t0j31b8DPXyBOcVYe5Kr9mDpKdoY6ndoCrDNyDnRZRNbxQWFyAAAAAElFTkSuQmCC")}
+input[type=range]{-webkit-appearance:none;
+-moz-appearance:none;
+appearance:none;
+background:transparent;
+padding:10px 1px;
+width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;
+background:var(--w7-sdt-icon);
+filter:drop-shadow(1px 1px 0 #0002);
+height:var(--w7-sdt-h);
+transform:translateY(-7px);
+width:var(--w7-sdt-w)}
+input[type=range]::-webkit-slider-thumb:hover{background:var(--w7-sdt-icon-h)}
+input[type=range]::-webkit-slider-thumb:active{background:var(--w7-sdt-icon-a)}
+input[type=range]::-moz-range-thumb{background:var(--w7-sdt-icon);
+border:0;
+border-radius:0;
+filter:drop-shadow(1px 1px 0 #0002);
+height:var(--w7-sdt-h);
+width:var(--w7-sdt-w)}
+input[type=range]::-moz-range-thumb:hover{background:var(--w7-sdt-icon-h)}
+input[type=range]::-moz-range-thumb:active{background:var(--w7-sdt-icon-a)}
+input[type=range]::-webkit-slider-runnable-track{background:var(--w7-surface);
+box-shadow:inset 1px 1px 1px #999,inset -1px 0 #999,0 1px #fff;
+box-sizing:border-box;
+height:3px;
+width:100%}
+input[type=range]::-moz-range-track{background:var(--w7-surface);
+box-shadow:inset 1px 1px 1px #999,inset -1px 0 #999,0 1px #fff;
+box-sizing:border-box;
+height:3px;
+width:100%}
 @media (prefers-contrast: more){:root{--w7-w-bg:rgba(3,97,174,1);--w7-surface:rgba(3,97,174,1);--w7-w-grad:linear-gradient(transparent,transparent),var(--w7-w-bg);--w7-w-glass:none}.window:before{background:var(--w7-w-grad)}}
