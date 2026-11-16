@@ -130,6 +130,7 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L90 | Each press remembers its sound: which button or link, when it was pressed, and when the sound began or whether it failed | `assets/js/sound.js` |
 | L91 | One test for "a link to another page of this site, in this tab", shared by the arrival sound and the link's wait | `assets/js/sound.js` |
 | L92 | In Firefox, a link waits for its press sound to begin and play its first 60 ms before the page changes, half a second at most | `assets/js/sound.js` |
+| L93 | The page's colour behind the wallpaper photograph, the photograph's average green, so a page painted before its photograph is ready shows green instead of white | `assets/css/borrowed/cyanobacteria.css` |
 
 The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L82 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 

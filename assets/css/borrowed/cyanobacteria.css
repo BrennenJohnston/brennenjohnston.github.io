@@ -82,6 +82,9 @@
    Added on 2026-11-11 (round WEB-R2, the music player), approved by the owner (FD-159): ledger line L89, the player's 19 rules after L80
      (.music-screen to .music-popout a): its screen in the panes' own gloss and blue, the sliders, buttons and Pop out link at least 44 px tall,
      the sliders with the links' focus ring, the playlist's piece playing in bold, and the smaller player in the menu column of every page.
+   Changed on 2026-11-16, approved by the owner (FD-165): ledger line L93, the body's background-color from var(--gradient-top) to a new token
+     --behind-photo, #75916c, the wallpaper photograph's average colour, so a page painted before its photograph is ready shows that green
+     instead of the browser's white. The photograph covers it once painted; the dark and more contrast sets keep the light set's value.
 */
 
 /* start light mode styling */
@@ -92,6 +95,7 @@
 		--bg: rgba(3,97,174,0.9);
 		--gradient-top: rgba(255,255,255,0.05);
 		--gradient-bottom: rgba(3,97,174,0.9);
+		--behind-photo: #75916c;
 		--sky: rgba(63,147,232,0.6);
 		--frame: rgba(63,147,232,0.42);
 		--box: rgba(63,147,232,0.35);
@@ -172,7 +176,7 @@ body {
 	text-shadow: var(--glow);
 
 	/* page background pattern */
-	background-color: var(--gradient-top);
+	background-color: var(--behind-photo);
 	background-image: url(/assets/images/site/wallpaper.jpg);
 	background-size: cover;
 	background-position: center;
