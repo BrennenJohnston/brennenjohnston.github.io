@@ -85,6 +85,9 @@
    Changed on 2026-11-16, approved by the owner (FD-165): ledger line L93, the body's background-color from var(--gradient-top) to a new token
      --behind-photo, #75916c, the wallpaper photograph's average colour, so a page painted before its photograph is ready shows that green
      instead of the browser's white. The photograph covers it once painted; the dark and more contrast sets keep the light set's value.
+   Added on 2026-11-16, approved by the owner (FD-168): ledger line L95, after the player's rules (L89), one @media (scripting: enabled) block
+     that holds the space of the Sounds switch and the menu's music player while they are still hidden, invisible (visibility: hidden keeps them
+     out of the Tab order and from screen readers), so the page does not move down when the script shows them. Without scripts, nothing is held.
 */
 
 /* start light mode styling */
@@ -351,6 +354,10 @@ pre { overflow-x: auto; }
 .music-playlist summary { padding: 10px 0; }
 .music-popout { margin: 8px 0 0; }
 .music-popout a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; }
+@media (scripting: enabled) {
+	#sounds-switch[hidden] { display: inline-block; visibility: hidden; }
+	.music-mini #music-deck[hidden] { display: block; visibility: hidden; }
+}
 .title-bar-text h1, .title-bar-text h2, .title-bar-text h3 { font-weight: 700; }
 .title-bar-text h3 { font-size: 1.1875rem; }
 .window-body { border-radius: 8px; }

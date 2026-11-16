@@ -4,6 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% if page.redirect %}<meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">{% endif %}
   {%- seo -%}
+  <link rel="preload" href="{{ '/assets/fonts/mplus-rounded-1c/mplusrounded1c-400-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/mplus-rounded-1c/mplusrounded1c-500-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/mplus-rounded-1c/mplusrounded1c-700-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/borrowed/7css.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/borrowed/cyanobacteria.css" | relative_url }}">
