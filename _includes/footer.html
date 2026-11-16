@@ -34,6 +34,7 @@
           <ul role="list">
             <li><a href="{{ '/accessibility/' | relative_url }}">Accessibility statement</a></li>
             <li><a href="{{ '/sounds/' | relative_url }}">Sounds on this site</a></li>
+            <li><a href="{{ '/credits/' | relative_url }}">Credits</a></li>
             <li><a href="{{ '/feed.xml' | relative_url }}">Project updates feed (RSS)</a></li>
           </ul>
         </section>
@@ -41,14 +42,6 @@
     </div>
 
     <p>Designs shared on this site are open source. See each project page for its license and download links.</p>
-
-    <h2>Made with pieces by</h2>
-    <ul role="list">
-      {%- for credit in site.data.credits -%}
-      <li><a href="{{ credit.url }}">{{ credit.author | escape }}</a> ({{ credit.piece }})</li>
-      {%- endfor -%}
-    </ul>
-    <p><a class="post-link" href="{{ '/credits/' | relative_url }}">See the full credits</a></p>
 
   </div>
   </div>

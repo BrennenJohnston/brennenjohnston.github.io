@@ -36,7 +36,7 @@ The look of this site is a collage of pieces other people made and shared under 
 | The music player's three pieces, [Wallpaper, Pinball Spring and Disco Lounge](https://incompetech.com/music/royalty-free/) | Kevin MacLeod (incompetech.com) | CC BY 4.0 |
 | The music player's icons, from [Nuvola](http://web.archive.org/web/20090831103737/http://www.icon-king.com/projects/nuvola/) | David Vignoni | GNU LGPL 2.1 |
 
-The project photographs are my own; the two symposium photographs on the collaborations page are KEMi's. The footer of every page names each author, and the Credits page (`credits.md`, published at /credits/) lists every piece with its license.
+The project photographs are my own; the two symposium photographs on the collaborations page are KEMi's. Every page's footer links to the Credits page (`credits.md`, published at /credits/), which names each author and lists every piece with its license.
 
 - **The untouched copies.** Every borrowed file is kept exactly as it was downloaded, with its license, in `vendor/pristine/`, which is left out of the published site. `vendor/pristine/PROVENANCE.md` records each piece's source, author, license, the date it was fetched, its SHA-256 hash, and where its adapted copy lives.
 - **The adapted copies.** The site itself uses copies: the stylesheets in `assets/css/borrowed/` and `assets/css/fonts.css`, and Minima's templates in `_layouts/` and `_includes/`. Each borrowed stylesheet begins with a comment that lists every change from the original, and PROVENANCE.md lists the changes to the templates.
@@ -131,6 +131,7 @@ The project photographs are my own; the two symposium photographs on the collabo
 | L91 | One test for "a link to another page of this site, in this tab", shared by the arrival sound and the link's wait | `assets/js/sound.js` |
 | L92 | In Firefox, a link waits for its press sound to begin and play its first 60 ms before the page changes, half a second at most | `assets/js/sound.js` |
 | L93 | The page's colour behind the wallpaper photograph, the photograph's average green, so a page painted before its photograph is ready shows green instead of white | `assets/css/borrowed/cyanobacteria.css` |
+| L94 | The footer's link to the Credits page, in its "This site" list, where the list of every author used to be | `_includes/footer.html` |
 
 The missing numbers were never needed in the site: licensed pieces covered L2, L6 and L7, L3 and L5 were dropped, and L8 was a one-off script outside the site. L19 to L31 came in a second pass, after I tested the first version and wanted the light glass and the arrangement of the site I took inspiration from back without losing the accessibility work. L32 to L36 are 18 condition and loop lines the project templates have had since July 2026, before this ledger began; I approved them as they stand. L37 came with the Tactile Map guide page. L38 to L82 came with the sounds in November 2026. The sound script is cut down from one I wrote for the OpenSCAD Assistive Forge; the lines it shares with that project are my own and have no numbers, and the numbered lines are the ones written or reshaped for this site.
 
