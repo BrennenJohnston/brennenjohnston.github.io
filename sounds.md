@@ -138,7 +138,7 @@ The pieces are "Wallpaper", "Pinball Spring" and "Disco Lounge" by Kevin MacLeod
 - The browser's Back and Forward.
 - A key held down: one press, one sound.
 - Turning sounds off. The switch's new label is the confirmation.
-- Anything before your first press or key on a page. Browsers do not let a page make sound until then.
+- Anything before your first press or key on a page. Browsers do not let a page make sound until then. Chrome and Edge count a press on the page before; Firefox asks for one on each page.
 
 ## When sounds start off
 
@@ -147,6 +147,7 @@ Sounds start off, until you turn them on, when your device asks for reduced moti
 ## What I know is not perfect
 
 - A press sound stops when the page changes, so a quick press can cut it short.
+- In Firefox, sound can take up to half a second to start on a new page. So that you hear your press, a link waits for its sound to begin before the page changes, half a second at most. If the sound is not ready by then, the page changes without it. With sounds off, nothing waits.
 - To keep pages light, the sounds are fetched the first time you move the mouse, touch the page or press a key. If the first thing you do on a visit is a press, that one press may be silent.
 - The arrival sound plays only in browsers that allow it.
 - The auto scroll sound has been tried only in Chrome and Edge on Windows.

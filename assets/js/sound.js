@@ -383,6 +383,11 @@ const SOUNDS_TEXT = { on: 'Sounds: on', off: 'Sounds: off' };
 let _soundsOn = true;
 /** The last control a press sounded for, so its click does not sound again. */
 let _pressHeard = null;
+/**
+ * The last press's sound: its control, when it was pressed, when the sound
+ * began or whether it failed, and a promise kept once it has done either.
+ */
+let _pressSound = null;
 
 /**
  * Whether sounds start on. A saved choice wins. With none saved they start
@@ -498,12 +503,29 @@ function _pressTarget(event) {
 const _plain = (event) =>
   !(event.ctrlKey || event.shiftKey || event.altKey || event.metaKey);
 
+// A link to another page of this site, opened in this tab: not a download,
+// and not a place on this same page.
+function _leadsToAnotherPage(link) {
+  if (link.origin !== location.origin || link.target) return false;
+  if (link.hasAttribute('download')) return false;
+  const here = link.pathname === location.pathname;
+  return !(here && link.search === location.search);
+}
+
 function _playPress(el) {
+  _pressSound = null;
   if (!_soundsOn) return;
   const set = el.matches(BIG_BUTTONS) ? 'buttons' : 'links';
-  playKeySound(set).catch((error) => {
-    console.warn('[Sounds] A press sound did not play:', error);
-  });
+  const sound = { el, at: performance.now(), begunAt: null, failed: false };
+  sound.begun = playKeySound(set)
+    .then(() => {
+      sound.begunAt = performance.now();
+    })
+    .catch((error) => {
+      sound.failed = true;
+      console.warn('[Sounds] A press sound did not play:', error);
+    });
+  _pressSound = sound;
 }
 
 function _installPressSounds() {
@@ -549,6 +571,71 @@ function _installPressSounds() {
   for (const [type, fn] of listeners) {
     document.addEventListener(type, fn, true);
   }
+}
+
+// The link's wait. This block and its one call in _startSounds are the
+// whole of it: take both out and it is gone.
+// A plain press on a link to another page of this site, in a browser whose
+// sound is not yet running on the page at the click, keeps the page until
+// the press sound has begun and played its first 60 ms, the loud part. A
+// sound that has not begun half a second after the press is given up.
+// Firefox can take that long to start sound on a page, and leaves the page
+// sooner, so without the wait its press is often not heard.
+const LINK_WAIT_MS = 500;
+const LINK_HEARD_MS = 60;
+
+/**
+ * How much longer, from now, a link pressed for another page waits for its
+ * press sound: once the sound has begun, until it has played 60 ms; before
+ * that, until half a second after the press; for a sound that failed, not
+ * at all.
+ * @param {{sincePressMs: number, sinceBegunMs: number|null,
+ *   failed: boolean}} sound
+ * @returns {number} ms to wait
+ */
+export function linkWaitMs({ sincePressMs, sinceBegunMs, failed }) {
+  if (failed) return 0;
+  if (sinceBegunMs !== null) return Math.max(0, LINK_HEARD_MS - sinceBegunMs);
+  return Math.max(0, LINK_WAIT_MS - sincePressMs);
+}
+
+function _linkWait(sound) {
+  const now = performance.now();
+  return linkWaitMs({
+    sincePressMs: now - sound.at,
+    sinceBegunMs: sound.begunAt === null ? null : now - sound.begunAt,
+    failed: sound.failed,
+  });
+}
+
+function _installLinkWait() {
+  // On the window, after the page's own handlers, so a click one of them
+  // has taken (Pop out) is left alone.
+  window.addEventListener('click', (event) => {
+    const sound = _pressSound;
+    const link = event.target?.closest?.('a[href]');
+    if (!sound || sound.el !== link || event.defaultPrevented) return;
+    if (!event.isTrusted || event.button !== 0 || !_plain(event)) return;
+    if (!_leadsToAnotherPage(link)) return;
+    // Chrome and Edge run their sound from the moment it is made: the press
+    // sound starts in time, and nothing waits.
+    if (_context?.state === 'running') return;
+    const waitMs = _linkWait(sound);
+    if (!waitMs) return;
+    event.preventDefault();
+    let gone = false;
+    const go = () => {
+      if (gone) return;
+      gone = true;
+      location.assign(link.href);
+    };
+    // Given up unless the sound begins first; once it has, its 60 ms.
+    const giveUp = setTimeout(go, waitMs);
+    sound.begun.then(() => {
+      clearTimeout(giveUp);
+      setTimeout(go, _linkWait(sound));
+    });
+  });
 }
 
 // Scrolling by hand ticks a line at a time: a tick for every 40 px the page
@@ -787,11 +874,7 @@ function _installArrival() {
     if (!link || !event.isTrusted || event.button !== 0 || !_plain(event)) {
       return;
     }
-    if (link.origin !== location.origin || link.target) return;
-    if (link.hasAttribute('download')) return;
-    // A place on this same page is not another page.
-    const here = link.pathname === location.pathname;
-    if (here && link.search === location.search) return;
+    if (!_leadsToAnotherPage(link)) return;
     try {
       sessionStorage.setItem(ARRIVE_KEY, String(Date.now()));
     } catch (error) {
@@ -1255,6 +1338,7 @@ function _startSounds() {
     })
   );
   _installPressSounds();
+  _installLinkWait();
   _installScrollTicks();
   _installTypingSounds();
   _installHoverSounds();
