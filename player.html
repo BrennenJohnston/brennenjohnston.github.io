@@ -10,16 +10,16 @@ permalink: /player/
   </div>
   <div class="music-toolbar">
     <button type="button" id="music-previous"><img src="{{ '/assets/images/icons/nuvola/actions-player_start.png' | relative_url }}" alt="" width="24" height="24"> Previous</button>
-    <button type="button" id="music-toggle"><img src="{{ '/assets/images/icons/nuvola/actions-player_play.png' | relative_url }}" alt="" width="32" height="32"> <span>Play</span></button>
+    <button type="button" id="music-toggle" aria-labelledby="music-toggle-label"><img src="{{ '/assets/images/icons/nuvola/actions-player_play.png' | relative_url }}" alt="" width="32" height="32"> <span id="music-toggle-label">Play</span></button>
     <button type="button" id="music-next"><img src="{{ '/assets/images/icons/nuvola/actions-player_end.png' | relative_url }}" alt="" width="24" height="24"> Next</button>
   </div>
   <p id="music-waiting" hidden>Your browser is waiting for you to start the music. Press play on a track.</p>
   <p class="music-volume"><label for="music-volume">Volume</label> <input type="range" id="music-volume" min="0" max="100" step="5" value="100"></p>
   <h2>Playlist</h2>
   <ol class="music-list">
-    <li><button type="button" data-title="Wallpaper" data-seconds="220">Wallpaper <span>3:40</span></button></li>
-    <li><button type="button" data-title="Pinball Spring" data-seconds="235">Pinball Spring <span>3:55</span></button></li>
-    <li><button type="button" data-title="Disco Lounge" data-seconds="253">Disco Lounge <span>4:13</span></button></li>
+    <li><button type="button" data-title="Wallpaper" data-seconds="220">Wallpaper&nbsp;<span>3:40</span></button></li>
+    <li><button type="button" data-title="Pinball Spring" data-seconds="235">Pinball Spring&nbsp;<span>3:55</span></button></li>
+    <li><button type="button" data-title="Disco Lounge" data-seconds="253">Disco Lounge&nbsp;<span>4:13</span></button></li>
   </ol>
 </div>
 <p>Music from the years this site's look comes from. It plays in this window while you browse. Close the window to stop it.</p>

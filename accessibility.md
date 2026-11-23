@@ -72,17 +72,16 @@ Despite my best efforts to ensure the accessibility of this site, there are some
 
 5. **Links inside sentences can be smaller than 44 by 44 pixels.** Links in the site's menu are at least 44 pixels tall, but a link inside a sentence keeps the size of its text. WCAG 2.2 allows this for links in a sentence, but they can still be hard to hit with a tremor or limited hand control. Zooming the page in makes them larger, and every link can be reached with the Tab key.
 
-6. **The Sounds switch has not been checked with a screen reader yet.** Pressing it changes its visible text between "Sounds: on" and "Sounds: off". I have not yet confirmed that a screen reader says the change as it happens; the new text is on the button to read either way. I will test it with NVDA and update this statement.
-
 ## Assessment approach
 
 I assessed the accessibility of this site by the following approaches:
 
 - **Self-evaluation** against WCAG 2.2 level AA, including keyboard-only navigation, 400% zoom and 320 pixel reflow, Windows High Contrast Mode, and contrast measurement of every text and non-text pair used in the design.
 - **Automated testing in continuous integration.** Every proposed change runs html-proofer for broken links and missing alternative text, pa11y-ci (axe-core and HTML_CodeSniffer) against the built site for WCAG 2.2 AA violations, and html-validate for markup validity.
+- **A screen reader check of the sounds and the music player.** On 23 November 2026 the Sounds switch, the music player, its pop out window and the sounds page were checked with the NVDA screen reader, version 2026.2, on Windows in Chrome, and the switch and the player in Firefox as well. The check pressed through them with the keyboard and read NVDA's own record of what it said. No other screen reader has been tried yet.
 
 This site has not been evaluated by an external accessibility auditor and has no formal third-party accessibility certification.
 
 ## Date
 
-This statement was created on 27 July 2026 and updated on 11 November 2026.
+This statement was created on 27 July 2026 and updated on 23 November 2026.
