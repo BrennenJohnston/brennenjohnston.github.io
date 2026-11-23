@@ -126,7 +126,7 @@ By Nuno Filipe Povoa, 2008: "[dialog-information](https://github.com/KDE/oxygen-
 
 ## Music
 
-Every page has a small music player under the menu, with three pieces by Kevin MacLeod. Nothing plays until you press Play. The pieces play one after another, starting over after the last, and the music carries on from page to page where it was; some browsers want Play pressed again on the new page. Pop out moves the music into a small window of its own, so it keeps playing while you browse. Turning sounds off pauses the music. Pressing play in the player starts it again. On a phone the small window opens as a tab, and the music may stop when you leave that tab.
+Every page has a small music player under the menu, with three pieces by Kevin MacLeod. Nothing plays until you press Play. The music starts at half volume, and the player's Volume slider changes it. On an iPhone or iPad the slider is left out, because Safari there keeps the volume to the device's own buttons. The pieces play one after another, starting over after the last, and the music carries on from page to page where it was; some browsers want Play pressed again on the new page. Pop out moves the music into a small window of its own, so it keeps playing while you browse. Turning sounds off pauses the music. Pressing play in the player starts it again. On a phone the small window opens as a tab, and the music may stop when you leave that tab.
 
 The pieces are "Wallpaper", "Pinball Spring" and "Disco Lounge" by Kevin MacLeod ([incompetech.com](https://incompetech.com/)), licensed under [Creative Commons: By Attribution 4.0](https://creativecommons.org/licenses/by/4.0/).
 

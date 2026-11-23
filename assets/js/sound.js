@@ -985,14 +985,15 @@ function _installWhoosh() {
 // Every page has the player in its menu column, and the player page in its
 // small window has the same player, larger. Nothing plays until Play is
 // pressed. The player shows the piece playing, its place in it, Previous,
-// Play or Pause, Next and the playlist; the small window also the volume.
-// When a piece ends the next starts, and after the last the first; starting
-// one pauses the others. Leaving a page keeps the piece, its place and
-// whether it plays for the next page of the tab, which carries on where it
-// was; if the browser does not let it, a line says to press play. Pop out
-// moves the music, at the same place, into the small window, and the page's
-// player pauses. Turning sounds off pauses the music in every window of the
-// site; pressing play afterwards plays it.
+// Play or Pause, Next, the volume and the playlist. The music starts at the
+// level the Volume slider has in the page, half. When a piece ends the next
+// starts, and after the last the first; starting one pauses the others.
+// Leaving a page keeps the piece, its place, its volume and whether it plays
+// for the next page of the tab, which carries on where it was; if the
+// browser does not let it, a line says to press play. Pop out moves the
+// music, at the same place, into the small window, and the page's player
+// pauses. Turning sounds off pauses the music in every window of the site;
+// pressing play afterwards plays it.
 const MUSIC_WINDOW = 'music-player';
 const MUSIC_FEATURES = 'popup,width=380,height=560';
 const MUSIC_KEY = 'sounds-music';
@@ -1059,6 +1060,9 @@ function _installMusic() {
       `${_clock(seconds)} of ${_clock(total)}`
     );
   };
+  const setLevel = () => {
+    for (const track of tracks) track.volume = Number(volume.value) / 100;
+  };
   const show = () => {
     const track = tracks[current];
     const piece = pieces[current];
@@ -1110,7 +1114,7 @@ function _installMusic() {
     current = kept.piece;
     tracks[current].currentTime = kept.time;
     for (const track of tracks) track.volume = kept.volume;
-    if (volume) volume.value = String(Math.round(kept.volume * 100));
+    volume.value = String(Math.round(kept.volume * 100));
     show();
     if (kept.playing) _playMusic(tracks[current]);
   };
@@ -1142,9 +1146,7 @@ function _installMusic() {
     sayPlace(Number(position.value), Number(position.max));
   });
   position.addEventListener('blur', show);
-  volume?.addEventListener('input', () => {
-    for (const track of tracks) track.volume = Number(volume.value) / 100;
-  });
+  volume.addEventListener('input', setLevel);
   const popOut = part('music-popout');
   popOut?.addEventListener('click', (event) => {
     if (event.button !== 0 || !_plain(event)) return;
@@ -1173,6 +1175,12 @@ function _installMusic() {
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) carryOn();
   });
+  // Safari on an iPhone or iPad leaves the volume to the device's own
+  // buttons: a level a page sets does not take, and reads back as 1. The
+  // slider could do nothing there, so it is taken out.
+  tracks[0].volume = 0.5;
+  if (tracks[0].volume !== 0.5) volume.parentElement.remove();
+  setLevel();
   part('music-tracks').hidden = true;
   deck.hidden = false;
   show();

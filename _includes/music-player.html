@@ -14,6 +14,7 @@
         <button type="button" id="music-next"><img src="{{ '/assets/images/icons/nuvola/actions-player_end.png' | relative_url }}" alt="" width="24" height="24"><span class="a11y-sr-only">Next</span></button>
       </div>
       <p id="music-waiting" hidden>Your browser is waiting for you to start the music. Press play on a track.</p>
+      <p class="music-volume"><label for="music-volume">Volume</label> <input type="range" id="music-volume" min="0" max="100" step="5" value="50"></p>
       <details class="music-playlist">
         <summary>Playlist</summary>
         <ol class="music-list">
