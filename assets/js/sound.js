@@ -1053,6 +1053,12 @@ function _installMusic() {
   const volume = part('music-volume');
   const pieces = [...deck.querySelectorAll('.music-list button')];
   let current = 0;
+  const sayPlace = (seconds, total) => {
+    position.setAttribute(
+      'aria-valuetext',
+      `${_clock(seconds)} of ${_clock(total)}`
+    );
+  };
   const show = () => {
     const track = tracks[current];
     const piece = pieces[current];
@@ -1066,10 +1072,12 @@ function _installMusic() {
     }
     position.max = String(Math.floor(total));
     position.value = String(Math.floor(track.currentTime));
-    position.setAttribute(
-      'aria-valuetext',
-      `${_clock(track.currentTime)} of ${_clock(total)}`
-    );
+    // A screen reader says a focused slider's place each time its words
+    // change, which would be every second of a piece. While the slider has
+    // focus, its words change only when the reader moves it.
+    if (document.activeElement !== position) {
+      sayPlace(track.currentTime, total);
+    }
     part('music-elapsed').textContent = _clock(track.currentTime);
     part('music-length').textContent = _clock(total);
     toggle.querySelector('span').textContent = track.paused ? 'Play' : 'Pause';
@@ -1131,7 +1139,9 @@ function _installMusic() {
   });
   position.addEventListener('input', () => {
     tracks[current].currentTime = Number(position.value);
+    sayPlace(Number(position.value), Number(position.max));
   });
+  position.addEventListener('blur', show);
   volume?.addEventListener('input', () => {
     for (const track of tracks) track.volume = Number(volume.value) / 100;
   });
